@@ -663,6 +663,12 @@ Use case ends.
 ** 2a1. VoluncheerBook shows an error message.
 +
 Use case ends.
+[none]
+* 2b. The beneficiary is not existed.
++
+[none]
+** 2b1. VoluncheerBook shows an error message.
++
 
 [none]
 * 2b. The date is invalid.

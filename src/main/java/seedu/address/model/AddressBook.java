@@ -7,16 +7,17 @@ import java.util.List;
 import javafx.beans.InvalidationListener;
 import javafx.collections.ObservableList;
 import seedu.address.commons.util.InvalidationListenerManager;
-import seedu.address.model.person.Person;
-import seedu.address.model.person.UniquePersonList;
+import seedu.address.model.beneficiary.UniqueBeneficiaryList;
+import seedu.address.model.beneficiary.Beneficiary;
+import seedu.address.model.beneficiary.UniqueBeneficiaryList;
 
 /**
  * Wraps all data at the address-book level
- * Duplicates are not allowed (by .isSamePerson comparison)
+ * Duplicates are not allowed (by .isSameBeneficiary comparison)
  */
 public class AddressBook implements ReadOnlyAddressBook {
 
-    private final UniquePersonList persons;
+    private final UniqueBeneficiaryList beneficiaries;
     private final InvalidationListenerManager invalidationListenerManager = new InvalidationListenerManager();
 
     /*
@@ -27,13 +28,13 @@ public class AddressBook implements ReadOnlyAddressBook {
      *   among constructors.
      */
     {
-        persons = new UniquePersonList();
+        beneficiaries = new UniqueBeneficiaryList();
     }
 
     public AddressBook() {}
 
     /**
-     * Creates an AddressBook using the Persons in the {@code toBeCopied}
+     * Creates an AddressBook using the Beneficiarys in the {@code toBeCopied}
      */
     public AddressBook(ReadOnlyAddressBook toBeCopied) {
         this();
@@ -43,11 +44,11 @@ public class AddressBook implements ReadOnlyAddressBook {
     //// list overwrite operations
 
     /**
-     * Replaces the contents of the person list with {@code persons}.
-     * {@code persons} must not contain duplicate persons.
+     * Replaces the contents of the beneficiary list with {@code beneficiaries}.
+     * {@code beneficiaries} must not contain duplicate beneficiaries.
      */
-    public void setPersons(List<Person> persons) {
-        this.persons.setPersons(persons);
+    public void setBeneficiarys(List<Beneficiary> beneficiaries) {
+        this.beneficiaries.setBeneficiarys(beneficiaries);
         indicateModified();
     }
 
@@ -57,37 +58,37 @@ public class AddressBook implements ReadOnlyAddressBook {
     public void resetData(ReadOnlyAddressBook newData) {
         requireNonNull(newData);
 
-        setPersons(newData.getPersonList());
+        setBeneficiarys(newData.getBeneficiaryList());
     }
 
-    //// person-level operations
+    //// beneficiary-level operations
 
     /**
-     * Returns true if a person with the same identity as {@code person} exists in the address book.
+     * Returns true if a beneficiary with the same identity as {@code beneficiary} exists in the address book.
      */
-    public boolean hasPerson(Person person) {
-        requireNonNull(person);
-        return persons.contains(person);
+    public boolean hasBeneficiary(Beneficiary beneficiary) {
+        requireNonNull(beneficiary);
+        return beneficiaries.contains(beneficiary);
     }
 
     /**
-     * Adds a person to the address book.
-     * The person must not already exist in the address book.
+     * Adds a beneficiary to the address book.
+     * The beneficiary must not already exist in the address book.
      */
-    public void addPerson(Person p) {
-        persons.add(p);
+    public void addBeneficiary(Beneficiary p) {
+        beneficiaries.add(p);
         indicateModified();
     }
 
     /**
-     * Replaces the given person {@code target} in the list with {@code editedPerson}.
+     * Replaces the given beneficiary {@code target} in the list with {@code editedBeneficiary}.
      * {@code target} must exist in the address book.
-     * The person identity of {@code editedPerson} must not be the same as another existing person in the address book.
+     * The beneficiary identity of {@code editedBeneficiary} must not be the same as another existing beneficiary in the address book.
      */
-    public void setPerson(Person target, Person editedPerson) {
-        requireNonNull(editedPerson);
+    public void setBeneficiary(Beneficiary target, Beneficiary editedBeneficiary) {
+        requireNonNull(editedBeneficiary);
 
-        persons.setPerson(target, editedPerson);
+        beneficiaries.setBeneficiary(target, editedBeneficiary);
         indicateModified();
     }
 
@@ -95,8 +96,8 @@ public class AddressBook implements ReadOnlyAddressBook {
      * Removes {@code key} from this {@code AddressBook}.
      * {@code key} must exist in the address book.
      */
-    public void removePerson(Person key) {
-        persons.remove(key);
+    public void removeBeneficiary(Beneficiary key) {
+        beneficiaries.remove(key);
         indicateModified();
     }
 
@@ -121,24 +122,24 @@ public class AddressBook implements ReadOnlyAddressBook {
 
     @Override
     public String toString() {
-        return persons.asUnmodifiableObservableList().size() + " persons";
+        return beneficiaries.asUnmodifiableObservableList().size() + " beneficiaries";
         // TODO: refine later
     }
 
     @Override
-    public ObservableList<Person> getPersonList() {
-        return persons.asUnmodifiableObservableList();
+    public ObservableList<Beneficiary> getBeneficiaryList() {
+        return beneficiaries.asUnmodifiableObservableList();
     }
 
     @Override
     public boolean equals(Object other) {
         return other == this // short circuit if same object
                 || (other instanceof AddressBook // instanceof handles nulls
-                && persons.equals(((AddressBook) other).persons));
+                && beneficiaries.equals(((AddressBook) other).beneficiaries));
     }
 
     @Override
     public int hashCode() {
-        return persons.hashCode();
+        return beneficiaries.hashCode();
     }
 }

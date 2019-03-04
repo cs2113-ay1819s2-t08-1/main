@@ -17,11 +17,11 @@ import guitests.guihandles.PersonListPanelHandle;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import seedu.address.model.person.Address;
-import seedu.address.model.person.Email;
-import seedu.address.model.person.Name;
+import seedu.address.model.beneficiary.Address;
+import seedu.address.model.beneficiary.Email;
+import seedu.address.model.beneficiary.Name;
 import seedu.address.model.person.Person;
-import seedu.address.model.person.Phone;
+import seedu.address.model.beneficiary.Phone;
 
 public class PersonListPanelTest extends GuiUnitTest {
     private static final ObservableList<Person> TYPICAL_PERSONS =

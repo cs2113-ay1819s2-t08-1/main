@@ -6,14 +6,14 @@ import java.util.function.Predicate;
 import javafx.beans.property.ReadOnlyProperty;
 import javafx.collections.ObservableList;
 import seedu.address.commons.core.GuiSettings;
-import seedu.address.model.person.Person;
+import seedu.address.model.beneficiary.Beneficiary;
 
 /**
  * The API of the Model component.
  */
 public interface Model {
     /** {@code Predicate} that always evaluate to true */
-    Predicate<Person> PREDICATE_SHOW_ALL_PERSONS = unused -> true;
+    Predicate<Beneficiary> PREDICATE_SHOW_ALL_PERSONS = unused -> true;
 
     /**
      * Replaces user prefs data with the data in {@code userPrefs}.
@@ -54,37 +54,37 @@ public interface Model {
     ReadOnlyAddressBook getAddressBook();
 
     /**
-     * Returns true if a person with the same identity as {@code person} exists in the address book.
+     * Returns true if a beneficiary with the same identity as {@code beneficiary} exists in the address book.
      */
-    boolean hasPerson(Person person);
+    boolean hasBeneficiary(Beneficiary beneficiary);
 
     /**
-     * Deletes the given person.
-     * The person must exist in the address book.
+     * Deletes the given beneficiary.
+     * The beneficiary must exist in the address book.
      */
-    void deletePerson(Person target);
+    void deleteBeneficiary(Beneficiary target);
 
     /**
-     * Adds the given person.
-     * {@code person} must not already exist in the address book.
+     * Adds the given beneficiary.
+     * {@code beneficiary} must not already exist in the address book.
      */
-    void addPerson(Person person);
+    void addBeneficiary(Beneficiary beneficiary);
 
     /**
-     * Replaces the given person {@code target} with {@code editedPerson}.
+     * Replaces the given beneficiary {@code target} with {@code editedBeneficiary}.
      * {@code target} must exist in the address book.
-     * The person identity of {@code editedPerson} must not be the same as another existing person in the address book.
+     * The beneficiary identity of {@code editedBeneficiary} must not be the same as another existing beneficiary in the address book.
      */
-    void setPerson(Person target, Person editedPerson);
+    void setBeneficiary(Beneficiary target, Beneficiary editedBeneficiary);
 
-    /** Returns an unmodifiable view of the filtered person list */
-    ObservableList<Person> getFilteredPersonList();
+    /** Returns an unmodifiable view of the filtered beneficiary list */
+    ObservableList<Beneficiary> getFilteredBeneficiaryList();
 
     /**
-     * Updates the filter of the filtered person list to filter by the given {@code predicate}.
+     * Updates the filter of the filtered beneficiary list to filter by the given {@code predicate}.
      * @throws NullPointerException if {@code predicate} is null.
      */
-    void updateFilteredPersonList(Predicate<Person> predicate);
+    void updateFilteredBeneficiaryList(Predicate<Beneficiary> predicate);
 
     /**
      * Returns true if the model has previous address book states to restore.
@@ -112,19 +112,19 @@ public interface Model {
     void commitAddressBook();
 
     /**
-     * Selected person in the filtered person list.
-     * null if no person is selected.
+     * Selected beneficiary in the filtered beneficiary list.
+     * null if no beneficiary is selected.
      */
-    ReadOnlyProperty<Person> selectedPersonProperty();
+    ReadOnlyProperty<Beneficiary> selectedBeneficiaryProperty();
 
     /**
-     * Returns the selected person in the filtered person list.
-     * null if no person is selected.
+     * Returns the selected beneficiary in the filtered beneficiary list.
+     * null if no beneficiary is selected.
      */
-    Person getSelectedPerson();
+    Beneficiary getSelectedBeneficiary();
 
     /**
-     * Sets the selected person in the filtered person list.
+     * Sets the selected beneficiary in the filtered beneficiary list.
      */
-    void setSelectedPerson(Person person);
+    void setSelectedBeneficiary(Beneficiary beneficiary);
 }

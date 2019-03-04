@@ -16,8 +16,9 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
-import seedu.address.model.person.exceptions.DuplicatePersonException;
-import seedu.address.model.person.exceptions.PersonNotFoundException;
+import seedu.address.model.beneficiary.UniquePersonList;
+import seedu.address.model.beneficiary.exceptions.DuplicateBeneficiaryException;
+import seedu.address.model.beneficiary.exceptions.PersonNotFoundException;
 import seedu.address.testutil.PersonBuilder;
 
 public class UniquePersonListTest {
@@ -60,7 +61,7 @@ public class UniquePersonListTest {
     @Test
     public void add_duplicatePerson_throwsDuplicatePersonException() {
         uniquePersonList.add(ALICE);
-        thrown.expect(DuplicatePersonException.class);
+        thrown.expect(DuplicateBeneficiaryException.class);
         uniquePersonList.add(ALICE);
     }
 
@@ -115,7 +116,7 @@ public class UniquePersonListTest {
     public void setPerson_editedPersonHasNonUniqueIdentity_throwsDuplicatePersonException() {
         uniquePersonList.add(ALICE);
         uniquePersonList.add(BOB);
-        thrown.expect(DuplicatePersonException.class);
+        thrown.expect(DuplicateBeneficiaryException.class);
         uniquePersonList.setPerson(ALICE, BOB);
     }
 
@@ -173,7 +174,7 @@ public class UniquePersonListTest {
     @Test
     public void setPersons_listWithDuplicatePersons_throwsDuplicatePersonException() {
         List<Person> listWithDuplicatePersons = Arrays.asList(ALICE, ALICE);
-        thrown.expect(DuplicatePersonException.class);
+        thrown.expect(DuplicateBeneficiaryException.class);
         uniquePersonList.setPersons(listWithDuplicatePersons);
     }
 

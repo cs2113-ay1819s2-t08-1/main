@@ -1,6 +1,6 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>VoluncheerBook Level 4 - Developer Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Voluncheer - Developer Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level3">AB-3</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">AddressBook-Level4</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link active" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/se-edu/addressbook-level4"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>VoluncheerBook Level 4 - Developer Guide</h1></div><div id="content"><div id="preamble">
+<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level3">AB-3</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">AddressBook-Level4</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link active" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/se-edu/addressbook-level4"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Voluncheer - Developer Guide</h1></div><div id="content"><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>By: <code>CS2113T T08-01</code>      Since: <code>Feb 2019</code>      Licence: <code>MIT</code></p>
@@ -321,7 +321,7 @@ The following class plays an important role at the architecture level:</p>
 </div>
 <h4 id="how-the-architecture-components-interact-with-each-other" class="discrete">How the architecture components interact with each other</h4>
 <div class="paragraph">
-<p>The <em>Sequence Diagram</em> below shows how the components interact with each other for the scenario where the user issues the command <code>delete 1</code>.</p>
+<p>The <em>Sequence Diagram</em> below shows how the components interact with each other for the scenario where the user issues the command <code>deleteVolunteer 1</code>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1324,9 +1324,6 @@ e.g. <code>seedu.Voluncheer.logic.LogicManagerTest</code></p>
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p><em>{More to be added}</em></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -1508,10 +1505,16 @@ e.g. <code>seedu.Voluncheer.logic.LogicManagerTest</code></p>
 </ul>
 </div>
 </li>
-</ul>
-</div>
+<li>
+<p>2b. The beneficiary is not existed.</p>
 <div class="ulist none">
 <ul class="none">
+<li>
+<p>2b1. VoluncheerBook shows an error message.</p>
+</li>
+</ul>
+</div>
+</li>
 <li>
 <p>2b. The date is invalid.</p>
 <div class="ulist none">
@@ -1581,44 +1584,7 @@ e.g. <code>seedu.Voluncheer.logic.LogicManagerTest</code></p>
 </li>
 </ul>
 </div>
-<h3 id="use-case-5-edit-project-2" class="discrete">Use case 5: Edit Project</h3>
-<div class="paragraph">
-<p><strong>MSS</strong></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Users requests to edit a project.</p>
-</li>
-<li>
-<p>VoluncheerBook shows the successful edit message.</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p><strong>Extensions</strong></p>
-</div>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>2a. The project is not existed.</p>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>2a1. VoluncheerBook shows an error message.</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<h3 id="use-case-6-find-volunteer" class="discrete">Use case 6: Find volunteer</h3>
+<h3 id="use-case-5-find-volunteer" class="discrete">Use case 5: Find volunteer</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -1655,44 +1621,7 @@ e.g. <code>seedu.Voluncheer.logic.LogicManagerTest</code></p>
 </li>
 </ul>
 </div>
-<h3 id="use-case-7-find-volunteer" class="discrete">Use case 7: Find volunteer</h3>
-<div class="paragraph">
-<p><strong>MSS</strong></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Users requests to find (a) volunteer/volunteers by name.</p>
-</li>
-<li>
-<p>VoluncheerBook shows the list of volunteers who share the name.</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p><strong>Extensions</strong></p>
-</div>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>2a. There is no volunteer with that name.</p>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>2a1. VoluncheerBook returns an empty list.</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<h3 id="use-case-8-delete-project" class="discrete">Use case 8: Delete Project</h3>
+<h3 id="use-case-6-delete-project" class="discrete">Use case 6: Delete Project</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -1729,7 +1658,7 @@ e.g. <code>seedu.Voluncheer.logic.LogicManagerTest</code></p>
 </li>
 </ul>
 </div>
-<h3 id="use-case-9-export-volunteer-list" class="discrete">Use case 9: export volunteer list</h3>
+<h3 id="use-case-7-export-volunteer-list" class="discrete">Use case 7: export volunteer list</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -1766,7 +1695,7 @@ e.g. <code>seedu.Voluncheer.logic.LogicManagerTest</code></p>
 </li>
 </ul>
 </div>
-<h3 id="use-case-10-export-volunteer-list" class="discrete">Use case 10: export volunteer list</h3>
+<h3 id="use-case-8-export-volunteer-list" class="discrete">Use case 8: export volunteer list</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -1803,7 +1732,7 @@ e.g. <code>seedu.Voluncheer.logic.LogicManagerTest</code></p>
 </li>
 </ul>
 </div>
-<h3 id="use-case-11-export-volunteer-list" class="discrete">Use case 11: export volunteer list</h3>
+<h3 id="use-case-9-export-volunteer-list" class="discrete">Use case 9: export volunteer list</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -1840,7 +1769,7 @@ e.g. <code>seedu.Voluncheer.logic.LogicManagerTest</code></p>
 </li>
 </ul>
 </div>
-<h3 id="use-case-12-add-beneficiary" class="discrete">Use case 12: Add beneficiary</h3>
+<h3 id="use-case-10-add-beneficiary" class="discrete">Use case 10: Add beneficiary</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -1883,17 +1812,20 @@ e.g. <code>seedu.Voluncheer.logic.LogicManagerTest</code></p>
 </li>
 </ul>
 </div>
-<h3 id="use-case-13-filter" class="discrete">Use case 13: Filter</h3>
+<h3 id="use-case-11-sort-volunteers-based-on-priority_score" class="discrete">Use case 11: Sort volunteers based on PRIORITY_SCORE</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to make a filtered list of volunteers.</p>
+<p>User uses "map" command to calculate PRIORITY_SCORE.</p>
 </li>
 <li>
-<p>VoluncheerBook shows the successful filtered list.</p>
+<p>User requests to make a sorted list of volunteers based on PRIORITY_SCORE.</p>
+</li>
+<li>
+<p>VoluncheerBook shows the successful sorted list.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -1906,21 +1838,12 @@ e.g. <code>seedu.Voluncheer.logic.LogicManagerTest</code></p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a. List is empty.</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ul>
-</div>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>2b. Invalid filter.</p>
+<p>2a. Invalid map features.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>2b1. VoluncheerBook shows error message.</p>
+<p>2b1. VoluncheerBook shows error message.
+Use case ends.</p>
 </li>
 </ul>
 </div>
@@ -2110,4 +2033,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-03-03 14:40:54 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-03-17 17:10:41 UTC</div></div></div></body></html>

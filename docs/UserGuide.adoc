@@ -227,22 +227,21 @@ Selects the 1st volunteer in the results of the `find` command.
 === Assigning mapping index to each volunteer : `map`
 
 Assigns the volunteers with points 3, 2, 1 according to the selection criteria set by the user.
-Format: `map t/(POINTS)(SELECTION) t/(POINTS)(SELECTION) t/(POINTS)(SELECTION)`
+Format: `map t/SELECTION t/SELECTION t/SELECTION`
 
 ****
-* There are three types of tags, the age of volunteer (y/), race (r/) and medical condition (m/).
+* The tags are the same as the tags for addVolunteer.
 * There can be at most 3 tags and at least 1 tag as the selection criteria.
-* Each volunteer is tagged with the final PRIORITY_SCORE based on the points used for sorting later on.
-* The age criteria has comparators >,<,= which relate to the age given afterwards.
-* See examples below for a clearer picture.
+* Each volunteer is tagged with the final PRIORITY_SCORE used for sorting later on
+* 'SELECTION' criteria can have comparators (i.e) "y/18 >" would mean that volunteers with age above 18 are chosen
 ****
 
 Examples:
 
-* `map y/3>18 r/2chinese m/1NIL`
+* `map y/18 > r/chinese m/NIL`
 Gives volunteers above the AGE of 18 3 points, RACE chinese 2 points and MEDICAL_CONDITION of NIL 1 point.
-* `map m/3NIL`
-Only selects volunteers with no MEDICAL_CONDITION and gives them 3 points.
+* `map m/NIL`
+Only selects volunteers with no MEDICAL_CONDITION.
 
 === Sort volunteers according to PRIORITY_SCORE : `sort`
 

@@ -2,7 +2,6 @@ package seedu.address.model.project;
 
 import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 
-import java.util.Collections;
 import java.util.Set;
 
 import seedu.address.model.tag.Tag;
@@ -50,15 +49,15 @@ public class Project {
      * Returns true if both Projects of the same projectTitle have at least one other identity field that is the same.
      * This defines a weaker notion of equality between two Projects.
      */
-    public boolean isSameProject(Project otherProject) {
-        if (otherProject == this) {
-            return true;
-        }
-
-        return otherProject != null
-                && otherProject.getProjectTitle().equals(getProjectTitle())
-                && (otherProject.getDate().equals(getDate()) || otherProject.getBeneficiary().equals(getBeneficiary()));
-    }
+    /** public boolean isSameProject(Project otherProject) {
+     * if (otherProject == this) {
+     *       return true;
+     *   }
+     *
+     *    return otherProject != null
+     *         && otherProject.getprojectTitle().equals(getprojectTitle())
+     *         && (otherProject.getDate().equals(getDate()) || otherProject.getBeneficiary().equals(getBeneficiary()));
+     */
 
     /**
      * Returns true if both Projects have the same identity and data fields.

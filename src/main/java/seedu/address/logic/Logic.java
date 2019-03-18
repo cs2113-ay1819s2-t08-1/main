@@ -11,7 +11,6 @@ import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.ReadOnlyAddressBook;
 import seedu.address.model.beneficiary.Beneficiary;
 import seedu.address.model.person.Person;
-import seedu.address.model.project.Project;
 
 /**
  * API of the Logic component
@@ -35,7 +34,6 @@ public interface Logic {
 
     /** Returns an unmodifiable view of the filtered list of persons */
     ObservableList<Person> getFilteredPersonList();
-    ObservableList<Project> getFilteredProjectList();
 
     /** Returns an unmodifiable view of the filtered list of benficiaries */
     ObservableList<Beneficiary> getFilteredBeneficiaryList();

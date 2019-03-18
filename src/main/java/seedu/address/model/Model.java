@@ -19,7 +19,6 @@ public interface Model {
      * {@code Predicate} that always evaluate to true
      */
     Predicate<Person> PREDICATE_SHOW_ALL_PERSONS = unused -> true;
-    Predicate<Project> PREDICATE_SHOW_ALL_PROJECTS = unused -> true;
     Predicate<Beneficiary> PREDICATE_SHOW_ALL_BENEFICIARIES = unused -> true;
 
     /**
@@ -79,21 +78,16 @@ public interface Model {
     void deletePerson(Person target);
 
     /**
-     * Deletes the given project.
-     * The person must exist in the address book.
-     */
-    void deleteProject(Project target);
-    /**
      * Deletes the given beneficiary.
      * The beneficiary must exist in the address book.
      */
     void deleteBeneficiary(Beneficiary target);
 
+
     /**
      * Adds the given project.
      * {@code project} must not already exist in the address book.
      */
-
     void addProject(Project project);
 
     /**
@@ -124,17 +118,11 @@ public interface Model {
     ObservableList<Beneficiary> getFilteredBeneficiaryList();
 
     /**
-     * Returns an unmodifiable view of the filtered project list
-     */
-    ObservableList<Project> getFilteredProjectList();
-    /**
      * Updates the filter of the filtered Beneficiary list to filter by the given {@code predicate}.
      *
      * @throws NullPointerException if {@code predicate} is null.
      */
     void updateFilteredPersonList(Predicate<Person> predicate);
-
-    void updateFilteredProjectList(Predicate<Project> predicate);
 
     void updateFilteredBeneficiaryList(Predicate<Beneficiary> predicate);
 

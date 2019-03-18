@@ -5,12 +5,10 @@ import javafx.collections.ObservableList;
 import seedu.address.model.beneficiary.Beneficiary;
 import seedu.address.model.person.Person;
 import seedu.address.model.person.Volunteer;
-import seedu.address.model.project.Project;
 
 /**
  * Unmodifiable view of an address book
  */
-
 public interface ReadOnlyAddressBook extends Observable {
 
     /**
@@ -19,6 +17,6 @@ public interface ReadOnlyAddressBook extends Observable {
      */
     ObservableList<Person> getPersonList();
     ObservableList<Beneficiary> getBeneficiaryList();
-    ObservableList<Project> getProjectList();
     ObservableList<Volunteer> getVolunteerList();
+
 }

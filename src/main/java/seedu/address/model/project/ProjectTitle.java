@@ -4,7 +4,7 @@ import static java.util.Objects.requireNonNull;
 import static seedu.address.commons.util.AppUtil.checkArgument;
 
 /**
- * Represents a Project's title in the address book.
+ * Represents a Project's name in the address book.
  * Guarantees: immutable; is valid as declared in {@link #isValidName(String)}
  */
 public class ProjectTitle {
@@ -18,7 +18,6 @@ public class ProjectTitle {
      */
 
     public static final String VALIDATION_REGEX = "[\\p{Alnum}][\\p{Alnum} ]*";
-    public final String fullTitle;
 
     /**
      * Constructs a {@code ProjectTitle}.
@@ -28,7 +27,6 @@ public class ProjectTitle {
     public ProjectTitle(String projectTitle) {
         requireNonNull(projectTitle);
         checkArgument(isValidName(projectTitle), MESSAGE_CONSTRAINTS);
-        fullTitle = projectTitle;
     }
 
     /**
@@ -38,8 +36,4 @@ public class ProjectTitle {
         return test.matches(VALIDATION_REGEX);
     }
 
-    @Override
-    public String toString() {
-        return fullTitle;
-    }
 }

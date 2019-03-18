@@ -19,7 +19,6 @@ import seedu.address.model.beneficiary.Beneficiary;
 import seedu.address.model.person.Person;
 import seedu.address.model.person.Volunteer;
 import seedu.address.model.person.exceptions.PersonNotFoundException;
-import seedu.address.model.project.exceptions.ProjectNotFoundException;
 import seedu.address.model.project.Project;
 
 /**
@@ -31,7 +30,6 @@ public class ModelManager implements Model {
     private final VersionedAddressBook versionedAddressBook;
     private final UserPrefs userPrefs;
     private final FilteredList<Person> filteredPersons;
-    private final FilteredList<Project> filteredProjects;
     private final SimpleObjectProperty<Person> selectedPerson = new SimpleObjectProperty<>();
 
     private final FilteredList<Beneficiary> filteredBeneficiaries;
@@ -50,7 +48,7 @@ public class ModelManager implements Model {
         this.userPrefs = new UserPrefs(userPrefs);
         filteredPersons = new FilteredList<>(versionedAddressBook.getPersonList());
         filteredPersons.addListener(this::ensureSelectedPersonIsValid);
-        filteredProjects = new FilteredList<>(versionedAddressBook.getProjectList());
+
         filteredBeneficiaries = new FilteredList<>(versionedAddressBook.getBeneficiaryList());
         filteredBeneficiaries.addListener(this::ensureSelectedBeneficiaryIsValid);
     }
@@ -129,13 +127,10 @@ public class ModelManager implements Model {
     }
 
     @Override
-
-    public void deleteProject(Project target) {
-            versionedAddressBook.removeProject(target);
-    }
     public void deleteBeneficiary(Beneficiary target) {
         versionedAddressBook.removeBeneficiary(target);
     }
+
     @Override
     public void addPerson(Person person) {
         versionedAddressBook.addPerson(person);
@@ -156,7 +151,6 @@ public class ModelManager implements Model {
     @Override
     public void addProject(Project project) {
         versionedAddressBook.addProject(project);
-        updateFilteredProjectList(PREDICATE_SHOW_ALL_PROJECTS);
     }
 
     @Override
@@ -183,6 +177,7 @@ public class ModelManager implements Model {
     public ObservableList<Person> getFilteredPersonList() {
         return filteredPersons;
     }
+
     @Override
     public ObservableList<Beneficiary> getFilteredBeneficiaryList() {
         return filteredBeneficiaries;
@@ -192,16 +187,6 @@ public class ModelManager implements Model {
     public void updateFilteredPersonList(Predicate<Person> predicate) {
         requireNonNull(predicate);
         filteredPersons.setPredicate(predicate);
-    }
-    @Override
-    public ObservableList<Project> getFilteredProjectList() {
-        return filteredProjects;
-    }
-
-    @Override
-    public void updateFilteredProjectList(Predicate<Project> predicate) {
-        requireNonNull(predicate);
-        filteredProjects.setPredicate(predicate);
     }
 
     @Override
@@ -355,15 +340,5 @@ public class ModelManager implements Model {
                 && filteredPersons.equals(other.filteredPersons)
                 && Objects.equals(selectedPerson.get(), other.selectedPerson.get());
     }
-    @Override
-    public void addBeneficiary(Beneficiary beneficiary) {
 
-    }
-    /*
-    ** prototype for checking existence of beneficiary
-     */
-    @Override
-    public boolean hasBeneficiary(Beneficiary Beneficiary) {
-        return false;
-    }
 }

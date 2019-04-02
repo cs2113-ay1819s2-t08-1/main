@@ -31,7 +31,7 @@ public class AddBeneficiaryCommand extends Command {
             + PREFIX_ADDRESS + "311, Clementi Ave 2, #02-25 ";
 
     public static final String MESSAGE_SUCCESS = "New beneficiary added: %1$s";
-    public static final String MESSAGE_DUPLICATE_BENEFICIARY= "This beneficiary already exists in the address book \n"
+    public static final String MESSAGE_DUPLICATE_BENEFICIARY = "This beneficiary already exists in the address book \n"
             + "Beneficiary needs to have different Name, Phone number and Email";
 
     private final Beneficiary toAdd;

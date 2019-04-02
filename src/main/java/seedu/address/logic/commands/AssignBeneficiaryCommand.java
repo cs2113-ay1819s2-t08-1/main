@@ -9,7 +9,6 @@ import java.util.function.Predicate;
 
 import seedu.address.commons.core.Messages;
 import seedu.address.commons.core.index.Index;
-import seedu.address.commons.exceptions.IllegalValueException;
 import seedu.address.logic.CommandHistory;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
@@ -17,7 +16,6 @@ import seedu.address.model.beneficiary.Beneficiary;
 import seedu.address.model.beneficiary.Name;
 import seedu.address.model.project.Project;
 import seedu.address.model.project.ProjectTitle;
-import seedu.address.model.project.exceptions.DuplicateProjectException;
 
 /**
  * Assigns a beneficiary to a project.
@@ -69,12 +67,10 @@ public class AssignBeneficiaryCommand extends Command {
             System.out.println(lastShownList.size());
             throw new CommandException(Messages.MESSAGE_INVALID_BENEFICIARY_DISPLAYED_INDEX);
         }
-//        Beneficiary beneficiary = lastShownList.get(targetBeneficiaryIndex.getZeroBased());
         Predicate<Project> equalProjectTitle = x->x.getProjectTitle().equals(targetProject);
-        if (model.getFilteredProjectList().filtered(equalProjectTitle).size() == 0){
+        if (model.getFilteredProjectList().filtered(equalProjectTitle).size() == 0) {
             throw new CommandException("Project does not exist.");
-        }
-        else {
+        } else {
             projectToAssign = model.getFilteredProjectList().filtered(equalProjectTitle).get(0);
             if (projectToAssign.getBeneficiaryAssigned().toString() != "nil"
                 && model.getFilteredBeneficiaryList().filtered(
@@ -83,8 +79,8 @@ public class AssignBeneficiaryCommand extends Command {
                         x -> x.getName().equals(projectToAssign.getBeneficiaryAssigned())).get(0);
                 oldBeneficiary.deleteAttachedProject(projectToAssign.getProjectTitle());
                 System.out.println(oldBeneficiary);
-                System.out.println(model.getFilteredBeneficiaryList().filtered(
-                        x -> x.getName().equals(projectToAssign.getBeneficiaryAssigned())).get(0));
+                System.out.println(model.getFilteredBeneficiaryList()
+                        .filtered(x -> x.getName().equals(projectToAssign.getBeneficiaryAssigned())).get(0));
             }
             Beneficiary beneficiary = model.getFilteredBeneficiaryList().get(targetBeneficiaryIndex.getZeroBased());
             if (!beneficiary.hasProjectTitle(targetProject)) {
@@ -94,7 +90,7 @@ public class AssignBeneficiaryCommand extends Command {
             beneficiary.addAttachedProject(targetProject);
             this.editedProject = new ProjectBuilder(this.projectToAssign).withBeneficiary(beneficiaryAssigned).build();
             editedProject.setBeneficiary(beneficiaryAssigned);
-            model.setProject(projectToAssign,editedProject);
+            model.setProject(projectToAssign, editedProject);
             model.commitAddressBook();
             return new CommandResult(String.format(MESSAGE_SUCCESS));
         }

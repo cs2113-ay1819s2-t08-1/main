@@ -85,7 +85,7 @@ public class EditBeneficiaryCommand extends Command {
             throw new CommandException(MESSAGE_DUPLICATE_BENEFICIARY);
         }
 
-        for(ProjectTitle attachedProject: beneficiaryToEdit.getAttachedProjectLists()) {
+        for (ProjectTitle attachedProject: beneficiaryToEdit.getAttachedProjectLists()) {
             Predicate<Project> equalProjectTitle = x->x.getProjectTitle().equals(attachedProject.toString());
             if (model.getFilteredProjectList().filtered(equalProjectTitle).size() != 0) {
                 Project project = model.getFilteredProjectList().filtered(equalProjectTitle).get(0);

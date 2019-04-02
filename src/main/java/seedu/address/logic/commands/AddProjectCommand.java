@@ -8,7 +8,6 @@ import seedu.address.logic.CommandHistory;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
 import seedu.address.model.project.Project;
-import seedu.address.model.project.exceptions.DuplicateProjectException;
 
 /**
  * Adds a new project to VolunCHeer.

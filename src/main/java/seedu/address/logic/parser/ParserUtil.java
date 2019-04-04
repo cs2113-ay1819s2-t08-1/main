@@ -26,6 +26,7 @@ public class ParserUtil {
         return Index.fromOneBased(Integer.parseInt(trimmedIndex));
     }
 
+    //@@author articstranger
     /**
      * checks @param testingString and returns true if the string can be converted to an integer
      */

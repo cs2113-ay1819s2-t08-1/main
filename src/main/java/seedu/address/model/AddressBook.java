@@ -303,15 +303,22 @@ public class AddressBook implements ReadOnlyAddressBook {
     }
 
     public void setProject(Project target, Project edited)
-        throws DuplicateProjectException, ProjectNotFoundException {
+            throws DuplicateProjectException, ProjectNotFoundException {
         requireNonNull(edited);
         projects.setProject(target, edited);
     }
-}
 
-/**
- * command
- */
+    //@@author articstranger
+    /**
+     * Sorts all volunteers by their points
+     */
+    public void sortVolunteers() {
+        volunteers.sortByPoints();
+        indicateModified();
+    }
+
+
+}
 //    public boolean checkBeneficiaryForProject(ProjectTitle projectTitle,Index targetBeneficiaryIndex) {
 //        Beneficiary beneficiary = beneficiaries.getBeneficiaryIndex(targetBeneficiaryIndex);
 //        Beneficiary beneficiaryCopy = beneficiary;

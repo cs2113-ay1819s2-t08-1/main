@@ -3,6 +3,7 @@ package seedu.address.model.volunteer;
 import static java.util.Objects.requireNonNull;
 import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 
@@ -71,6 +72,20 @@ public class UniqueVolunteerList implements Iterable<Volunteer> {
         internalList.set(index, editedVolunteer);
     }
 
+
+    //@@author articstranger
+    /**
+     * Sorts the @code internalList
+     */
+    public void sortByPoints() {
+        FXCollections.sort(internalList, (new Comparator<Volunteer>() {
+            public int compare (Volunteer s1, Volunteer s2) {
+                return s2.getPoints() - s1.getPoints();
+            }
+        }));
+    }
+
+    //@@author swalahlah
     /**
      * Removes the equivalent volunteer from the list.
      * The volunteer must exist in the list.

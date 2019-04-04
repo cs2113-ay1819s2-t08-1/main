@@ -9,7 +9,11 @@
 <div id="toc" class="toc">
 <div id="toctitle"></div>
 <ul class="sectlevel1">
-<li><a href="#introduction">1. Introduction</a></li>
+<li><a href="#introduction">1. Introduction</a>
+<ul class="sectlevel2">
+<li><a href="#overview">1.1. Overview</a></li>
+</ul>
+</li>
 <li><a href="#quick-start">2. Quick Start</a></li>
 <li><a href="#Features">3. Features</a>
 <ul class="sectlevel2">
@@ -17,26 +21,32 @@
 <li><a href="#adding-a-project-code-addproject-code">3.2. Adding a project: <code>addProject</code></a></li>
 <li><a href="#adding-a-volunteer-code-addvolunteer-code">3.3. Adding a volunteer: <code>addVolunteer</code></a></li>
 <li><a href="#adding-a-beneficiary-code-addbeneficiary-code">3.4. Adding a beneficiary: <code>addBeneficiary</code></a></li>
-<li><a href="#listing-all-volunteers-code-list-code">3.5. Listing all volunteers : <code>list</code></a></li>
-<li><a href="#editing-a-project-code-editproject-code">3.6. Editing a project : <code>editProject</code></a></li>
-<li><a href="#editing-a-volunteer-code-editvolunteer-code">3.7. Editing a volunteer : <code>editVolunteer</code></a></li>
-<li><a href="#locating-volunteers-by-name-code-find-code">3.8. Locating volunteers by name: <code>find</code></a></li>
-<li><a href="#deleting-a-project-code-deleteproject-code">3.9. Deleting a project ： <code>deleteProject</code></a></li>
-<li><a href="#deleting-a-volunteer-code-deletevolunteer-code">3.10. Deleting a volunteer : <code>deleteVolunteer</code></a></li>
-<li><a href="#selecting-a-volunteer-code-select-code">3.11. Selecting a volunteer : <code>select</code></a></li>
-<li><a href="#assigning-mapping-index-to-each-volunteer-code-map-code">3.12. Assigning mapping index to each volunteer : <code>map</code></a></li>
-<li><a href="#sort-volunteers-according-to-priority_score-code-sort-code">3.13. Sort volunteers according to PRIORITY_SCORE : <code>sort</code></a></li>
-<li><a href="#select-multiple-volunteers-from-sorted-list-code-extract-code">3.14. Select multiple volunteers from sorted list : <code>extract</code></a></li>
-<li><a href="#listing-entered-commands-code-history-code">3.15. Listing entered commands : <code>history</code></a></li>
-<li><a href="#undoing-previous-command-code-undo-code">3.16. Undoing previous command : <code>undo</code></a></li>
-<li><a href="#redoing-the-previously-undone-command-code-redo-code">3.17. Redoing the previously undone command : <code>redo</code></a></li>
-<li><a href="#clearing-all-entries-code-clear-code">3.18. Clearing all entries : <code>clear</code></a></li>
-<li><a href="#export-data-file-code-export-code">3.19. Export data file: <code>export</code></a></li>
-<li><a href="#import-data-file-code-import-code">3.20. Import data file: <code>import</code></a></li>
-<li><a href="#exiting-the-program-code-exit-code">3.21. Exiting the program : <code>exit</code></a></li>
-<li><a href="#saving-the-data">3.22. Saving the data</a></li>
-<li><a href="#attendance-taking-code-coming-in-v2-0-code">3.23. Attendance taking <code>[coming in v2.0]</code></a></li>
-<li><a href="#manage-funding-and-sponsorships-code-coming-in-v2-0-code">3.24. Manage funding and sponsorships <code>[coming in v2.0]</code></a></li>
+<li><a href="#editing-a-beneficiary-code-editbeneficiary-code">3.5. Editing a beneficiary: <code>editBeneficiary</code></a></li>
+<li><a href="#listing-all-beneficiary-code-listbeneficiary-code">3.6. Listing all beneficiary: <code>listBeneficiary</code></a></li>
+<li><a href="#locating-beneficiaries-by-name-code-findbeneficiary-code">3.7. Locating beneficiaries by name: <code>findBeneficiary</code></a></li>
+<li><a href="#listing-all-projects-code-listproject-code">3.8. Listing all projects : <code>listProject</code></a></li>
+<li><a href="#listing-all-volunteers-code-list-code">3.9. Listing all volunteers : <code>list</code></a></li>
+<li><a href="#editing-a-project-code-editproject-code">3.10. Editing a project : <code>editProject</code></a></li>
+<li><a href="#editing-a-volunteer-code-editvolunteer-code">3.11. Editing a volunteer : <code>editVolunteer</code></a></li>
+<li><a href="#locating-volunteers-by-name-code-find-code">3.12. Locating volunteers by name: <code>find</code></a></li>
+<li><a href="#deleting-a-project-code-deleteproject-code">3.13. Deleting a project ： <code>deleteProject</code></a></li>
+<li><a href="#deleting-a-volunteer-code-deletevolunteer-code">3.14. Deleting a volunteer : <code>deleteVolunteer</code></a></li>
+<li><a href="#selecting-a-volunteer-code-select-code">3.15. Selecting a volunteer : <code>select</code></a></li>
+<li><a href="#assigning-a-beneficiary-to-project-assign">3.16. Assigning a beneficiary to project: 'assign'</a></li>
+<li><a href="#mark-project-as-complete-complete">3.17. Mark project as complete: 'complete'</a></li>
+<li><a href="#assigning-mapping-index-to-each-volunteer-code-map-code">3.18. Assigning mapping index to each volunteer : <code>map</code></a></li>
+<li><a href="#sort-volunteers-according-to-priority_score-code-sort-code">3.19. Sort volunteers according to PRIORITY_SCORE : <code>sort</code></a></li>
+<li><a href="#select-multiple-volunteers-from-sorted-list-code-extract-code-coming-in-v1-4">3.20. Select multiple volunteers from sorted list : <code>extract</code> (Coming in V1.4)</a></li>
+<li><a href="#listing-entered-commands-code-history-code">3.21. Listing entered commands : <code>history</code></a></li>
+<li><a href="#undoing-previous-command-code-undo-code">3.22. Undoing previous command : <code>undo</code></a></li>
+<li><a href="#redoing-the-previously-undone-command-code-redo-code">3.23. Redoing the previously undone command : <code>redo</code></a></li>
+<li><a href="#clearing-all-entries-code-clear-code">3.24. Clearing all entries : <code>clear</code></a></li>
+<li><a href="#export-data-file-code-export-code">3.25. Export data file: <code>export</code></a></li>
+<li><a href="#import-data-file-code-import-code">3.26. Import data file: <code>import</code></a></li>
+<li><a href="#exiting-the-program-code-exit-code">3.27. Exiting the program : <code>exit</code></a></li>
+<li><a href="#saving-the-data">3.28. Saving the data</a></li>
+<li><a href="#attendance-taking-code-coming-in-v2-0-code">3.29. Attendance taking <code>[coming in v2.0]</code></a></li>
+<li><a href="#manage-funding-and-sponsorships-code-coming-in-v2-0-code">3.30. Manage funding and sponsorships <code>[coming in v2.0]</code></a></li>
 </ul>
 </li>
 <li><a href="#faq">4. FAQ</a></li>
@@ -48,9 +58,52 @@
 <h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The VolunCHeer Application is for project managers or directors who require a system to keep track of their
-ongoing projects and the volunteer pool. This application allows the user to analyse and extract various data for
-easy management of projects.</p>
+<p>VolunCheer is a desktop application for project managers who wish to keep track of their ongoing / upcoming projects as
+well as their beneficiary and volunteer pool.</p>
+</div>
+<div class="paragraph">
+<p>You can also use VolunCHeer to filter out suitable volunteers based on their data stored in the system. VolunCHeer is
+The VolunCHeer Application is for project managers or directors who require a system to <strong>keep track of their
+ongoing projects and the volunteer pool</strong>. VolunCheer is optimised for users who prefer a <strong>Command Line Interface (CLI)</strong> while
+still being able to view important data on the <strong>Graphical User Interface(GUI)</strong>. VolunCHeer will save you the need for multiple documents
+and folders just to store volunteer/beneficiary information. It also removes the need to track large amount of volunteer data to fit selection criterias using traditional methods such
+as Excel.</p>
+</div>
+<div class="paragraph">
+<p>Wish to know more? Click on <a href="{https://github.com/cs2113-ay1819s2-t08-1/main/blob/master/docs/UserGuide.adoc#quick-start}/">Section 2. "Quick Start"</a> to get started.</p>
+</div>
+<div class="sect2">
+<h3 id="overview"><a class="link" href="#overview">1.1. Overview</a></h3>
+<div class="paragraph">
+<p>Shown below is a quick overview of our VolunCHeer application.</p>
+</div>
+<div class="paragraph">
+<p>+
+image::Ui.png[width="790"]</p>
+</div>
+<div class="paragraph">
+<p>+</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Command Box:
+This is where you type your commands.</p>
+</li>
+<li>
+<p>Command Result:
+This shows the result of command execution, useful tips and error messages are also shown here.</p>
+</li>
+<li>
+<p>Project List:
+This shows the list of projects currently in VolunCHeer.</p>
+</li>
+<li>
+<p>Beneficiary List:
+This shows the list of beneficiaries currently in VolunCHeer.</p>
+</li>
+</ol>
+</div>
 </div>
 </div>
 </div>
@@ -88,10 +141,10 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <p><strong><code>list</code></strong> : lists all contacts</p>
 </li>
 <li>
-<p><strong><code>add</code></strong><code>n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01</code> : adds a contact named <code>John Doe</code> to the volunteer list.</p>
+<p><strong><code>addProject</code></strong> n/Project Sunshine d/20190320: adds a project named "Project Sunshine" in the project list.</p>
 </li>
 <li>
-<p><strong><code>delete</code></strong><code>3</code> : deletes the 3rd contact shown in the current list</p>
+<p><strong><code>deleteProject</code></strong><code>2</code> : deletes the 2nd project portfolio in the current list of projects.</p>
 </li>
 <li>
 <p><strong><code>exit</code></strong> : exits the app</p>
@@ -142,17 +195,17 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <h3 id="adding-a-project-code-addproject-code"><a class="link" href="#adding-a-project-code-addproject-code">3.2. Adding a project: <code>addProject</code></a></h3>
 <div class="paragraph">
 <p>Adds a new project<br>
-Format: <code>addProject n/PROJECT_NAME d/DATE b/BENEFICIARY [t/TAG]&#8230;&#8203;</code></p>
+Format: <code>addProject n/PROJECT_NAME d/DATE</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>Please enter DATE in ddmmyy format</p>
+<p>Please enter DATE in yyyymmdd format.</p>
 </li>
 <li>
-<p>The specified 'BENEFICIARY' has to be added before adding the project</p>
+<p>Project Title should not have duplicates in the project list.</p>
 </li>
 </ul>
 </div>
@@ -164,7 +217,7 @@ Format: <code>addProject n/PROJECT_NAME d/DATE b/BENEFICIARY [t/TAG]&#8230;&#820
 <div class="ulist">
 <ul>
 <li>
-<p><code>addProject n/Charity Run d/081219 b/Bright Primary School</code></p>
+<p><code>addProject n/Charity Run d/081219</code></p>
 </li>
 </ul>
 </div>
@@ -173,8 +226,8 @@ Format: <code>addProject n/PROJECT_NAME d/DATE b/BENEFICIARY [t/TAG]&#8230;&#820
 <h3 id="adding-a-volunteer-code-addvolunteer-code"><a class="link" href="#adding-a-volunteer-code-addvolunteer-code">3.3. Adding a volunteer: <code>addVolunteer</code></a></h3>
 <div class="paragraph">
 <p>Adds a volunteer to the volunteer pool<br>
-Format: <code>addVolunteer n/NAME y/AGE a/ADDRESS e/EMAIL p/PHONE_NUMBER g/EMERGENCY_CONTACT r/RACE d/DIETARY_PREFERENCE
-m/MEDICAL CONDITION [t/TAG]&#8230;&#8203;</code></p>
+Format: <code>addVolunteer n/NAME y/AGE g/gender r/race rg/religion a/ADDRESS e/EMAIL p/PHONE_NUMBER
+ec/EMERGENCY_CONTACT dp/DIETARY_PREFERENCE m/MEDICAL CONDITION [t/TAG]&#8230;&#8203;</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -187,7 +240,7 @@ m/MEDICAL CONDITION [t/TAG]&#8230;&#8203;</code></p>
 <p>Otherwise, if the volunteer already exists, show edit option to update portfolio</p>
 </li>
 <li>
-<p>Please enter 'NIL' for m/MEDICAL CONDITION if not applicable</p>
+<p>Dietary Preference, Medical Condition is set to NIL by default</p>
 </li>
 </ul>
 </div>
@@ -211,12 +264,12 @@ A volunteer can have any number of tags (including 0)
 <div class="ulist">
 <ul>
 <li>
-<p><code>addVolunteer n/John Doe y/18 a/John street, block 123, #01-01 e/johnd@example.com p/98765432 g/98292998 r/chinese
-d/vegetarian m/asthma</code></p>
+<p><code>addVolunteer n/John Doe y/18 g/male r/eurasian rg/nil a/John street, block 123, #01-01 e/johnd@example.com
+p/98765432 ec/Mary, Mother, 92221111 dp/vegetarian m/asthma</code></p>
 </li>
 <li>
-<p><code>addVolunteer n/Sarah S y/22 a/betsy ave 6, 02-08 e/sarah08@example.com p/12345678 g/98299900 r/malay
-d/muslim</code></p>
+<p>`addVolunteer n/Sarah Soh y/22 g/female r/chinese rg/buddhist a/betsy ave 6, 02-08 e/sarah08@example.com
+p/92345678 ec/Johnny, Husband, 81234568</p>
 </li>
 </ul>
 </div>
@@ -225,17 +278,15 @@ d/muslim</code></p>
 <h3 id="adding-a-beneficiary-code-addbeneficiary-code"><a class="link" href="#adding-a-beneficiary-code-addbeneficiary-code">3.4. Adding a beneficiary: <code>addBeneficiary</code></a></h3>
 <div class="paragraph">
 <p>Adds a beneficiary to the list of Beneficiaries<br>
-Format: <code>addBeneficiary n/NAME a/ADDRESS e/EMAIL p/PHONE_NUMBER v/VOLUNTEERS_REQUIRED [t/TAG]&#8230;&#8203;</code></p>
+Format: `addBeneficiary n/NAME a/ADDRESS e/EMAIL p/PHONE_NUMBER `</p>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>"Add Successful!" message is prompted upon successfully adding a beneficiary</p>
-</li>
-<li>
-<p>To edit Beneficiary details, please remove the existing Beneficiary and add new one with addBeneficiary</p>
+<p>"New beneficiary added: Orphanage Phone: 98765432 Email: <a href="mailto:Orphanage@example.com">Orphanage@example.com</a> Address: 311, Clementi Ave 2,
+#02-25Attached Project List: []" message is prompted upon successfully adding a beneficiary</p>
 </li>
 </ul>
 </div>
@@ -247,23 +298,138 @@ Format: <code>addBeneficiary n/NAME a/ADDRESS e/EMAIL p/PHONE_NUMBER v/VOLUNTEER
 <div class="ulist">
 <ul>
 <li>
-<p><code>addBeneficiary n/Sunshine Old Folks Home a/sunshine ave 5 e/sunny@oldfolks.sg p/67580392 v/20</code></p>
+<p><code>addBeneficiary n/Orphanage p/98765432 e/Orphanage@example.com a/311, Clementi Ave 2, #02-25</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Consideration:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The beneficiary will be used to assign to a project, this means that the project will benefit this beneficiary,
+i.e. Orphanage Home, Nursing home, etc.</p>
+</li>
+<li>
+<p>When add a new beneficiary, the project lists assigned to it will be empty. You can assign projects to it by assign
+command stated below.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="listing-all-volunteers-code-list-code"><a class="link" href="#listing-all-volunteers-code-list-code">3.5. Listing all volunteers : <code>list</code></a></h3>
+<h3 id="editing-a-beneficiary-code-editbeneficiary-code"><a class="link" href="#editing-a-beneficiary-code-editbeneficiary-code">3.5. Editing a beneficiary: <code>editBeneficiary</code></a></h3>
+<div class="paragraph">
+<p>Edits a beneficiary to the list of Beneficiaries<br>
+Format: `editBeneficiary  INDEX (must be a positive integer) [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] `</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>"Edited Beneficiary: Old Folk Home Phone: 91234567 Email: <a href="mailto:Orphanage@example.com">Orphanage@example.com</a> Address: 311, Clementi Ave 2,
+#02-25Attached Project List: []" message is prompted upon successfully editing a beneficiary</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>editBeneficiary 1 n/Old Folk Home p/91234567</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Consideration:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>When a beneficiary is edited, the data of the beneficiary in its attached projects is in sync, meaning that that data
+is automatically updated in the mentioned projects.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="listing-all-beneficiary-code-listbeneficiary-code"><a class="link" href="#listing-all-beneficiary-code-listbeneficiary-code">3.6. Listing all beneficiary: <code>listBeneficiary</code></a></h3>
+<div class="paragraph">
+<p>Shows a list of all Beneficiaries in the beneficiary pool.<br>
+Format: <code>listBeneficiary</code></p>
+</div>
+<div class="paragraph">
+<p>Consideration:
+* The command can be used to get back to full list after several commands changing the list.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="locating-beneficiaries-by-name-code-findbeneficiary-code"><a class="link" href="#locating-beneficiaries-by-name-code-findbeneficiary-code">3.7. Locating beneficiaries by name: <code>findBeneficiary</code></a></h3>
+<div class="paragraph">
+<p>Finds beneficiaries whose names contain any of the given keywords.<br>
+Format: <code>findBeneficiary KEYWORD [MORE_KEYWORDS]</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The search is case insensitive. e.g <code>orphanage</code> will match <code>Orphanage</code></p>
+</li>
+<li>
+<p>The order of the keywords does not matter. e.g. <code>Orphanage Nursing</code> will match <code>Nursing Orphanage</code></p>
+</li>
+<li>
+<p>Only the name is searched.</p>
+</li>
+<li>
+<p>Only full words will be matched e.g. <code>Orphan</code> will not match <code>Orphanage</code></p>
+</li>
+<li>
+<p>beneficiaries matching at least one keyword will be returned (i.e. <code>OR</code> search). e.g. <code>Orphanage Nursing</code> will return
+<code>Orphanage Rainbow</code>, <code>Nursing Home</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>find Nursing</code><br>
+Returns <code>Nursing Home</code> and <code>Nursing Center</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="listing-all-projects-code-listproject-code"><a class="link" href="#listing-all-projects-code-listproject-code">3.8. Listing all projects : <code>listProject</code></a></h3>
+<div class="paragraph">
+<p>Shows a list of all projects.<br>
+Format: <code>listProject</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="listing-all-volunteers-code-list-code"><a class="link" href="#listing-all-volunteers-code-list-code">3.9. Listing all volunteers : <code>list</code></a></h3>
 <div class="paragraph">
 <p>Shows a list of all volunteers in the volunteer pool.<br>
 Format: <code>list</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="editing-a-project-code-editproject-code"><a class="link" href="#editing-a-project-code-editproject-code">3.6. Editing a project : <code>editProject</code></a></h3>
+<h3 id="editing-a-project-code-editproject-code"><a class="link" href="#editing-a-project-code-editproject-code">3.10. Editing a project : <code>editProject</code></a></h3>
 <div class="paragraph">
 <p>Edits an existing project<br>
-Format: <code>editProject PROJECT_NAME [n/NAME] [d/DATE] [b/BENEFICIARY] [t/TAG]&#8230;&#8203;</code></p>
+Format: <code>editProject PROJECT_NAME [n/NAME] [d/DATE]&#8230;&#8203;</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -294,28 +460,27 @@ Format: <code>editProject PROJECT_NAME [n/NAME] [d/DATE] [b/BENEFICIARY] [t/TAG]
 <div class="ulist">
 <ul>
 <li>
-<p><code>editProject Charity Run d/010319</code><br>
-Edits the date of the project to be '010319'.</p>
-</li>
-<li>
-<p><code>editProject Charity Run b/Sunshine Old Folks Home</code><br>
-Edits the beneficiary of the Charity Run project to 'Sunshine Old Folks Home'</p>
+<p><code>editProject Charity Run d/20190301</code><br>
+Edits the date of the project to be '20190301'.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="editing-a-volunteer-code-editvolunteer-code"><a class="link" href="#editing-a-volunteer-code-editvolunteer-code">3.7. Editing a volunteer : <code>editVolunteer</code></a></h3>
+<h3 id="editing-a-volunteer-code-editvolunteer-code"><a class="link" href="#editing-a-volunteer-code-editvolunteer-code">3.11. Editing a volunteer : <code>editVolunteer</code></a></h3>
 <div class="paragraph">
 <p>Edits an existing volunteer in the volunteer list.<br>
-Format: <code>edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]&#8230;&#8203;</code></p>
+Format: <code>edit INDEX [n/NAME] [y/AGE] [g/GENDER] [r/RACE] [rg/RELIGION][p/PHONE] [a/ADDRESS] [e/EMAIL]
+[ec/EMERGENCYCONTACT] [dp/DIETARYPREFERENCE] [mc/MEDICALCONDITION] [[t/TAG]&#8230;&#8203;</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>Edits the volunteer at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed volunteer list. The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+<p>Edits the volunteer at the specified <code>INDEX</code>.
+The index refers to the index number shown in the displayed volunteer list.
+The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
 </li>
 <li>
 <p>At least one of the optional fields must be provided.</p>
@@ -350,7 +515,7 @@ Edits the name of the 2nd volunteer to be <code>Betsy Crower</code> and clears a
 </div>
 </div>
 <div class="sect2">
-<h3 id="locating-volunteers-by-name-code-find-code"><a class="link" href="#locating-volunteers-by-name-code-find-code">3.8. Locating volunteers by name: <code>find</code></a></h3>
+<h3 id="locating-volunteers-by-name-code-find-code"><a class="link" href="#locating-volunteers-by-name-code-find-code">3.12. Locating volunteers by name: <code>find</code></a></h3>
 <div class="paragraph">
 <p>Finds volunteers whose names contain any of the given keywords.<br>
 Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
@@ -372,7 +537,10 @@ Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
 <p>Only full words will be matched e.g. <code>Han</code> will not match <code>Hans</code></p>
 </li>
 <li>
-<p>volunteers matching at least one keyword will be returned (i.e. <code>OR</code> search). e.g. <code>Hans Bo</code> will return <code>Hans Gruber</code>, <code>Bo Yang</code></p>
+<p>volunteers matching at least one keyword will be returned (i.e. <code>OR</code> search).</p>
+</li>
+<li>
+<p>e.g. <code>Hans Bo</code> will return <code>Hans Gruber</code>, <code>Bo Yang</code></p>
 </li>
 </ul>
 </div>
@@ -395,23 +563,23 @@ Returns any volunteer having names <code>Betsy</code>, <code>Tim</code>, or <cod
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-project-code-deleteproject-code"><a class="link" href="#deleting-a-project-code-deleteproject-code">3.9. Deleting a project ： <code>deleteProject</code></a></h3>
+<h3 id="deleting-a-project-code-deleteproject-code"><a class="link" href="#deleting-a-project-code-deleteproject-code">3.13. Deleting a project ： <code>deleteProject</code></a></h3>
 <div class="paragraph">
 <p>Deletes the specified project from the application.<br>
-Format: <code>delete PROJECT_TITLE</code></p>
+Format: <code>deleteProject INDEX</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>Deletes the project specified with 'PROJECT_TITLE'.</p>
+<p>Deletes the project at index "INDEX".</p>
 </li>
 <li>
-<p>The PROJECT_TITLE should match exactly, use 'listProjects' to view all projects if unsure.</p>
+<p>The INDEX refers to the index of the project in the project list, use 'listProject' to view all projects if unsure.</p>
 </li>
 <li>
-<p>Error message is shown if the PROJECT_TITLE entered is invalid</p>
+<p>Error message is shown if the INDEX entered is invalid</p>
 </li>
 </ul>
 </div>
@@ -419,7 +587,7 @@ Format: <code>delete PROJECT_TITLE</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-volunteer-code-deletevolunteer-code"><a class="link" href="#deleting-a-volunteer-code-deletevolunteer-code">3.10. Deleting a volunteer : <code>deleteVolunteer</code></a></h3>
+<h3 id="deleting-a-volunteer-code-deletevolunteer-code"><a class="link" href="#deleting-a-volunteer-code-deletevolunteer-code">3.14. Deleting a volunteer : <code>deleteVolunteer</code></a></h3>
 <div class="paragraph">
 <p>Deletes the specified volunteer from the volunteer list.<br>
 Format: <code>delete INDEX</code></p>
@@ -463,7 +631,7 @@ Deletes the 1st volunteer in the results of the <code>find</code> command.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="selecting-a-volunteer-code-select-code"><a class="link" href="#selecting-a-volunteer-code-select-code">3.11. Selecting a volunteer : <code>select</code></a></h3>
+<h3 id="selecting-a-volunteer-code-select-code"><a class="link" href="#selecting-a-volunteer-code-select-code">3.15. Selecting a volunteer : <code>select</code></a></h3>
 <div class="paragraph">
 <p>Selects the volunteer identified by the index number used in the displayed volunteer list.<br>
 Format: <code>select INDEX</code></p>
@@ -504,26 +672,77 @@ Selects the 1st volunteer in the results of the <code>find</code> command.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="assigning-mapping-index-to-each-volunteer-code-map-code"><a class="link" href="#assigning-mapping-index-to-each-volunteer-code-map-code">3.12. Assigning mapping index to each volunteer : <code>map</code></a></h3>
+<h3 id="assigning-a-beneficiary-to-project-assign"><a class="link" href="#assigning-a-beneficiary-to-project-assign">3.16. Assigning a beneficiary to project: 'assign'</a></h3>
 <div class="paragraph">
-<p>Assigns the volunteers with points 3, 2, 1 according to the selection criteria set by the user.
-Format: <code>map t/SELECTION t/SELECTION t/SELECTION</code></p>
+<p>Assigns a beneficiary identified by the index number used in the displayed beneficiary list to a project matched
+by project title entered.
+Format: <code>assign PROJECT_TITLE, i/INDEX</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>The tags are the same as the tags for addVolunteer.</p>
+<p>Assigns the beneficiary with index = "INDEX" to the project with title "PROJECT_TITLE".</p>
+</li>
+<li>
+<p>Project attached will be shown on the specific beneficiary</p>
+</li>
+<li>
+<p>There can be only one beneficiary for each project, however, one beneficiary can be assigned to multiple projects.</p>
+</li>
+<li>
+<p>The index <strong>must be a positive integer</strong> <code>1, 2, 3, &#8230;&#8203;</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="mark-project-as-complete-complete"><a class="link" href="#mark-project-as-complete-complete">3.17. Mark project as complete: 'complete'</a></h3>
+<div class="paragraph">
+<p>Marks project with at index "INDEX" as complete.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>complete i/INDEX</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Once marked as complete, project title will be displayed in red colour font</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="assigning-mapping-index-to-each-volunteer-code-map-code"><a class="link" href="#assigning-mapping-index-to-each-volunteer-code-map-code">3.18. Assigning mapping index to each volunteer : <code>map</code></a></h3>
+<div class="paragraph">
+<p>Assigns the volunteers with points 3, 2, 1 according to the selection criteria set by the user.
+Format: <code>map t/(POINTS)(CRITERIA) t/(POINTS)(CRITERIA) t/(POINTS)(CRITERIA)</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>There are three types of tags, the age of volunteer (y/), race (r/) and medical condition (m/).</p>
 </li>
 <li>
 <p>There can be at most 3 tags and at least 1 tag as the selection criteria.</p>
 </li>
 <li>
-<p>Each volunteer is tagged with the final PRIORITY_SCORE used for sorting later on</p>
+<p>Each volunteer is tagged with the final PRIORITY_SCORE based on the points used for sorting later on.</p>
 </li>
 <li>
-<p>'SELECTION' criteria can have comparators (i.e) "y/18 &gt;" would mean that volunteers with age above 18 are chosen</p>
+<p>The age criteria has comparators &gt;,&lt;,= which relate to the age given afterwards.</p>
+</li>
+<li>
+<p>See examples below for a clearer picture.</p>
 </li>
 </ul>
 </div>
@@ -535,18 +754,18 @@ Format: <code>map t/SELECTION t/SELECTION t/SELECTION</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>map y/18 &gt; r/chinese m/NIL</code>
+<p><code>map y/3&gt;18 r/2chinese m/1NIL</code>
 Gives volunteers above the AGE of 18 3 points, RACE chinese 2 points and MEDICAL_CONDITION of NIL 1 point.</p>
 </li>
 <li>
-<p><code>map m/NIL</code>
-Only selects volunteers with no MEDICAL_CONDITION.</p>
+<p><code>map m/3NIL</code>
+Only gives volunteers with no MEDICAL_CONDITION 3 points.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="sort-volunteers-according-to-priority_score-code-sort-code"><a class="link" href="#sort-volunteers-according-to-priority_score-code-sort-code">3.13. Sort volunteers according to PRIORITY_SCORE : <code>sort</code></a></h3>
+<h3 id="sort-volunteers-according-to-priority_score-code-sort-code"><a class="link" href="#sort-volunteers-according-to-priority_score-code-sort-code">3.19. Sort volunteers according to PRIORITY_SCORE : <code>sort</code></a></h3>
 <div class="paragraph">
 <p>Sorts the volunteers from highest PRIORITY_SCORE to lowest PRIORITY_SCORE.
 Format: <code>sort</code></p>
@@ -570,7 +789,7 @@ Format: <code>sort</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="select-multiple-volunteers-from-sorted-list-code-extract-code"><a class="link" href="#select-multiple-volunteers-from-sorted-list-code-extract-code">3.14. Select multiple volunteers from sorted list : <code>extract</code></a></h3>
+<h3 id="select-multiple-volunteers-from-sorted-list-code-extract-code-coming-in-v1-4"><a class="link" href="#select-multiple-volunteers-from-sorted-list-code-extract-code-coming-in-v1-4">3.20. Select multiple volunteers from sorted list : <code>extract</code> (Coming in V1.4)</a></h3>
 <div class="paragraph">
 <p>Format: <code>extract [a][b]</code></p>
 </div>
@@ -596,7 +815,7 @@ Extracts volunteer number 5 to 15 in the list.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="listing-entered-commands-code-history-code"><a class="link" href="#listing-entered-commands-code-history-code">3.15. Listing entered commands : <code>history</code></a></h3>
+<h3 id="listing-entered-commands-code-history-code"><a class="link" href="#listing-entered-commands-code-history-code">3.21. Listing entered commands : <code>history</code></a></h3>
 <div class="paragraph">
 <p>Lists all the commands that you have entered in reverse chronological order.<br>
 Format: <code>history</code></p>
@@ -617,7 +836,7 @@ Format: <code>history</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="undoing-previous-command-code-undo-code"><a class="link" href="#undoing-previous-command-code-undo-code">3.16. Undoing previous command : <code>undo</code></a></h3>
+<h3 id="undoing-previous-command-code-undo-code"><a class="link" href="#undoing-previous-command-code-undo-code">3.22. Undoing previous command : <code>undo</code></a></h3>
 <div class="paragraph">
 <p>Restores the VolunCHeer application to the state before the previous <em>undoable</em> command was executed.<br>
 Format: <code>undo</code></p>
@@ -662,7 +881,7 @@ The <code>undo</code> command fails as there are no undoable commands executed p
 </div>
 </div>
 <div class="sect2">
-<h3 id="redoing-the-previously-undone-command-code-redo-code"><a class="link" href="#redoing-the-previously-undone-command-code-redo-code">3.17. Redoing the previously undone command : <code>redo</code></a></h3>
+<h3 id="redoing-the-previously-undone-command-code-redo-code"><a class="link" href="#redoing-the-previously-undone-command-code-redo-code">3.23. Redoing the previously undone command : <code>redo</code></a></h3>
 <div class="paragraph">
 <p>Reverses the most recent <code>undo</code> command.<br>
 Format: <code>redo</code></p>
@@ -694,14 +913,14 @@ The <code>redo</code> command fails as there are no <code>undo</code> commands e
 </div>
 </div>
 <div class="sect2">
-<h3 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">3.18. Clearing all entries : <code>clear</code></a></h3>
+<h3 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">3.24. Clearing all entries : <code>clear</code></a></h3>
 <div class="paragraph">
 <p>Clears all entries from the specific list requested by user.<br>
 Format: <code>clear</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="export-data-file-code-export-code"><a class="link" href="#export-data-file-code-export-code">3.19. Export data file: <code>export</code></a></h3>
+<h3 id="export-data-file-code-export-code"><a class="link" href="#export-data-file-code-export-code">3.25. Export data file: <code>export</code></a></h3>
 <div class="paragraph">
 <p>Exports the saved data in a csv file.<br>
 Format: 'export'</p>
@@ -725,7 +944,7 @@ Format: 'export'</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="import-data-file-code-import-code"><a class="link" href="#import-data-file-code-import-code">3.20. Import data file: <code>import</code></a></h3>
+<h3 id="import-data-file-code-import-code"><a class="link" href="#import-data-file-code-import-code">3.26. Import data file: <code>import</code></a></h3>
 <div class="paragraph">
 <p>Imports csv file saved in local folder.<br>
 Format: 'import FILE_DIRECTORY'</p>
@@ -749,27 +968,27 @@ Format: 'import FILE_DIRECTORY'</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.21. Exiting the program : <code>exit</code></a></h3>
+<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.27. Exiting the program : <code>exit</code></a></h3>
 <div class="paragraph">
 <p>Exits the program.<br>
 Format: <code>exit</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.22. Saving the data</a></h3>
+<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.28. Saving the data</a></h3>
 <div class="paragraph">
 <p>All data for the application are saved in the hard disk automatically after any command that changes the data.<br>
 There is no need to save manually.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="attendance-taking-code-coming-in-v2-0-code"><a class="link" href="#attendance-taking-code-coming-in-v2-0-code">3.23. Attendance taking <code>[coming in v2.0]</code></a></h3>
+<h3 id="attendance-taking-code-coming-in-v2-0-code"><a class="link" href="#attendance-taking-code-coming-in-v2-0-code">3.29. Attendance taking <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
 <p>Track attendance of the volunteers and award frequent volunteers with certificates or promote to team leader.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="manage-funding-and-sponsorships-code-coming-in-v2-0-code"><a class="link" href="#manage-funding-and-sponsorships-code-coming-in-v2-0-code">3.24. Manage funding and sponsorships <code>[coming in v2.0]</code></a></h3>
+<h3 id="manage-funding-and-sponsorships-code-coming-in-v2-0-code"><a class="link" href="#manage-funding-and-sponsorships-code-coming-in-v2-0-code">3.30. Manage funding and sponsorships <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
 <p>Manage funds and sponsors for individual projects and track project spending.</p>
 </div>
@@ -869,4 +1088,4 @@ e.g. <code>extract 20</code></p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-03-18 13:06:00 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-04 06:14:05 UTC</div></div></div></body></html>

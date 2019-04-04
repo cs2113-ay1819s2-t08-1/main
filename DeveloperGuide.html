@@ -29,10 +29,12 @@
 </li>
 <li><a href="#implementation">3. Implementation</a>
 <ul class="sectlevel2">
-<li><a href="#undo-redo-feature">3.1. Undo/Redo feature</a></li>
-<li><a href="#proposed-data-encryption">3.2. [Proposed] Data Encryption</a></li>
-<li><a href="#logging">3.3. Logging</a></li>
-<li><a href="#Implementation-Configuration">3.4. Configuration</a></li>
+<li><a href="#proposed-command-line-recommendation-feature">3.1. [Proposed] Command Line Recommendation feature</a></li>
+<li><a href="#undo-redo-feature">3.2. Undo/Redo feature</a></li>
+<li><a href="#proposed-project-calendar">3.3. [Proposed] Project Calendar</a></li>
+<li><a href="#proposed-delete-project">3.4. [Proposed] Delete Project</a></li>
+<li><a href="#logging">3.5. Logging</a></li>
+<li><a href="#Implementation-Configuration">3.6. Configuration</a></li>
 </ul>
 </li>
 <li><a href="#documentation">4. Documentation</a>
@@ -470,9 +472,117 @@ The following class plays an important role at the architecture level:</p>
 <p>This section describes some noteworthy details on how certain features are implemented.</p>
 </div>
 <div class="sect2">
-<h3 id="undo-redo-feature"><a class="link" href="#undo-redo-feature">3.1. Undo/Redo feature</a></h3>
+<h3 id="proposed-command-line-recommendation-feature"><a class="link" href="#proposed-command-line-recommendation-feature">3.1. [Proposed] Command Line Recommendation feature</a></h3>
 <div class="sect3">
-<h4 id="current-implementation"><a class="link" href="#current-implementation">3.1.1. Current Implementation</a></h4>
+<h4 id="proposed-implementation"><a class="link" href="#proposed-implementation">3.1.1. Proposed Implementation</a></h4>
+<div class="paragraph">
+<p>The command line recommendation feature is facilitated by the <code>CommandLineParser</code>. It imports the 'CliSyntax.Java'
+and stores internally the <code>UserClosestInput</code> and <code>CommandUsed</code>. It updates the <code>UserClosestInput</code> and process to
+give suggestions.</p>
+</div>
+<div class="paragraph">
+<p>+
+Given below is an example usage scenario and how the command line recommendation feature behaves at each step.</p>
+</div>
+<div class="paragraph">
+<p>Step 1: The user types in a command keyword then type [space], the CommandLineParser is initialized which stores the
+<code>UserClosestInput</code> and <code>CommandUsed</code>. Then the command line show the command syntax.</p>
+</div>
+<div class="paragraph">
+<p>Step 2: The user continues to type, <code>UserClosestInput</code> takes the input and stores. There are 2 alternatives:
+* If the user types a slash [\] the <code>UserClosestInput</code> waits for syntax and when syntax match, shows the recommandation
+list for that particular slash sub syntax.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If the user types without the slash [\] the example remains.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Step 3: After the users type [Enter] the class is cleared.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/CommandLineRecommendationSequenceDiagram.png" alt="CommandLineRecommendationSequenceDiagram" width="800">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">3.1.2. Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-how-often-should-the-code-userclosestinput-code-refreshs-itself"><a class="link" href="#aspect-how-often-should-the-code-userclosestinput-code-refreshs-itself">Aspect: How often should the <code>UserClosestInput</code> refreshs itself</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Everytime the [space] key is used.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy to implement.</p>
+</li>
+<li>
+<p>Cons: Unable to dynamicly support the user.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Everytime a new character is type.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Very dynamic in the UI and supporting the user.</p>
+</li>
+<li>
+<p>Cons: Potential to cause lagging, harder to implement.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="aspect-proposed-choices-for-user-to-quickly-choose-the-recommendation"><a class="link" href="#aspect-proposed-choices-for-user-to-quickly-choose-the-recommendation">Aspect (proposed): Choices for user to quickly choose the recommendation</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> [tab] when only 1 choice left.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy to implement.</p>
+</li>
+<li>
+<p>Cons: Unoptimized for this particular purpose.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Arrow key.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Good for user experiences.</p>
+</li>
+<li>
+<p>Cons: Might be difficult to implement.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="undo-redo-feature"><a class="link" href="#undo-redo-feature">3.2. Undo/Redo feature</a></h3>
+<div class="sect3">
+<h4 id="current-implementation"><a class="link" href="#current-implementation">3.2.1. Current Implementation</a></h4>
 <div class="paragraph">
 <p>The undo/redo mechanism is facilitated by <code>VersionedVoluncheerBook</code>.
 It extends <code>VoluncheerBook</code> with an undo/redo history, stored internally as an <code>voluncheerBookStateList</code> and <code>currentStatePointer</code>.
@@ -602,7 +712,7 @@ If the <code>currentStatePointer</code> is at index <code>VoluncheerBookStateLis
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations"><a class="link" href="#design-considerations">3.1.2. Design Considerations</a></h4>
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">3.2.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-undo-redo-executes"><a class="link" href="#aspect-how-undo-redo-executes">Aspect: How undo &amp; redo executes</a></h5>
 <div class="ulist">
@@ -672,20 +782,29 @@ If the <code>currentStatePointer</code> is at index <code>VoluncheerBookStateLis
 </div>
 </div>
 <div class="sect2">
-<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">3.2. [Proposed] Data Encryption</a></h3>
+<h3 id="proposed-project-calendar"><a class="link" href="#proposed-project-calendar">3.3. [Proposed] Project Calendar</a></h3>
 <div class="paragraph">
-<p><em>{Explain here how the data encryption feature will be implemented}</em></p>
+<p>_{The projectcalendar mechanism takes the projectTitle and projectDate attribute of the project list and apply them into - Google Calendar API such that the UI now
+ includes a calendar interface and projects sorted according to date.
+ The API has a dependency on Google API Client Library and build.gradle file compiles 'com.google.api-client:google-api-client:1.25.0'.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">3.3. Logging</a></h3>
+<h3 id="proposed-delete-project"><a class="link" href="#proposed-delete-project">3.4. [Proposed] Delete Project</a></h3>
+<div class="paragraph">
+<p>_{The deleteProject is facilitated by DeleterProjectCommand Parser. deleteProject(index) removes the project with index, alongside with date attribute but beneficiary remains.
+if the project index is not found, DeleteProjectCommand throws ParseException.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="logging"><a class="link" href="#logging">3.5. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.4, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.6, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
@@ -716,7 +835,7 @@ If the <code>currentStatePointer</code> is at index <code>VoluncheerBookStateLis
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.4. Configuration</a></h3>
+<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.6. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g user prefs file location, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -2033,4 +2152,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-03-18 13:06:00 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-04 06:14:05 UTC</div></div></div></body></html>

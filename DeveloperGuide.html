@@ -30,11 +30,12 @@
 <li><a href="#implementation">3. Implementation</a>
 <ul class="sectlevel2">
 <li><a href="#proposed-command-line-recommendation-feature">3.1. [Proposed] Command Line Recommendation feature</a></li>
-<li><a href="#undo-redo-feature">3.2. Undo/Redo feature</a></li>
-<li><a href="#proposed-project-calendar">3.3. [Proposed] Project Calendar</a></li>
-<li><a href="#proposed-delete-project">3.4. [Proposed] Delete Project</a></li>
-<li><a href="#logging">3.5. Logging</a></li>
-<li><a href="#Implementation-Configuration">3.6. Configuration</a></li>
+<li><a href="#filtered-export-feature">3.2. Filtered Export feature</a></li>
+<li><a href="#undo-redo-feature">3.3. Undo/Redo feature</a></li>
+<li><a href="#proposed-project-calendar">3.4. [Proposed] Project Calendar</a></li>
+<li><a href="#proposed-delete-project">3.5. [Proposed] Delete Project</a></li>
+<li><a href="#logging">3.6. Logging</a></li>
+<li><a href="#Implementation-Configuration">3.7. Configuration</a></li>
 </ul>
 </li>
 <li><a href="#documentation">4. Documentation</a>
@@ -580,9 +581,135 @@ list for that particular slash sub syntax.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="undo-redo-feature"><a class="link" href="#undo-redo-feature">3.2. Undo/Redo feature</a></h3>
+<h3 id="filtered-export-feature"><a class="link" href="#filtered-export-feature">3.2. Filtered Export feature</a></h3>
 <div class="sect3">
 <h4 id="current-implementation"><a class="link" href="#current-implementation">3.2.1. Current Implementation</a></h4>
+<div class="paragraph">
+<p>To facilitate the filtering mechanism, a new <code>points</code> integer field is added to the <code>Volunteer</code> class:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/Volunteerclasswithpoints.jpg" alt="Volunteerclasswithpoints" width="800">
+</div>
+<div class="title">Figure 8. Volunteer class with new points field</div>
+</div>
+<div class="paragraph">
+<p><code>points</code> was implemented as a integer instead of a class for ease of access. Also, it is not directly influenced by
+any input from the user, as input has been checked by the the other classes in <code>Volunteer</code>. Hence, no accompanying
+methods are necessary.</p>
+</div>
+<div class="paragraph">
+<p>This feature revolves around 3 commands:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>map</code> Command</p>
+</li>
+<li>
+<p><code>sort</code> Command</p>
+</li>
+<li>
+<p><code>exportV</code> Command</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>For the <code>map</code> command, the user inputs the specific criteria to map <code>Volunteers</code> on, as well as the points.
+Upon execution of the <code>map</code> command, the following sequence diagram shows how the map command works:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/MapSequenceDiagram.png" alt="MapSequenceDiagram" width="800">
+</div>
+<div class="title">Figure 9. Sequence diagram of the map command</div>
+</div>
+<div class="paragraph">
+<p><code>MapCommandParser</code> will check the given arguments for correctness, such as proper points or valid comparator.
+It then creates a <code>MapObject</code> and stores the given arguments in a <code>Pair</code> of &lt;points, conditions&gt; and passes it to <code>MapCommand</code>, which passes it to <code>Model</code>
+by calling <code>mapAllVolunteers</code>.</p>
+</div>
+<div class="paragraph">
+<p>Within the model, <code>mapAllVolunteers()</code> is as shown:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>public void mapAllVolunteer(MapObject map) {
+        versionedAddressBook.getVolunteerList().forEach(volunteer -&gt; {
+            volunteer.resetPoints();
+            volunteer.addPoints(checkAge(map, volunteer));
+            volunteer.addPoints(checkRace(map, volunteer));
+            volunteer.addPoints(checkRace(map, volunteer));
+        });
+    }</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>checkAge</code>, <code>checkRace</code> and <code>checkRace</code> methods check each <code>Volunteer</code> and
+return the given points for that criteria,
+which <code>addPoints</code> adds to them.</p>
+</div>
+<div class="paragraph">
+<p><strong class="large"><code>Sort</code> Command</strong></p>
+</div>
+<div class="paragraph">
+<p>For the <code>Sort</code> command, the <code>Model</code> calls the <code>UniqueVolunteerList</code> internal <code>sortByPoints</code> method.
+This method uses the standard <code>FXCollections.sort</code> on the <code>internalList</code>,
+which immediately reflects in the UI.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>    public void sortByPoints() {
+        FXCollections.sort(internalList, (new Comparator&lt;Volunteer&gt;() {
+            public int compare (Volunteer s1, Volunteer s2) {
+                return s2.getPoints() - s1.getPoints();
+            }
+        }));
+    }</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The custom comparator sorts <code>Volunteers</code> in descending order of points.</p>
+</div>
+<div class="paragraph">
+<p><strong class="large"><code>Export</code> Command</strong></p>
+</div>
+<div class="paragraph">
+<p>The <code>exportV</code> command writes certain parts of volunteers data based on provided crtieria.
+It takes on various parameters such as [NUMBER OF VOLUNTEERS],
+[PREFIX OF DATA REQUIRED 1][PREFIX OF DATA REQUIRED 2] &#8230;&#8203; .</p>
+</div>
+<div class="paragraph">
+<p>The <code>ExportVolunteerCommandParser</code> checks that at least 1 type of data and the number of <code>Volunteers</code>
+is given. It then stores the prefixes in a list called <code>prefixToBePrinted</code> and returns the the list and the number of volunteers
+as a <code>Pair</code> to <code>ExportVolunteer</code>.
+The code snippet below shows how the main command is implemented.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>File output = new File("Export.csv");
+        List&lt;String[]&gt; volunteerData = new ArrayList&lt;&gt;();
+        volunteerData = model.addData(numVolunteers, prefixToBePrinted);
+        try (PrintWriter pw = new PrintWriter(output)) {
+            volunteerData.stream()
+                    .map(this::toCsv)
+                    .forEach(pw::println);
+        } catch (IOException e) {
+            throw new CommandException("Error writing to file");
+        }</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>A <code>List</code> of <code>String</code> arrays is used to store each line of <code>Volunteer</code>. The <code>addData</code> method goes through the <code>Volunteer</code>
+list and collects the specified fields into a <code>String</code> array, which is appended to another <code>List</code> of <code>String</code> arrays
+and returned. The <code>toCsv</code> method formats the data into CSV-friendly data.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="undo-redo-feature"><a class="link" href="#undo-redo-feature">3.3. Undo/Redo feature</a></h3>
+<div class="sect3">
+<h4 id="current-implementation-2"><a class="link" href="#current-implementation-2">3.3.1. Current Implementation</a></h4>
 <div class="paragraph">
 <p>The undo/redo mechanism is facilitated by <code>VersionedVoluncheerBook</code>.
 It extends <code>VoluncheerBook</code> with an undo/redo history, stored internally as an <code>voluncheerBookStateList</code> and <code>currentStatePointer</code>.
@@ -712,7 +839,7 @@ If the <code>currentStatePointer</code> is at index <code>VoluncheerBookStateLis
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">3.2.2. Design Considerations</a></h4>
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">3.3.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-undo-redo-executes"><a class="link" href="#aspect-how-undo-redo-executes">Aspect: How undo &amp; redo executes</a></h5>
 <div class="ulist">
@@ -782,7 +909,7 @@ If the <code>currentStatePointer</code> is at index <code>VoluncheerBookStateLis
 </div>
 </div>
 <div class="sect2">
-<h3 id="proposed-project-calendar"><a class="link" href="#proposed-project-calendar">3.3. [Proposed] Project Calendar</a></h3>
+<h3 id="proposed-project-calendar"><a class="link" href="#proposed-project-calendar">3.4. [Proposed] Project Calendar</a></h3>
 <div class="paragraph">
 <p>_{The projectcalendar mechanism takes the projectTitle and projectDate attribute of the project list and apply them into - Google Calendar API such that the UI now
  includes a calendar interface and projects sorted according to date.
@@ -790,21 +917,21 @@ If the <code>currentStatePointer</code> is at index <code>VoluncheerBookStateLis
 </div>
 </div>
 <div class="sect2">
-<h3 id="proposed-delete-project"><a class="link" href="#proposed-delete-project">3.4. [Proposed] Delete Project</a></h3>
+<h3 id="proposed-delete-project"><a class="link" href="#proposed-delete-project">3.5. [Proposed] Delete Project</a></h3>
 <div class="paragraph">
 <p>_{The deleteProject is facilitated by DeleterProjectCommand Parser. deleteProject(index) removes the project with index, alongside with date attribute but beneficiary remains.
 if the project index is not found, DeleteProjectCommand throws ParseException.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">3.5. Logging</a></h3>
+<h3 id="logging"><a class="link" href="#logging">3.6. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.6, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.7, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
@@ -835,7 +962,7 @@ if the project index is not found, DeleteProjectCommand throws ParseException.</
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.6. Configuration</a></h3>
+<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.7. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g user prefs file location, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -901,7 +1028,7 @@ Alternatively, you can download the AsciiDoc plugin for IntelliJ, which allows y
 <div class="content">
 <img src="images/chrome_save_as_pdf.png" alt="chrome save as pdf" width="300">
 </div>
-<div class="title">Figure 8. Saving documentation as PDF files in Chrome</div>
+<div class="title">Figure 10. Saving documentation as PDF files in Chrome</div>
 </div>
 </div>
 <div class="sect2">
@@ -2152,4 +2279,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-13 06:10:27 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-13 18:48:03 UTC</div></div></div></body></html>

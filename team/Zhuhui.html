@@ -107,7 +107,7 @@ compared to using the command line interface.</p>
 </div>
 </li>
 <li>
-<p><strong>Code contributed</strong>: [<a href="https://github.com/cs2113-ay1819s2-t08-1/main/tree/master/src/main/java/seedu/address/logic/command/volunteer">Volunteer</a>] [<a href="https://github.com/cs2113-ay1819s2-t08-1/main/tree/master/src/main/java/seedu/address/ui/ValidatePassword">Password</a>]</p>
+<p><strong>Code contributed</strong>: [<a href="https://github.com/cs2113-ay1819s2-t08-1/main/tree/master/src/main/java/seedu/address/logic/command/volunteer.java">Volunteer</a>] [<a href="https://github.com/cs2113-ay1819s2-t08-1/main/tree/master/src/main/java/seedu/address/ui/ValidatePassword.java">Password</a>]</p>
 </li>
 <li>
 <p><strong>Other contributions</strong>:</p>
@@ -208,14 +208,16 @@ to enter the password.<br></p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/password%20prompt.png" alt="password prompt" width="800">
+<img src="../images/password_prompt.jpg" alt="password prompt" width="800">
 </div>
 <div class="title">Figure 1. Program prompting user for password</div>
 </div>
 <div class="paragraph">
-<p>The password feature uses <code>ValidatePassword</code> to check if the user input matches the password stored in the program.
-If the password matches, it will set boolean <code>user</code> to be true. <code>UiManager</code> will thus instantiate
- <code>fillInnerParts()</code>, displaying the hidden data to the project manager.</p>
+<p>The password feature uses <code>ValidatePassword</code> to check if the user input matches the password stored in the program.</p>
+</div>
+<div class="paragraph">
+<p>If the password matches, it will set boolean <code>user</code> to be true. <code>UiManager</code> will thus instantiate
+<code>fillInnerParts()</code>, displaying the hidden data to the project manager.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -224,10 +226,8 @@ If the password matches, it will set boolean <code>user</code> to be true. <code
 <div class="title">Figure 2. Data displayed to user upon entering the correct password</div>
 </div>
 <div class="paragraph">
-<p>If the password is entered incorrectly for five times, the program will terminate itself.</p>
-</div>
-<div class="paragraph">
-<p>A sequence diagram is shown below to illustrate how it works in an abstract level.</p>
+<p>If the password is entered incorrectly for five times, the program will terminate itself.
+A sequence diagram is shown below to illustrate how it works in an abstract level.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -269,4 +269,4 @@ If the password matches, it will set boolean <code>user</code> to be true. <code
 </table>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 17:30:13 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 17:50:57 UTC</div></div></div></body></html>

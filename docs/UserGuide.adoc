@@ -76,6 +76,7 @@ you have, check out link:{https://www.java.com/en/download/help/version_manual.x
 .  Download the latest `VolunCHeer.jar` link:{repoURL}/releases[here].
 .  Copy the file to whichever folder you would like to store VolunCHeer in.
 .  Double-click the file to start the app. The GUI should appear as below in a few seconds.
+.  The GUI will prompt you to key in the password. Enter your password. (default: password)
 +
 image::UiClean.png[width="790"]
 +

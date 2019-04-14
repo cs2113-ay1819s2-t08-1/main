@@ -206,7 +206,8 @@ image::complete.png[]
 
 [NOTE]
 Once marked as complete, project title will be displayed in red colour font
-// end::ProjectManagement[
+
+// end::ProjectManagement[]
 
 // tag::BeneficiaryManagement[]
 === Beneficiary Management

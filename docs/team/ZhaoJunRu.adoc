@@ -30,7 +30,7 @@ setting projects status as complete to keep track of ongoing and completed `Proj
        there was thus some difficulty trying to implement the command. Many adjustments had to be made to keep the project class
        and beneficiary class independent and yet synchronised.
     2. Assign Volunteer feature
-    *allows the user to assign a Requried number of `Volunteers` to the `Project` selected*
+    *allows the user to assign a Required number of `Volunteers` to the `Project` selected*
     - Justification: Projects usually require varying number of volunteers, we thus decide to make it flexible by allowing user to key in
     the required number themselves. Furthermore, should there be any requirement for the `Volunteers` they can filter the `Volunteer` list with
     our `Map Command` and `Sort` function.
@@ -69,7 +69,6 @@ https://github.com/cs2113-ay1819s2-t08-1/main/pull/141#issue-270291847[#141]
 *** Integrated asciidoc for pdf releases of documentations as well as easy editing of adoc
 
 == Contributions to the User Guide
-
 
 |===
 |_Given below are sections I contributed to the User Guide. They showcase my ability to write documentation targeting end-users._

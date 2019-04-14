@@ -34,21 +34,40 @@ and the <code>assign</code> feature which will be elaborated in further details.
 <p>Justification: The Project class forms the basis of the VolunCHeer application whereby the aim is to manage and organise projects better and save users form the hustle of paper works.</p>
 </li>
 <li>
-<p>Highlights: The methods implemented involves interactions between the 3 objects namely <code>Project</code> <code>Beneficiary</code> and <code>Volunteer</code>.</p>
+<p>Highlights: The methods implemented involves interactions between the 3 objects namely <code>Project</code> <code>Beneficiary</code> and <code>Volunteer</code>. It provides user with the
+ability to add and delete <code>Projects</code>, assign the specific <code>Beneficiary</code> and a list of <code>Volunteers</code> to <code>Project</code> of interest as well as
+setting projects status as complete to keep track of ongoing and completed <code>Projects</code>.</p>
 </li>
 <li>
-<p>Relevant features/enhancements:</p>
+<p>Explanation of features implemented</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Assign Beneficiary <strong>allows the user to assign a existing beneficiary to the project selected</strong></p>
+<p>Assign Beneficiary feature
+<strong>allows the user to assign a existing <code>Beneficiary</code> to the <code>Project</code> selected</strong></p>
 <div class="ulist">
 <ul>
 <li>
-<p>Justification: A beneficiary is usually attached to a project and beneficiary details are very important and usually tracked in a separate document / file. Thus we decide to keep Beneficiary information as a separate list and assigned to the project when required such that it can be managed separately.</p>
+<p>Justification: A <code>Beneficiary</code> is usually attached to a <code>Project</code> and the beneficiary details are very important
+and usually tracked in a separate document / file. Thus we decide to keep Beneficiary information as a separate list and assigned to the project when required such that it can be managed separately.</p>
 </li>
 <li>
-<p>Highlights: This enhancement requires data from both the project list as well as the beneficiary list, there was thus some difficulty trying to implement the command. Many adjustments had to be made to keep the project class and beneficiary class independent.</p>
+<p>Highlights: This enhancement requires data from both the project list as well as the beneficiary list,
+there was thus some difficulty trying to implement the command. Many adjustments had to be made to keep the project class
+and beneficiary class independent and yet synchronised.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Assign Volunteer feature
+<strong>allows the user to assign a Requried number of <code>Volunteers</code> to the <code>Project</code> selected</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Justification: Projects usually require varying number of volunteers, we thus decide to make it flexible by allowing user to key in
+the required number themselves. Furthermore, should there be any requirement for the <code>Volunteers</code> they can filter the <code>Volunteer</code> list with
+our <code>Map Command</code> and <code>Sort</code> function.</p>
 </li>
 </ul>
 </div>
@@ -73,7 +92,7 @@ and the <code>assign</code> feature which will be elaborated in further details.
 </div>
 </li>
 <li>
-<p><strong>Minor enhancement</strong>: Edit project and Delete project commands are inherited from addressbook and successfully implemented on the project class.</p>
+<p><strong>Minor enhancement</strong>: ListProject and DeleteProject commands are inherited from addressBook and successfully implemented on the project class.</p>
 </li>
 <li>
 <p><strong>Other contributions</strong>:</p>
@@ -84,13 +103,33 @@ and the <code>assign</code> feature which will be elaborated in further details.
 <div class="ulist">
 <ul>
 <li>
-<p>Managed setting up of Milestones v1.2 and v1.3</p>
+<p>Manage project submissions and deadlines.</p>
 </li>
 <li>
-<p>Managed deadlines and submissions</p>
+<p>Managed setting up of Milestones v1.2 v1.3 and v1.4
+<a href="https://github.com/cs2113-ay1819s2-t08-1/main/issues/#42#issue-424114821">#42</a></p>
 </li>
 <li>
-<p>Managed releases <code>v1.3</code> on GitHub</p>
+<p>Managed releases <code>v1.3</code> and <code>v1.4</code> on GitHub
+<a href="https://github.com/cs2113-ay1819s2-t08-1/main/issues/73#issue-428190500">#73</a>
+<a href="https://github.com/cs2113-ay1819s2-t08-1/main/issues/122#issue-431639827">#122</a>
+<a href="https://github.com/cs2113-ay1819s2-t08-1/main/issues/123#issue-431640740">#123</a></p>
+</li>
+<li>
+<p>Setting up of issues to track progress
+<a href="https://github.com/cs2113-ay1819s2-t08-1/main/issues/36#issue-422222890">#36</a>
+<a href="https://github.com/cs2113-ay1819s2-t08-1/main/issues/74#issue-428191586">#74</a>
+<a href="https://github.com/cs2113-ay1819s2-t08-1/main/issues/76#issue-428194020">#76</a>
+<a href="https://github.com/cs2113-ay1819s2-t08-1/main/issues/110#issue-430026906">#110</a>
+<a href="https://github.com/cs2113-ay1819s2-t08-1/main/issues/119#issue-431638374">#119</a>
+<a href="https://github.com/cs2113-ay1819s2-t08-1/main/issues/120#issue-431638782">#120</a></p>
+</li>
+<li>
+<p>Managed overall merging of project and solve bugs raised.</p>
+</li>
+<li>
+<p>Merging and Integration of team&#8217;s repositories.
+<a href="https://github.com/cs2113-ay1819s2-t08-1/main/pull/141#issue-270291847">#141</a></p>
 </li>
 </ul>
 </div>
@@ -104,6 +143,16 @@ and the <code>assign</code> feature which will be elaborated in further details.
 </li>
 <li>
 <p>Subsequent updates of documents on individual features.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Tools:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Integrated asciidoc for pdf releases of documentations as well as easy editing of adoc</p>
 </li>
 </ul>
 </div>
@@ -129,20 +178,333 @@ and the <code>assign</code> feature which will be elaborated in further details.
 </tbody>
 </table>
 <div class="sect2">
-<h3 id="adding-a-project-code-addproject-code"><a class="link" href="#adding-a-project-code-addproject-code">Adding a project: <code>addProject</code></a></h3>
+<h3 id="project-management"><a class="link" href="#project-management">Project Management</a></h3>
+<div class="sect3">
+<h4 id="adding-a-project-code-addproject-code-code-ap-code"><a class="link" href="#adding-a-project-code-addproject-code-code-ap-code">Adding a project: <code>addProject</code> / <code>ap</code></a></h4>
 <div class="paragraph">
-<p>Adds a new project<br>
-Format: <code>addProject n/PROJECT_NAME d/DATE</code></p>
+<p>One of the first things to do when you use the app is to start adding projects to track, and this is the command to use.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>addProject n/PROJECT_NAME d/DATE</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>Please enter DATE in yyyymmdd format.</p>
+<p>Please enter DATE in DD/MM/YYYY format, making sure that the date should be after today.</p>
 </li>
 <li>
-<p>Project Title should not have duplicates in the project list.</p>
+<p>Project Name does not accept duplicates in the project list, so make you name everything differently!</p>
+</li>
+<li>
+<p>Projects are automatically sorted in ascending date order for easier tracking or Project tasks.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Now let us look at what happens when the command <code>addProject p/Old Folk Home Visit d/25/05/2019</code> is entered on screen.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="C:/Users/Quinn/Desktop/Y2S2/CS2113T/Project/AddressBook4/docs/images/quinnzzzzz.png/addProject.png" alt="addProject">
+</div>
+<div class="title">Figure 1. When <code>addProject p/Old Folk Home Visit d/25/05/2019</code> is executed.</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="deleting-a-project-code-deleteproject-code-code-dp-code"><a class="link" href="#deleting-a-project-code-deleteproject-code-code-dp-code">Deleting a project ： <code>deleteProject</code> / <code>dp</code></a></h4>
+<div class="paragraph">
+<p>When a project is completed or cancelled, VolunCHeer allows you to easily delete it by stating
+ the project order in the list.<br>
+Format: <code>deleteProject INDEX</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>This INDEX refers to the index of the project in the project list. If you are unsure of the order, <strong>PLEASE</strong>
+use 'listProject' to view all projects and get the correct index. If you delete the wrong projects, please refer to  <a href="#undo">Undoing previous command : <code>undo</code></a>.</p>
+</li>
+<li>
+<p>Error message is shown if the INDEX entered is invalid</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>This is how the project list changes upon execution.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="C:/Users/Quinn/Desktop/Y2S2/CS2113T/Project/AddressBook4/docs/images/quinnzzzzz.png/deleteProject.png" alt="deleteProject">
+</div>
+<div class="title">Figure 2. When <code>deleteProject 3</code> command is executed.</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="listing-all-projects-code-listproject-code-code-lp-code"><a class="link" href="#listing-all-projects-code-listproject-code-code-lp-code">Listing all projects : <code>listProject</code> / <code>lp</code></a></h4>
+<div class="paragraph">
+<p>When you want to take a look at all your projects, this command helps you do so.<br></p>
+</div>
+<div class="paragraph">
+<p>Format: <code>listProject</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="assigning-a-beneficiary-to-project-code-assignb-code"><a class="link" href="#assigning-a-beneficiary-to-project-code-assignb-code">Assigning a Beneficiary to Project: <code>assignB</code></a></h4>
+<div class="paragraph">
+<p>Projects are generally associated with certain beneficiaries. VolunCHeer allows you to attach them easily with this command.
+It assigns the Beneficiary at the provided INDEX to the Project with ProjectTitle indicated.<br></p>
+</div>
+<div class="paragraph">
+<p>Format: <code>assignBeneficiary p/PROJECT_TITLE i/INDEX</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The assigned Beneficiary can then be seen under the Project card as shown below.</p>
+</li>
+<li>
+<p>There can be only one beneficiary for each project, however, one beneficiary can be assigned to multiple projects.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+The index <strong>must be a positive integer</strong> <code>1, 2, 3, &#8230;&#8203;</code>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>After assigning a beneficiary, the project will have its adata updated as seen below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="C:/Users/Quinn/Desktop/Y2S2/CS2113T/Project/AddressBook4/docs/images/quinnzzzzz.png/assignB.png" alt="assignB">
+</div>
+<div class="title">Figure 3. When <code>assignB p/Old Folks Home Visit i/1</code> command executed</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Use listBeneficiary to view a full list of Beneficiary to assign.
+Use summaryBeneficiary command to view the Projects attached to each Beneficiary.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="assigning-one-or-more-volunteers-to-project-code-assignv-code"><a class="link" href="#assigning-one-or-more-volunteers-to-project-code-assignv-code">Assigning one or more Volunteers to Project: <code>assignV</code></a></h4>
+<div class="paragraph">
+<p>We also provide an easy method to assign a specific number of volunteers to the indicated Project</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>assignVolunteer p/PROJECT_TITLE rv/REQUIRED_NUMBER_OF_VOLUNTEERS</code></p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The number of volunteers assigned to the Project can be seen under the Project card as shown below.
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="C:/Users/Quinn/Desktop/Y2S2/CS2113T/Project/AddressBook4/docs/images/quinnzzzzz.png/assignV.png" alt="assignV">
+</div>
+<div class="title">Figure 4. When <code>assignV p/Old Folks Home Visit rv/2</code> is executed.</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Use the commands listed in <a href="#map">Filtering &amp; Exporting</a> to filter out the desired list of volunteers.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="mark-project-as-complete-complete"><a class="link" href="#mark-project-as-complete-complete">Mark project as complete: 'complete'</a></h4>
+<div class="paragraph">
+<p>Once a project is done, you can mark it as complete to distinguish it from your other projects.
+Simply provide an INDEX to indicate which project you would like to complete.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>complete i/INDEX</code></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="C:/Users/Quinn/Desktop/Y2S2/CS2113T/Project/AddressBook4/docs/images/quinnzzzzz.png/complete.png" alt="complete">
+</div>
+<div class="title">Figure 5. When <code>complete i/1</code> command is executed</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Once marked as complete, project title will be displayed in red colour font
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="beneficiary-management"><a class="link" href="#beneficiary-management">Beneficiary Management</a></h3>
+<div class="sect3">
+<h4 id="adding-a-beneficiary-code-addbeneficiary-code-code-ab-code"><a class="link" href="#adding-a-beneficiary-code-addbeneficiary-code-code-ab-code">Adding a beneficiary: <code>addBeneficiary</code> / <code>ab</code></a></h4>
+<div class="paragraph">
+<p>Similar to the previous adding command, this adds a beneficiary to the list of Beneficiaries<br></p>
+</div>
+<div class="paragraph">
+<p>Format: <code>addBeneficiary n/NAME a/ADDRESS e/EMAIL p/PHONE_NUMBER</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>addBeneficiary n/Orphanage p/98765432 e/Orphanage@example.com a/311, Clementi Ave 2, #02-25</code></p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="C:/Users/Quinn/Desktop/Y2S2/CS2113T/Project/AddressBook4/docs/images/quinnzzzzz.png/AddBeneficiary.png" alt="AddBeneficiary">
+</div>
+<div class="title">Figure 6. Add Beneficiary Command Result (pink: input, blue: output)</div>
+</div>
+<div class="paragraph">
+<p>In the figure above, after the add command, we can observe a new beneficiary card is shown on the GUI.</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The beneficiary will be used to assign to a project, this means that the project will benefit this beneficiary,
+i.e. Orphanage Home, Nursing home, etc.</p>
+</li>
+<li>
+<p>When add a new beneficiary, the project lists assigned to it will be empty. You can assign projects to it by assign
+command stated.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="editing-a-beneficiary-code-editbeneficiary-code-code-eb-code"><a class="link" href="#editing-a-beneficiary-code-editbeneficiary-code-code-eb-code">Editing a beneficiary: <code>editBeneficiary</code> / <code>eb</code></a></h4>
+<div class="paragraph">
+<p>In case of incorrect information, we also allow you to edit the beneficiary at the given INDEX</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>editBeneficiary  INDEX (must be a positive integer) [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS]</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>editBeneficiary 1 n/Old Folk Home p/91234567</code></p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="C:/Users/Quinn/Desktop/Y2S2/CS2113T/Project/AddressBook4/docs/images/quinnzzzzz.png/EditBeneficiary.png" alt="EditBeneficiary">
+</div>
+<div class="title">Figure 7. Edit Beneficiary Command Result (pink: input, blue: output)</div>
+</div>
+<div class="paragraph">
+<p>In the figure, we can see that the WHO information including phone number and email has changed, compared to the last figure.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+When a beneficiary is edited, the data of the beneficiary in its attached projects is in sync, meaning that that data
+is automatically updated in the mentioned projects.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="deleting-a-beneficiary-code-deletebeneficiary-code-code-db-code"><a class="link" href="#deleting-a-beneficiary-code-deletebeneficiary-code-code-db-code">Deleting a beneficiary: <code>deleteBeneficiary</code> / <code>db</code></a></h4>
+<div class="paragraph">
+<p>Of course, once a beneficiary is no longer associated with you, it can be removed by providing the INDEX.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>deleteBeneficiary i/INDEX -D</code></p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<code>-D</code> is optional and should not be misused (see below)
+</td>
+</tr>
+</table>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>There are two modes of deletion: <strong>soft delete mode</strong> and <strong>hard delete mode</strong>.<br></p>
+</li>
+<li>
+<p>In the <strong>soft delete mode</strong>, there is a safe check to help you avoid deleting beneficiary
+that has attached projects, leaving the projects unassigned.</p>
+</li>
+<li>
+<p>In the <strong>hard delete mode</strong>,
+the beneficiary and all its attached projects will be deleted.<br></p>
+</li>
+<li>
+<p>Default is <strong>soft delete mode</strong>. To switch to <strong>hard delete mode</strong>, include <code>-D</code> in your command.</p>
 </li>
 </ul>
 </div>
@@ -154,62 +516,933 @@ Format: <code>addProject n/PROJECT_NAME d/DATE</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>addProject n/Charity Run d/081219</code></p>
+<p><code>deleteBeneficiary i/1</code>  <strong>soft delete mode</strong></p>
+</li>
+<li>
+<p><code>deleteBeneficiary i/1 -D</code>  <strong>hard delete mode</strong></p>
 </li>
 </ul>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="C:/Users/Quinn/Desktop/Y2S2/CS2113T/Project/AddressBook4/docs/images/quinnzzzzz.png/SoftDelete.png" alt="SoftDelete">
 </div>
-<div class="sect2">
-<h3 id="deleting-a-project-code-deleteproject-code"><a class="link" href="#deleting-a-project-code-deleteproject-code">Deleting a project ： <code>deleteProject</code></a></h3>
+<div class="title">Figure 8. Delete Beneficiary Command (Soft Delete Mode) Result (pink: input, blue: output)</div>
+</div>
 <div class="paragraph">
-<p>Deletes the specified project from the application.<br>
-Format: <code>deleteProject INDEX</code></p>
+<p>In Figure 3, we are trying to soft delete a beneficiary which was assigned to project <strong>Run</strong>. Hence, a message appears and informs us
+to switch to hard delete mode.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="C:/Users/Quinn/Desktop/Y2S2/CS2113T/Project/AddressBook4/docs/images/quinnzzzzz.png/HardDelete.png" alt="HardDelete">
+</div>
+<div class="title">Figure 9. Delete Beneficiary Command (Hard Delete Mode) Result (pink: input, blue: output)</div>
+</div>
+<div class="paragraph">
+<p>In Figure 4, the beneficiary and its attached projects have been deleted successfully.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="listing-all-beneficiaries-code-listbeneficiary-code-code-lb-code"><a class="link" href="#listing-all-beneficiaries-code-listbeneficiary-code-code-lb-code">Listing all beneficiaries: <code>listBeneficiary</code> / <code>lb</code></a></h4>
+<div class="paragraph">
+<p>As before, you can show a list of all Beneficiaries in the beneficiary pool.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>listBeneficiary</code></p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The command can be used to get back to full list after several commands which change the list.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="locating-beneficiaries-by-name-code-findbeneficiary-code-code-fb-code"><a class="link" href="#locating-beneficiaries-by-name-code-findbeneficiary-code-code-fb-code">Locating beneficiaries by name: <code>findBeneficiary</code> / <code>fb</code></a></h4>
+<div class="paragraph">
+<p>TO facilitate searching for beneficiary, you can locate a specific one easily with via given keyword/keywords.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>findBeneficiary KEYWORD [MORE_KEYWORDS]</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>Deletes the project at index "INDEX".</p>
+<p>The search is case insensitive. e.g <code>orphanage</code> will match <code>Orphanage</code></p>
 </li>
 <li>
-<p>The INDEX refers to the index of the project in the project list, use 'listProject' to view all projects if unsure.</p>
+<p>The order of the keywords does not matter. e.g. <code>Orphanage Nursing</code> will match <code>Nursing Orphanage</code></p>
 </li>
 <li>
-<p>Error message is shown if the INDEX entered is invalid</p>
+<p>Only the name is searched.</p>
+</li>
+<li>
+<p>Only full words will be matched e.g. <code>Orphan</code> will not match <code>Orphanage</code></p>
+</li>
+<li>
+<p>beneficiaries matching at least one keyword will be returned (i.e. <code>OR</code> search). e.g. <code>Orphanage Nursing</code> will return
+<code>Orphanage Rainbow</code> and <code>Nursing Home</code></p>
 </li>
 </ul>
 </div>
 </div>
 </div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>find Nursing</code><br>
+Returns <code>Nursing Home</code> and <code>Nursing Center</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="summarising-all-beneficiaries-code-summarisebeneficiary-code-code-sb-code"><a class="link" href="#summarising-all-beneficiaries-code-summarisebeneficiary-code-code-sb-code">Summarising all beneficiaries: <code>summariseBeneficiary</code> / <code>sb</code></a></h4>
+<div class="paragraph">
+<p>Sometimes we have a beneficiary assigned to many projects and we just want to see a list of everything it is attached to.
+This command opens a pop up summary table of the beneficiaries for easy view. You can use even the arrow in header cells <strong>number of Projects</strong>
+to sort beneficiaries by the number of attached projects.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>summariseBeneficiary</code></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="C:/Users/Quinn/Desktop/Y2S2/CS2113T/Project/AddressBook4/docs/images/quinnzzzzz.png/SummaryBeneficiary.png" alt="SummaryBeneficiary">
+</div>
+<div class="title">Figure 10. Beneficiary Summary Table</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The command can be used to consider future partners or fundraising.
+</td>
+</tr>
+</table>
+</div>
+</div>
 </div>
 <div class="sect2">
-<h3 id="assigning-a-beneficiary-to-project-assign"><a class="link" href="#assigning-a-beneficiary-to-project-assign">Assigning a beneficiary to project: 'assign'</a></h3>
+<h3 id="volunteer"><a class="link" href="#volunteer">Volunteer</a></h3>
+<div class="sect3">
+<h4 id="adding-a-volunteer-code-addvolunteer-code-code-av-code"><a class="link" href="#adding-a-volunteer-code-addvolunteer-code-code-av-code">Adding a volunteer: <code>addVolunteer</code> / <code>av</code></a></h4>
 <div class="paragraph">
-<p>Assigns a beneficiary identified by the index number used in the displayed beneficiary list to a project matched
-by project title entered.
-Format: <code>assign PROJECT_TITLE, i/INDEX</code></p>
+<p>As like before, this adds a volunteer to the volunteer pool</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>addVolunteer n/NAME y/AGE g/GENDER r/RACE [rg/RELIGION] a/ADDRESS e/EMAIL p/PHONE_NUMBER
+ec/EMERGENCY_CONTACT [dp/DIETARY_PREFERENCE] [m/MEDICAL_CONDITION] [t/TAG]&#8230;&#8203;</code></p>
+</div>
+<div class="paragraph">
+<p>Alternative Format: <code>av n/NAME y/AGE g/GENDER r/RACE [rg/RELIGION] a/ADDRESS e/EMAIL p/PHONE_NUMBER
+                    ec/EMERGENCY_CONTACT [dp/DIETARY_PREFERENCE] [m/MEDICAL_CONDITION] [t/TAG]&#8230;&#8203;</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>Assigns the beneficiary with index = "INDEX" to the project with title "PROJECT_TITLE".</p>
+<p>"Add Successful!" message is prompted upon successfully adding a volunteer</p>
 </li>
 <li>
-<p>Project attached will be shown on the specific beneficiary</p>
+<p>An invalid message will be prompted if a Volunteer with the same exact name is present in the existing database</p>
 </li>
 <li>
-<p>There can be only one beneficiary for each project, however, one beneficiary can be assigned to multiple projects.</p>
-</li>
-<li>
-<p>The index <strong>must be a positive integer</strong> <code>1, 2, 3, &#8230;&#8203;</code></p>
+<p>Parameters for Religion, Dietary Preference, Medical Condition are optional and set to 'nil' by default</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+A volunteer can have any number of tags (including 0)
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>addVolunteer n/John Doe y/18 g/male r/eurasian rg/christian a/John street, block 123, #01-01 e/johnd@example.com
+p/98765432 ec/Mary, Mother, 92221111 dp/vegetarian m/asthma</code></p>
+</li>
+<li>
+<p><code>av n/Sarah Soh y/22 g/female r/chinese rg/buddhist a/betsy ave 6, 02-08 e/sarah08@example.com
+p/92345678 ec/Johnny, Husband, 81234568</code></p>
+</li>
+</ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 16:35:22 UTC</div></div></div></body></html>
+<div class="sect3">
+<h4 id="deleting-a-volunteer-code-deletevolunteer-code-code-dv-code"><a class="link" href="#deleting-a-volunteer-code-deletevolunteer-code-code-dv-code">Deleting a volunteer : <code>deleteVolunteer</code> \ <code>dv</code></a></h4>
+<div class="paragraph">
+<p>After a volunteer has left, it can be deleted by this command by referencing its index in the list.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>deleteVolunteer INDEX</code><br>
+Alternative Format: <code>dv INDEX</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Deletes the volunteer at the specified <code>INDEX</code>.</p>
+</li>
+<li>
+<p>The index refers to the index number shown in the displayed volunteer list.</p>
+</li>
+<li>
+<p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+<li>
+<p>Error message is shown if the given index is invalid</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>listVolunteer</code><br>
+<code>deleteVolunteer 2</code><br>
+Deletes the 2nd volunteer in the volunteer list.</p>
+</li>
+<li>
+<p><code>findVolunteer Betsy</code><br>
+<code>dv 1</code><br>
+Deletes the 1st volunteer in the searched volunteer list.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Use the list volunteers commands to check the correct index of the volunteer to be deleted
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="editing-a-volunteer-code-editvolunteer-code-code-ev-code"><a class="link" href="#editing-a-volunteer-code-editvolunteer-code-code-ev-code">Editing a volunteer : <code>editVolunteer</code> \ <code>ev</code></a></h4>
+<div class="paragraph">
+<p>Similar to beneficiary, we can update volunteer particulars by the given index.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>editVolunteer INDEX [n/NAME] [y/AGE] [g/GENDER] [r/RACE] [rg/RELIGION][p/PHONE] [a/ADDRESS] [e/EMAIL]
+[ec/EMERGENCYCONTACT] [dp/DIETARYPREFERENCE] [mc/MEDICALCONDITION] [t/TAG]&#8230;&#8203;</code></p>
+</div>
+<div class="paragraph">
+<p>Alternative Format: <code>ev INDEX [n/NAME] [y/AGE] [g/GENDER] [r/RACE] [rg/RELIGION][p/PHONE] [a/ADDRESS] [e/EMAIL]
+                    [ec/EMERGENCYCONTACT] [dp/DIETARYPREFERENCE] [mc/MEDICALCONDITION] [t/TAG]&#8230;&#8203;</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Edits the volunteer at the specified <code>INDEX</code>.
+The index refers to the index number shown in the displayed volunteer list.
+The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+<li>
+<p>At least one of the optional fields must be provided.</p>
+</li>
+<li>
+<p>Existing values will be updated to the input values.</p>
+</li>
+<li>
+<p>When editing tags, the existing tags of the volunteer will be removed i.e adding of tags is not cumulative.</p>
+</li>
+<li>
+<p>You can remove all the volunteer&#8217;s tags by typing <code>t/</code> without specifying any tags after it.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>editVolunteer 1 p/91234567 e/johndoe@example.com</code><br>
+Edits the phone number and email address of the 1st volunteer to be <code>91234567</code> and <code>johndoe@example.com</code> respectively.</p>
+</li>
+<li>
+<p><code>ev 2 n/Betsy Crower t/</code><br>
+Edits the name of the 2nd volunteer to be <code>Betsy Crower</code> and clears all existing tags.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="locating-volunteers-by-name-code-findvolunteer-code-code-fv-code"><a class="link" href="#locating-volunteers-by-name-code-findvolunteer-code-code-fv-code">Locating volunteers by name: <code>findVolunteer</code> \ <code>fv</code></a></h4>
+<div class="paragraph">
+<p>Searching for volunteers works similarly to beneficiaries.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
+</div>
+<div class="paragraph">
+<p>Alternative Format: <code>fv KEYWORD [MORE_KEYWORDS]</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The search is case insensitive. e.g <code>hans</code> will match <code>Hans</code></p>
+</li>
+<li>
+<p>The order of the keywords does not matter. e.g. <code>Hans Bo</code> will match <code>Bo Hans</code></p>
+</li>
+<li>
+<p>Only the name is searched.</p>
+</li>
+<li>
+<p>Only full words will be matched e.g. <code>Han</code> will not match <code>Hans</code></p>
+</li>
+<li>
+<p>volunteers matching at least one keyword will be returned (i.e. <code>OR</code> search).</p>
+</li>
+<li>
+<p>e.g. <code>Hans Bo</code> will return <code>Hans Gruber</code>, <code>Bo Yang</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>findVolunteer John</code><br>
+Returns <code>john</code> and <code>John Doe</code></p>
+</li>
+<li>
+<p><code>fv Betsy Tim John</code><br>
+Returns any volunteer having names <code>Betsy</code>, <code>Tim</code>, or <code>John</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="listing-all-volunteers-code-listvolunteer-code-code-lv-code"><a class="link" href="#listing-all-volunteers-code-listvolunteer-code-code-lv-code">Listing all volunteers : <code>listVolunteer</code> \ <code>lv</code></a></h4>
+<div class="paragraph">
+<p>Shows a list of all volunteers in the volunteer pool.<br></p>
+</div>
+<div class="paragraph">
+<p>Format: <code>listVolunteer</code></p>
+</div>
+<div class="paragraph">
+<p>Alternative Format: <code>lv</code></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="map"><a class="link" href="#map">Filtering &amp; Exporting</a></h3>
+<div class="sect3">
+<h4 id="assigning-mapping-index-to-each-volunteer-code-map-code"><a class="link" href="#assigning-mapping-index-to-each-volunteer-code-map-code">Assigning mapping index to each volunteer : <code>map</code></a></h4>
+<div class="paragraph">
+<p>We know that some volunteers suit a certain project better than others. To help with finding these volunteers,
+the map command assigns the volunteers with points 3, 2 or 1 according to the selection criteria that you set.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>map t/(POINTS)(CRITERIA) t/(POINTS)(CRITERIA) t/(POINTS)(CRITERIA)</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The t/ refers to any of the following tags.</p>
+</li>
+<li>
+<p>There are three types of tags, the age of volunteer (y/), race (r/) and medical condition (m/).</p>
+</li>
+<li>
+<p>You can enter at most 3 tags and at least 1 tag as the selection criteria.</p>
+</li>
+<li>
+<p>Each volunteer is internally assigned points which will be used used for sorting later on.</p>
+</li>
+<li>
+<p>The age criteria has comparators &gt;,&lt;,= which relate to the age given afterwards.</p>
+</li>
+<li>
+<p>See examples below for a clearer picture.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>map y/3&gt;18 r/2chinese m/1NIL</code>
+Gives volunteers above the AGE of 18 3 points, RACE chinese 2 points and MEDICAL_CONDITION of NIL 1 point.</p>
+</li>
+<li>
+<p><code>map m/3NIL</code>
+Only gives volunteers with no MEDICAL_CONDITION 3 points.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="C:/Users/Quinn/Desktop/Y2S2/CS2113T/Project/AddressBook4/docs/images/quinnzzzzz.png/MapCommand.png" alt="MapCommand">
+</div>
+<div class="title">Figure 11. map command execution</div>
+</div>
+<div class="paragraph">
+<p>Upon executing a successful map command, the message on figure 12 will appear.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="sorting-volunteers-according-to-points-code-sort-code"><a class="link" href="#sorting-volunteers-according-to-points-code-sort-code">Sorting volunteers according to points : <code>sort</code></a></h4>
+<div class="paragraph">
+<p>After mapping, we can then sort the volunteers into order, with the most suitable volunteers being on top.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>sort</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The map function should be called before sort to generate the points</p>
+</li>
+<li>
+<p>Volunteers with equal points will not be sorted in any particular order</p>
+</li>
+<li>
+<p>Selection of the volunteers, such as with the assignV command, can be done after sorting.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="C:/Users/Quinn/Desktop/Y2S2/CS2113T/Project/AddressBook4/docs/images/quinnzzzzz.png/SortBefore.jpg" alt="SortBefore">
+</div>
+<div class="title">Figure 12. Before sorting</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="C:/Users/Quinn/Desktop/Y2S2/CS2113T/Project/AddressBook4/docs/images/quinnzzzzz.png/SortAfter.jpg" alt="SortAfter">
+</div>
+<div class="title">Figure 13. After sorting</div>
+</div>
+<div class="paragraph">
+<p>As can be seen in figure 13 Alice was previously at index 3. After sorting, she has shifted up to index 2 in figure 14.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="extracting-multiple-volunteers-from-sorted-list-code-extract-code"><a class="link" href="#extracting-multiple-volunteers-from-sorted-list-code-extract-code">Extracting multiple volunteers from sorted list : <code>extract</code></a></h4>
+<div class="paragraph">
+<p>Not everyone will have VolunCHeer, which is frankly their loss. Nonetheless, this command allows you
+share a list of certain volunteer particulars by extracting it into a Microsoft Excel file.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>extract NUMBER_OF_VOLUNTEERS t/PARTICULAR [t/OTHER_PARTICULARS]&#8230;&#8203;</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>This command requires at least one type of particular from the volunteers, up to all type of particulars.</p>
+</li>
+<li>
+<p>If the NUMBER_OF_VOLUNTEERS exceeds the total number of volunteers in the list, the file will just extract all volunteers in
+VolunCHeer.</p>
+</li>
+<li>
+<p>This command can be called before map and sort if order is not an issue.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="paragraph">
+<p>*<code>extract [1][20]</code>
+Extracts the first 20 volunteers in the sorted list.
+*<code>extract [5][15]</code>
+Extracts volunteer number 5 to 15 in the list.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="C:/Users/Quinn/Desktop/Y2S2/CS2113T/Project/AddressBook4/docs/images/quinnzzzzz.png/Export.png" alt="Export">
+</div>
+<div class="title">Figure 14. Extracted volunteer details</div>
+</div>
+<div class="paragraph">
+<p>The Excel file will look like figure 15.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="listing-entered-commands-code-history-code"><a class="link" href="#listing-entered-commands-code-history-code">Listing entered commands : <code>history</code></a></h3>
+<div class="paragraph">
+<p>Lists all the commands that you have entered in reverse chronological order.<br>
+Format: <code>history</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Pressing the <kbd>&uarr;</kbd> and <kbd>&darr;</kbd> arrows will display the previous and next input respectively in the command box.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="undo"><a class="link" href="#undo">Undoing previous command : <code>undo</code></a></h3>
+<div class="paragraph">
+<p>Restores the VolunCHeer application to the state before the previous <em>undoable</em> command was executed.<br>
+Format: <code>undo</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Undoable commands: those commands that modify the VolunCHeer application&#8217;s main content (<code>addProject</code>, <code>addVolunteer</code>, <code>delete</code>, <code>edit</code> and <code>clear</code>).</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>delete 1</code><br>
+<code>list</code><br>
+<code>undo</code> (reverses the <code>delete 1</code> command)<br></p>
+</li>
+<li>
+<p><code>select 1</code><br>
+<code>list</code><br>
+<code>undo</code><br>
+The <code>undo</code> command fails as there are no undoable commands executed previously.</p>
+</li>
+<li>
+<p><code>delete 1</code><br>
+<code>clear</code><br>
+<code>undo</code> (reverses the <code>clear</code> command)<br>
+<code>undo</code> (reverses the <code>delete 1</code> command)<br></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="redoing-the-previously-undone-command-code-redo-code"><a class="link" href="#redoing-the-previously-undone-command-code-redo-code">Redoing the previously undone command : <code>redo</code></a></h3>
+<div class="paragraph">
+<p>Reverses the most recent <code>undo</code> command.<br>
+Format: <code>redo</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>delete 1</code><br>
+<code>undo</code> (reverses the <code>delete 1</code> command)<br>
+<code>redo</code> (reapplies the <code>delete 1</code> command)<br></p>
+</li>
+<li>
+<p><code>delete 1</code><br>
+<code>redo</code><br>
+The <code>redo</code> command fails as there are no <code>undo</code> commands executed previously.</p>
+</li>
+<li>
+<p><code>delete 1</code><br>
+<code>clear</code><br>
+<code>undo</code> (reverses the <code>clear</code> command)<br>
+<code>undo</code> (reverses the <code>delete 1</code> command)<br>
+<code>redo</code> (reapplies the <code>delete 1</code> command)<br>
+<code>redo</code> (reapplies the <code>clear</code> command)<br></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">Clearing all entries : <code>clear</code></a></h3>
+<div class="paragraph">
+<p>Clears all entries from the specific list requested by user.<br>
+Format: <code>clear</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">Exiting the program : <code>exit</code></a></h3>
+<div class="paragraph">
+<p>Exits the program.<br>
+Format: <code>exit</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="saving-the-data"><a class="link" href="#saving-the-data">Saving the data</a></h3>
+<div class="paragraph">
+<p>All data for the application are saved in the hard disk automatically after any command that changes the data.<br>
+There is no need to save manually.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="attendance-taking-code-coming-in-v2-0-code"><a class="link" href="#attendance-taking-code-coming-in-v2-0-code">Attendance taking <code>[coming in v2.0]</code></a></h3>
+<div class="paragraph">
+<p>Track attendance of the volunteers and award frequent volunteers with certificates or promote to team leader.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="manage-funding-and-sponsorships-code-coming-in-v2-0-code"><a class="link" href="#manage-funding-and-sponsorships-code-coming-in-v2-0-code">Manage funding and sponsorships <code>[coming in v2.0]</code></a></h3>
+<div class="paragraph">
+<p>Manage funds and sponsors for individual projects and track project spending.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="auto-completion-of-command-code-coming-in-v2-0-code"><a class="link" href="#auto-completion-of-command-code-coming-in-v2-0-code">Auto-completion of command <code>[coming in v2.0]</code></a></h3>
+<div class="paragraph">
+<p>Quick Auto-completion of command to enhance typing speed</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="faq"><a class="link" href="#faq">FAQ</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Q</strong>: How do I transfer my data to another Computer?<br>
+<strong>A</strong>: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous VolunCHeer application folder.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="command-summary"><a class="link" href="#command-summary">Command Summary</a></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>AddProject</strong> <code>addProject n/PROJECT_TITLE d/DATE b/BENEFICIARY [t/TAG]&#8230;&#8203;</code><br>
+e.g. <code>addProject n/Charity Run d/081219 b/Sunshine Old Folks Home</code></p>
+</li>
+<li>
+<p><strong>AddVolunteer</strong> <code>addVolunteer n/NAME y/AGE a/ADDRESS e/EMAIL p/PHONE_NUMBER g/EMERGENCY_CONTACT r/RACE d/DIETARY_PREFERENCE
+                 m/MEDICAL CONDITION [t/TAG]&#8230;&#8203;</code><br>
+e.g. <code>addVolunteer n/John Doe y/18 a/John street, block 123, #01-01 e/johnd@example.com p/98765432 g/98292998 r/chinese
+        d/vegetarian m/asthma</code></p>
+</li>
+<li>
+<p><strong>AddBeneficiary</strong> <code>addBeneficiary n/NAME a/ADDRESS e/EMAIL p/PHONE_NUMBER</code><br>
+e.g. <code>addBeneficiary n/Orphanage p/98765432 e/Orphanage@example.com a/311, Clementi Ave 2, #02-25</code></p>
+</li>
+<li>
+<p><strong>EditBeneficiary</strong> <code>editBeneficiary INDEX (must be a positive integer) [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS]</code><br>
+e.g. <code>editBeneficiary 1 n/Old Folk Home p/91234567</code></p>
+</li>
+<li>
+<p><strong>DeleteBeneficiary</strong> <code>deleteBeneficiary i/INDEX -D</code>
+e.g. <code>deleteBeneficiary i/1 -D</code></p>
+</li>
+<li>
+<p><strong>ListBeneficiary</strong> <code>listBeneficiary</code></p>
+</li>
+<li>
+<p><strong>FindBeneficiary</strong> <code>findBeneficiary KEYWORD</code>
+e.g. <code>findBeneficiary Old</code></p>
+</li>
+<li>
+<p><strong>SummariseBeneficiary</strong> <code>summariseBeneficiary</code></p>
+</li>
+<li>
+<p><strong>List</strong> : <code>list</code></p>
+</li>
+<li>
+<p><strong>EditProject</strong> <code>editProject PROJECT_NAME [n/NAME] [d/DATE] [b/BENEFICIARY] [t/TAG]&#8230;&#8203;</code><br>
+e.g. <code>editProject Charity Run d/010319</code></p>
+</li>
+<li>
+<p><strong>EditVolunteer</strong> <code>edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]&#8230;&#8203;</code><br>
+e.g. <code>editVolunteer 1 p/91234567 e/johndoe@example.com</code></p>
+</li>
+<li>
+<p><strong>Find</strong> : <code>find KEYWORD [MORE_KEYWORDS]</code><br>
+e.g. <code>find James Jake</code></p>
+</li>
+<li>
+<p><strong>DeleteProject</strong> : <code>delete PROJECT_TITLE</code>
+e.g. <code>delete Charity Run</code></p>
+</li>
+<li>
+<p><strong>DeleteVolunteer</strong> : <code>delete INDEX</code><br>
+e.g. <code>delete 3</code></p>
+</li>
+<li>
+<p><strong>Select</strong> : <code>select INDEX</code><br>
+e.g.<code>select 2</code></p>
+</li>
+<li>
+<p><strong>Map</strong> <code>map t/SELECTION t/SELECTION t/SELECTION</code><br>
+e.g. <code>map y/18 &gt; r/chinese m/NIL</code></p>
+</li>
+<li>
+<p><strong>Sort</strong> <code>sort</code></p>
+</li>
+<li>
+<p><strong>Extract</strong> <code>extract VOLUNTEERS_REQUIRED</code>+
+e.g. <code>extract 20</code></p>
+</li>
+<li>
+<p><strong>History</strong> : <code>history</code></p>
+</li>
+<li>
+<p><strong>Undo</strong> : <code>undo</code></p>
+</li>
+<li>
+<p><strong>Redo</strong> : <code>redo</code></p>
+</li>
+<li>
+<p><strong>Clear</strong> : <code>clear</code></p>
+</li>
+<li>
+<p><strong>Export</strong> : <code>export</code></p>
+</li>
+<li>
+<p><strong>Import</strong> : <code>import</code></p>
+</li>
+<li>
+<p><strong>Exit</strong> * : <code>exit</code></p>
+</li>
+<li>
+<p><strong>Help</strong> : <code>help</code></p>
+</li>
+</ul>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>== Contributions to the Developer Guide</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the Developer Guide. They showcase my ability to write technical documentation and the technical depth of my contributions to the project.</em></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>=== Project Complete Feature
+The complete feature allows users to indicate a project as completed.</p>
+</div>
+<div class="paragraph">
+<p>==== Implementation
+To facilitate the complete feature, an association with a new <code>Complete</code> class is added to the <code>Project</code> class:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="C:/Users/Quinn/Desktop/Y2S2/CS2113T/Project/AddressBook4/docs/images/quinnzzzzz.png/ProjectClassDiagram.PNG" alt="ProjectClassDiagram" width="800">
+</div>
+<div class="title">Figure 15. Structure of the attributes of a Project in the Model component.</div>
+</div>
+<div class="paragraph">
+<p>The diagram shows that the Project class is associated with the Complete class.</p>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the complete command works:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="C:/Users/Quinn/Desktop/Y2S2/CS2113T/Project/AddressBook4/docs/images/quinnzzzzz.png/CompleteSequenceDiagram.png" alt="CompleteSequenceDiagram" width="800">
+</div>
+<div class="title">Figure 16. Figure Sequence diagram for the complete command.</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The <code>CompleteCommandParser</code> parses the user input to obtain the target project index and constructs a ne <code>CompleteCommand</code> with this index.</p>
+</li>
+<li>
+<p>The logic portion of the complete command will be executed by the <code>CompleteCommand</code> method. To mark a Project object as complete:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>The <strong>CompleteCommand()</strong> method creates a <code>targetProject</code> based on the provided project index.</p>
+</li>
+<li>
+<p>In the <strong>executeCommandResult()</strong> method then creates a <code>editedProject</code> with <code>Complete</code> attribute set to “true”.
+The <code>editedProject</code> is created with ProjectBuilder as shown below:</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java">    Project editedProject = <span class="keyword">new</span> ProjectBuilder(targetProject).withComplete(<span class="predefined-constant">true</span>).build();</code></pre>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="3">
+<li>
+<p>In the executeCommandResult() method</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java">    model.setProject(targetProject, editedProject)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>is called to replace <code>Project</code>’s complete attribute from “false” to “true” in the VolunCHeer in-memory.</p>
+</div>
+<div class="paragraph">
+<p>==== Design Considerations</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Aspect</th>
+<th class="tableblock halign-left valign-top">Alternatives</th>
+<th class="tableblock halign-left valign-top">Pros (+)/ Cons(-)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">Implementation of ‘CompleteCommand’</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Add a Complete attribute to Project (current choice)
+   -Completed projects indicated “Red”</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">+ : It is easy to tag complete status as an attribute to the <code>Project</code> as we can make use of current implementations
+such as model.setProject(Project,Project) that sets the <code>Project</code>’s complete attribute to “true”.<br>
+    <br>
+ - :  Unable to have a observable list of complete projects.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create a new CompletedProjectList that consists of all the complete projects, a listComplete command to show all completed tasks..</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">+ : Will use less memory (e.g. for deleteVolunteer, just save the volunteer being deleted).
+    <br>
+  - : We must ensure that the implementation of each individual command are correct.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>=== Assign Feature
+Assigning a Beneficiary / VolunteerList to Project.</p>
+</div>
+<div class="paragraph">
+<p>==== Implementations
+Since the implementation of commands AssignBeneficiary and AssignVolunteer are similar, we will describe the
+implementation of AssignBeneficiary command only and provide the difference between the two.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="C:/Users/Quinn/Desktop/Y2S2/CS2113T/Project/AddressBook4/docs/images/quinnzzzzz.png/assignSequence.png" alt="assignSequence">
+</div>
+<div class="title">Figure 17. Sequence diagram to show how the AssignBeneficiaryCommand works.</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The <strong>AssignBeneficiaryCommand(ProjectTitle, Index)</strong> takes in the targetProject’s projectTitle attribute and targetBeneficiary’s index.</p>
+</li>
+<li>
+<p>The <strong>executeCommandResult()</strong> method</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Sets up projectToAssign by calling a predicate to compare with the <code>ProjectTitle</code> in <code>FilteredProjectList</code>:</p>
+<div class="literalblock">
+<div class="content">
+<pre>model. getFilteredProjectList(). filtered(equalProjectTitle).get(0);</pre>
+</div>
+</div>
+</li>
+<li>
+<p><strong>updateBeneficiary(model)</strong> methods updates the <code>Beneficiary</code> object so that ProjectTitle is tracked within the Beneficiary class.</p>
+</li>
+<li>
+<p>editedProject is created using ProjectBuilder to take in the <code>Beneficiary</code> assigned. The following method is called
+to store the <code>Project</code> in VolunCHeer with specific <code>Beneficiary</code> attached to it.</p>
+<div class="literalblock">
+<div class="content">
+<pre>model.setProject(projectToAssign, editedProject)</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<hr>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 16:48:37 UTC</div></div></div></body></html>

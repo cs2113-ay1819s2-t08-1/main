@@ -123,6 +123,39 @@ compared to using the command line interface.</p>
 </ul>
 </div>
 </li>
+<li>
+<p>Enhancements to existing features:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>PENDING: Allow the selection of volunteers into details (Pull requests <a href="https://github.com">#33</a>, <a href="https://github.com">#34</a>)</p>
+</li>
+<li>
+<p>Wrote additional tests for existing features to increase coverage from 88% to 92% (Pull requests <a href="https://github.com">#36</a>, <a href="https://github.com">#38</a>)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Documentation:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Did cosmetic tweaks to existing contents of the User Guide: <a href="https://github.com">#14</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Community:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>PRs reviewed (with non-trivial review comments): <a href="https://github.com">#12</a>, <a href="https://github.com">#32</a>, <a href="https://github.com">#19</a>, <a href="https://github.com">#42</a>)</p>
+</li>
+</ul>
+</div>
+</li>
 </ul>
 </div>
 </li>
@@ -162,7 +195,78 @@ compared to using the command line interface.</p>
 </tbody>
 </table>
 <div class="paragraph">
-<p>*Password Feature</p>
+<p>*Password Feature
+=== Password Feature (coming in v2.0)
+==== Current Implementation
+A password is required to grant access to the project manager at the start of the program.
+It serves as a security mechanism to
+protect the important data within.</p>
+</div>
+<div class="paragraph">
+<p>At the start of the program, the UI is initialised by <code>UiManager</code>. A password window will pop out and prompt the user
+to enter the password.<br></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/password%20prompt.jpg" alt="password prompt" width="800">
+</div>
+<div class="title">Figure 1. Program prompting user for password</div>
+</div>
+<div class="paragraph">
+<p>The password feature uses <code>ValidatePassword</code> to check if the user input matches the password stored in the program.
+If the password matches, it will set boolean <code>user</code> to be true. <code>UiManager</code> will thus instantiate
+ <code>fillInnerParts()</code>, displaying the hidden data to the project manager.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/login%20successful.jpg" alt="login successful" width="800">
+</div>
+<div class="title">Figure 2. Data displayed to user upon entering the correct password</div>
+</div>
+<div class="paragraph">
+<p>If the password is entered incorrectly for five times, the program will terminate itself.</p>
+</div>
+<div class="paragraph">
+<p>A sequence diagram is shown below to illustrate how it works in an abstract level.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ArchitectureDiagram_password.png" alt="ArchitectureDiagram password" width="800">
+</div>
+<div class="title">Figure 3. Sequence diagram of Password Feature</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Aspect</th>
+<th class="tableblock halign-left valign-top">Alternatives</th>
+<th class="tableblock halign-left valign-top">Pros (+)/ Cons(-)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">Implementation of Synchronization</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>UI with a password field. (current choice)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">+ : It is simple and user friendly. It serves its purpose as a offline application for a single user.
+<br>
+    <br>
+ - : The current alternative does not allow the user to change password.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Using Command Line Interface</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">+ : It allows more flexibility to implement more parameters such as custom security questions to improve its security.<br>
+  <br>
+  - : It may not be as user friendly as the UI.</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 16:35:22 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 16:48:37 UTC</div></div></div></body></html>

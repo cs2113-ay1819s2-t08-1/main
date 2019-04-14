@@ -210,13 +210,17 @@ Hence, storage management is essential for the application to work properly and 
 </tbody>
 </table>
 <div class="sect2">
-<h3 id="adding-a-beneficiary-code-addbeneficiary-code-code-ab-code"><a class="link" href="#adding-a-beneficiary-code-addbeneficiary-code-code-ab-code">Adding a beneficiary: <code>addBeneficiary</code> / <code>ab</code></a></h3>
+<h3 id="beneficiary-management"><a class="link" href="#beneficiary-management">Beneficiary Management</a></h3>
+<div class="sect3">
+<h4 id="adding-a-beneficiary-code-addbeneficiary-code-code-ab-code"><a class="link" href="#adding-a-beneficiary-code-addbeneficiary-code-code-ab-code">Adding a beneficiary: <code>addBeneficiary</code> / <code>ab</code></a></h4>
 <div class="paragraph">
-<p>Adds a beneficiary to the list of Beneficiaries<br>
-Format: `addBeneficiary n/NAME a/ADDRESS e/EMAIL p/PHONE_NUMBER `</p>
+<p>Similar to the previous adding command, this adds a beneficiary to the list of Beneficiaries<br></p>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
+<p>Format: <code>addBeneficiary n/NAME a/ADDRESS e/EMAIL p/PHONE_NUMBER</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -240,7 +244,7 @@ Format: `addBeneficiary n/NAME a/ADDRESS e/EMAIL p/PHONE_NUMBER `</p>
 <ul>
 <li>
 <p>The beneficiary will be used to assign to a project, this means that the project will benefit this beneficiary,
-i.e. Orphanage Home, Nursing home, etc.<br></p>
+i.e. Orphanage Home, Nursing home, etc.</p>
 </li>
 <li>
 <p>When add a new beneficiary, the project lists assigned to it will be empty. You can assign projects to it by assign
@@ -251,11 +255,13 @@ command stated.</p>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="editing-a-beneficiary-code-editbeneficiary-code-code-eb-code"><a class="link" href="#editing-a-beneficiary-code-editbeneficiary-code-code-eb-code">Editing a beneficiary: <code>editBeneficiary</code> / <code>eb</code></a></h3>
+<div class="sect3">
+<h4 id="editing-a-beneficiary-code-editbeneficiary-code-code-eb-code"><a class="link" href="#editing-a-beneficiary-code-editbeneficiary-code-code-eb-code">Editing a beneficiary: <code>editBeneficiary</code> / <code>eb</code></a></h4>
 <div class="paragraph">
-<p>Edits a beneficiary to the list of Beneficiaries<br>
-Format: `editBeneficiary  INDEX (must be a positive integer) [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] `</p>
+<p>In case of incorrect information, we also allow you to edit the beneficiary at the given INDEX</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>editBeneficiary  INDEX (must be a positive integer) [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS]</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -274,26 +280,7 @@ Format: `editBeneficiary  INDEX (must be a positive integer) [n/NAME] [p/PHONE] 
 <div class="title">Figure 2. Edit Beneficiary Command Result (pink: input, blue: output)</div>
 </div>
 <div class="paragraph">
-<p>In the figure, we can see that the WHO information including phone number and email haa changed, compared to the last figure.</p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>When a beneficiary is edited, the data of the beneficiary in its attached projects is in sync, meaning that that data
-is automatically updated in the mentioned projects.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="deleting-a-beneficiary-code-deletebeneficiary-code-code-db-code"><a class="link" href="#deleting-a-beneficiary-code-deletebeneficiary-code-code-db-code">Deleting a beneficiary: <code>deleteBeneficiary</code> / <code>db</code></a></h3>
-<div class="paragraph">
-<p>Deletes a beneficiary in the beneficiary pool.<br>
-Format: <code>deleteBeneficiary i/INDEX -D</code></p>
+<p>In the figure, we can see that the WHO information including phone number and email has changed, compared to the last figure.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -302,7 +289,29 @@ Format: <code>deleteBeneficiary i/INDEX -D</code></p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-<code>-D</code> is optional.
+When a beneficiary is edited, the data of the beneficiary in its attached projects is in sync, meaning that that data
+is automatically updated in the mentioned projects.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="deleting-a-beneficiary-code-deletebeneficiary-code-code-db-code"><a class="link" href="#deleting-a-beneficiary-code-deletebeneficiary-code-code-db-code">Deleting a beneficiary: <code>deleteBeneficiary</code> / <code>db</code></a></h4>
+<div class="paragraph">
+<p>Of course, once a beneficiary is no longer associated with you, it can be removed by providing the INDEX.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>deleteBeneficiary i/INDEX -D</code></p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<code>-D</code> is optional and should not be misused (see below)
 </td>
 </tr>
 </table>
@@ -362,11 +371,13 @@ to switch to hard delete mode.</p>
 <p>In Figure 4, the beneficiary and its attached projects have been deleted successfully.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="listing-all-beneficiaries-code-listbeneficiary-code-code-lb-code"><a class="link" href="#listing-all-beneficiaries-code-listbeneficiary-code-code-lb-code">Listing all beneficiaries: <code>listBeneficiary</code> / <code>lb</code></a></h3>
+<div class="sect3">
+<h4 id="listing-all-beneficiaries-code-listbeneficiary-code-code-lb-code"><a class="link" href="#listing-all-beneficiaries-code-listbeneficiary-code-code-lb-code">Listing all beneficiaries: <code>listBeneficiary</code> / <code>lb</code></a></h4>
 <div class="paragraph">
-<p>Shows a list of all Beneficiaries in the beneficiary pool.<br>
-Format: <code>listBeneficiary</code></p>
+<p>As before, you can show a list of all Beneficiaries in the beneficiary pool.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>listBeneficiary</code></p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -375,17 +386,19 @@ Format: <code>listBeneficiary</code></p>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-The command can be used to get back to full list after several commands changing the list.
+The command can be used to get back to full list after several commands which change the list.
 </td>
 </tr>
 </table>
 </div>
 </div>
-<div class="sect2">
-<h3 id="locating-beneficiaries-by-name-code-findbeneficiary-code-code-fb-code"><a class="link" href="#locating-beneficiaries-by-name-code-findbeneficiary-code-code-fb-code">Locating beneficiaries by name: <code>findBeneficiary</code> / <code>fb</code></a></h3>
+<div class="sect3">
+<h4 id="locating-beneficiaries-by-name-code-findbeneficiary-code-code-fb-code"><a class="link" href="#locating-beneficiaries-by-name-code-findbeneficiary-code-code-fb-code">Locating beneficiaries by name: <code>findBeneficiary</code> / <code>fb</code></a></h4>
 <div class="paragraph">
-<p>Finds beneficiaries whose names contain any of the given keywords.<br>
-Format: <code>findBeneficiary KEYWORD [MORE_KEYWORDS]</code></p>
+<p>TO facilitate searching for beneficiary, you can locate a specific one easily with via given keyword/keywords.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>findBeneficiary KEYWORD [MORE_KEYWORDS]</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -405,7 +418,7 @@ Format: <code>findBeneficiary KEYWORD [MORE_KEYWORDS]</code></p>
 </li>
 <li>
 <p>beneficiaries matching at least one keyword will be returned (i.e. <code>OR</code> search). e.g. <code>Orphanage Nursing</code> will return
-<code>Orphanage Rainbow</code>, <code>Nursing Home</code></p>
+<code>Orphanage Rainbow</code> and <code>Nursing Home</code></p>
 </li>
 </ul>
 </div>
@@ -423,11 +436,12 @@ Returns <code>Nursing Home</code> and <code>Nursing Center</code></p>
 </ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="summarising-all-beneficiaries-code-summarisebeneficiary-code-code-sb-code"><a class="link" href="#summarising-all-beneficiaries-code-summarisebeneficiary-code-code-sb-code">Summarising all beneficiaries: <code>summariseBeneficiary</code> / <code>sb</code></a></h3>
+<div class="sect3">
+<h4 id="summarising-all-beneficiaries-code-summarisebeneficiary-code-code-sb-code"><a class="link" href="#summarising-all-beneficiaries-code-summarisebeneficiary-code-code-sb-code">Summarising all beneficiaries: <code>summariseBeneficiary</code> / <code>sb</code></a></h4>
 <div class="paragraph">
-<p>Opens a pop up summary table of beneficiaries. You can use the arrow in header cells <strong>number of Projects</strong>
-to sort beneficiaries by the number of attached projects. A table sample is shown below.<br></p>
+<p>Sometimes we have a beneficiary assigned to many projects and we just want to see a list of everything it is attached to.
+This command opens a pop up summary table of the beneficiaries for easy view. You can use even the arrow in header cells <strong>number of Projects</strong>
+to sort beneficiaries by the number of attached projects.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code>summariseBeneficiary</code></p>
@@ -449,6 +463,7 @@ The command can be used to consider future partners or fundraising.
 </td>
 </tr>
 </table>
+</div>
 </div>
 </div>
 </div>
@@ -777,4 +792,4 @@ of the list based on the beneficiary&#8217;s activeness<br>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 16:35:22 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 16:48:37 UTC</div></div></div></body></html>

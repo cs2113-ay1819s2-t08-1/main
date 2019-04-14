@@ -14,7 +14,7 @@ As part of our software engineering module, CS2113T, **VolunCHeer** was develope
 
 === Zhao Jun Ru
 image::quinnzzzzz.png[width="150", align="left"]
-{empty}[https://github.com/quinnzzzzz[github]][<<ZhaoJunRu#, portfolio>>]
+{empty}[https://github.com/quinnzzzzz[github]][<<JunRu#, portfolio>>]
 
 Role: Team Lead/Developer +
 Responsibilities: Deadline & Deliverables, Scheduling and Tracking, Documentation

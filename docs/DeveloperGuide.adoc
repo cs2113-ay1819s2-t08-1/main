@@ -251,7 +251,9 @@ Aspect: Login fields for password protection
 ** Pros: It is simple and user friendly. It serves its purpose as a offline application for a single user.
 ** Cons: The current alternative does not allow the user to change password.
 
-* **Alternative 2**: Using CLI 
+* **Alternative 2**: Using Command Line Interface
+** Pros: It is able to implement more parameters such as custom security questions to improve its security.
+** Cons: It may not be as intuitive as a UI application.
 
 // tag::[recommendationCommandLine][]
 === [Proposed] Command Line Recommendation feature

@@ -255,7 +255,6 @@ public abstract class AddressBookSystemTest {
         //        assertEquals(expectedSyncStatus, handle.getSyncStatus());
         //        assertFalse(handle.isSaveLocationChanged());
         //    }
-    
         /**
          * Asserts that the starting state of the application is correct.
          */

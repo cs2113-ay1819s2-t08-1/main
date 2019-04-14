@@ -233,7 +233,6 @@ At the start of the program, the UI is initialised by `UiManager`. A password wi
 to enter the password. +
 
 .Program prompting user for password
-
 image::password_prompt.jpg[width="800"]
 
 The password feature uses `ValidatePassword` to check if the user input matches the password stored in the program.
@@ -284,6 +283,7 @@ To facilitate the complete feature, an association with a new `Complete` class i
 
 .Structure of the attributes of a Project in the Model component.
 image::ProjectClass.png[width="800"]
+
 
 
 The diagram shows that the Project class is associated with the Complete class.

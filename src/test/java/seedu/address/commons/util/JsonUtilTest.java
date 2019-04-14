@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> 3ba3fae3591cd5ac236a1ea50b55b2d158e17b28
 package seedu.address.commons.util;
 
 import static org.junit.Assert.assertEquals;

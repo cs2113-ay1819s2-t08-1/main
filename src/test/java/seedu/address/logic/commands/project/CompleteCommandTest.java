@@ -2,17 +2,11 @@ package seedu.address.logic.commands.project;
 
 import static junit.framework.TestCase.assertTrue;
 import static org.junit.Assert.assertFalse;
-
 import static seedu.address.logic.commands.CommandTestUtil.assertCommandFailure;
 import static seedu.address.logic.commands.CommandTestUtil.assertCommandSuccess;
-import static seedu.address.testutil.project.TypicalProjects.getTypicalAddressBook;
 import static seedu.address.testutil.TypicalIndexes.INDEX_FIRST;
 import static seedu.address.testutil.TypicalIndexes.INDEX_SECOND;
-<<<<<<< HEAD
-
-=======
 import static seedu.address.testutil.project.TypicalProjects.getTypicalAddressBook;
->>>>>>> 3ba3fae3591cd5ac236a1ea50b55b2d158e17b28
 
 import org.junit.Rule;
 import org.junit.Test;

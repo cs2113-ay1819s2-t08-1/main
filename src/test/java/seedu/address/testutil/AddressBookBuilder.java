@@ -46,14 +46,6 @@ public class AddressBookBuilder {
         return this;
     }
 
-    /**
-     * Adds a new {@code Volunteer} to the {@code AddressBook} that we are building.
-     */
-    public AddressBookBuilder withVolunteer(Volunteer volunteer) {
-        addressBook.addVolunteer(volunteer);
-        return this;
-    }
-
     public AddressBook build() {
         return addressBook;
     }

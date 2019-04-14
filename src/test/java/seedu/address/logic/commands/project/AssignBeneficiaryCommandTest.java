@@ -1,12 +1,7 @@
 package seedu.address.logic.commands.project;
 
-<<<<<<< HEAD
-import static junit.framework.TestCase.assertTrue;
-import static org.junit.Assert.assertFalse;
-=======
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
->>>>>>> 3ba3fae3591cd5ac236a1ea50b55b2d158e17b28
 import static seedu.address.logic.commands.CommandTestUtil.assertCommandFailure;
 import static seedu.address.logic.commands.CommandTestUtil.assertCommandSuccess;
 import static seedu.address.logic.commands.project.ProjectCommandTestUtil.showBeneficiaryAtIndex;

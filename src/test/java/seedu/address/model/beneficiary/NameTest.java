@@ -5,10 +5,6 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-<<<<<<< HEAD
-import seedu.address.model.volunteer.Name;
-=======
->>>>>>> 3ba3fae3591cd5ac236a1ea50b55b2d158e17b28
 import seedu.address.testutil.Assert;
 
 public class NameTest {

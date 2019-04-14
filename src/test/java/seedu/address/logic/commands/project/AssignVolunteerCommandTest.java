@@ -20,10 +20,6 @@ import seedu.address.model.ModelManager;
 import seedu.address.model.UserPrefs;
 import seedu.address.model.project.Project;
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 3ba3fae3591cd5ac236a1ea50b55b2d158e17b28
 public class AssignVolunteerCommandTest {
 
     private static final CommandHistory commandHistory = new CommandHistory();
@@ -34,13 +30,8 @@ public class AssignVolunteerCommandTest {
     @Test
     public void execute_validProjectAndRequiredVolunteers_success() {
         Integer requiredVolunteers = model.getFilteredVolunteerList().size();
-<<<<<<< HEAD
-        AssignVolunteerCommand assignVolunteerCommand =
-                new AssignVolunteerCommand(PROJECT1.getProjectTitle(), requiredVolunteers);
-=======
         AssignVolunteerCommand assignVolunteerCommand = new AssignVolunteerCommand(PROJECT1.getProjectTitle(),
             requiredVolunteers);
->>>>>>> 3ba3fae3591cd5ac236a1ea50b55b2d158e17b28
         String expectedMessage = String.format(AssignVolunteerCommand.MESSAGE_SUCCESS);
         Model expectedModel = new ModelManager(model.getAddressBook(), new UserPrefs());
         expectedModel.commitAddressBook();
@@ -66,29 +57,17 @@ public class AssignVolunteerCommandTest {
 
     @Test
     public void equals() {
-<<<<<<< HEAD
-        final AssignVolunteerCommand assignFirstCommand =
-                new AssignVolunteerCommand(PROJECT1.getProjectTitle(),2);
-        final AssignVolunteerCommand assignSecondCommand =
-                new AssignVolunteerCommand(PROJECT2.getProjectTitle(),2);
-=======
         final AssignVolunteerCommand assignFirstCommand = new AssignVolunteerCommand(PROJECT1.getProjectTitle(),
             2);
         final AssignVolunteerCommand assignSecondCommand = new AssignVolunteerCommand(PROJECT2.getProjectTitle(),
             2);
->>>>>>> 3ba3fae3591cd5ac236a1ea50b55b2d158e17b28
 
         // same object -> returns true
         assertTrue(assignFirstCommand.equals(assignFirstCommand));
 
         // same values -> returns true
-<<<<<<< HEAD
         AssignVolunteerCommand assignFirstCommandCopy =
                 new AssignVolunteerCommand(PROJECT1.getProjectTitle(),2);
-=======
-        AssignVolunteerCommand assignFirstCommandCopy = new AssignVolunteerCommand(PROJECT1.getProjectTitle(),
-            2);
->>>>>>> 3ba3fae3591cd5ac236a1ea50b55b2d158e17b28
         assertTrue(assignFirstCommand.equals(assignFirstCommandCopy));
 
         // different types -> returns false

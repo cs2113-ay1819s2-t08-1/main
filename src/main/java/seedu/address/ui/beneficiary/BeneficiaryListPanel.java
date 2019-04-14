@@ -1,3 +1,4 @@
+//@@author ndhuu
 package seedu.address.ui.beneficiary;
 
 import java.util.Objects;

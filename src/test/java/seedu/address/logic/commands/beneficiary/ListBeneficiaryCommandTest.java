@@ -1,3 +1,4 @@
+//@@author ndhuu
 package seedu.address.logic.commands.beneficiary;
 
 import static seedu.address.logic.commands.beneficiary.BeneficiaryCommandTestUtil.assertCommandSuccess;

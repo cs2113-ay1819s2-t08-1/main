@@ -1,3 +1,4 @@
+//@@author ndhuu
 package seedu.address.testutil.beneficiary;
 
 import java.util.Set;

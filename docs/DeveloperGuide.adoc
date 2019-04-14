@@ -359,6 +359,7 @@ which immediately reflects in the UI.
 ----
 The custom comparator sorts `Volunteers` in descending order of points.
 
+
 [large]*`Export` Command*
 
 The `exportV` command writes certain parts of volunteers data based on provided crtieria.
@@ -384,6 +385,28 @@ File output = new File("Export.csv");
 A `List` of `String` arrays is used to store each line of `Volunteer`. The `addData` method goes through the `Volunteer`
 list and collects the specified fields into a `String` array, which is appended to another `List` of `String` arrays
 and returned. The `toCsv` method formats the data into CSV-friendly data.
+
+Below are certain considerations made when designing the filtered export feature.
+
+[width="100%", cols="1, 1, 1 "options="header",]
+|=======================================================================
+| Aspect | Alternatives | Pros (+)/ Cons(-)
+.1+| Sorting the internal volunteer list
+| *Using a SortedList wrapper around the unmodifiable list*
+| + : Easy to implement. + Will not affect the actual data.
+    {empty} +
+ - :  The new SortedList has to be added to the UI, or constantly swapped around with
+ the usual list of volunteers.
+
+.1+| Using PrintWriter to write out data to CSV
+| *Using an open-source library such as openCSV to handle the writing.*
+| + : Easier to understand and code for any new developers. + openCSV will handle special characters in data.
+    {empty} +
+ - : External library is required to be installed. - Data to be written is already checked and cleaned to be free of
+ special characters, hence it is not necessary.
+
+
+|=======================================================================
 
 
 // end::filterexport[]

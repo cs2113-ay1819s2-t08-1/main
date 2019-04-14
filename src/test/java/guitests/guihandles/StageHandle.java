@@ -60,4 +60,6 @@ public abstract class StageHandle {
         Optional<T> node = guiRobot.from(stage.getScene().getRoot()).lookup(query).tryQuery();
         return node.orElseThrow(NodeNotFoundException::new);
     }
+
+
 }

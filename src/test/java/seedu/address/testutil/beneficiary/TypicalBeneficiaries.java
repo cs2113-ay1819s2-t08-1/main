@@ -1,3 +1,4 @@
+//@@author ndhuu
 package seedu.address.testutil.beneficiary;
 
 import static seedu.address.logic.commands.beneficiary.BeneficiaryCommandTestUtil.VALID_ADDRESS_ANIMAL_SHELTER;

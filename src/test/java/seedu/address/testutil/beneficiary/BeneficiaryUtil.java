@@ -1,3 +1,4 @@
+//@@author ndhuu
 package seedu.address.testutil.beneficiary;
 
 import static seedu.address.logic.parser.CliSyntax.PREFIX_ADDRESS;

@@ -82,7 +82,7 @@ https://github.com/cs2113-ay1819s2-t08-1/main[#43]
 
 
 * *Code contributed*: My code contribution can be viewed
-[https://nuscs2113-ay1819s2.github.io/dashboard-beta/#search=huu&sort=displayName&since=2019-02-10&until=2019-04-01&timeframe=day&reverse=false&groupSelect=groupByRepos&breakdown=false[here]]
+https://nuscs2113-ay1819s2.github.io/dashboard-beta/#search=huu&sort=displayName&since=2019-02-10&until=2019-04-01&timeframe=day&reverse=false&groupSelect=groupByRepos&breakdown=false[here]
 
 
 * *Other contributions*:

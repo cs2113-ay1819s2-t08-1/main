@@ -101,6 +101,9 @@ public class AssignBeneficiaryCommand extends Command {
     //@@ndhuu
 
     /**
+     * update the previous assigned beneficiary in the following procedure:
+     *  get the beneficiary
+     *  add the project record in that beneficiary
      * @param model
      * @return
      */
@@ -115,6 +118,9 @@ public class AssignBeneficiaryCommand extends Command {
     }
 
     /**
+     * update the previous assigned beneficiary in the following procedure:
+     *  get the previous beneficiary.
+     *  delete the project record in that beneficiary.
      * @param model
      */
     private void updatePreBeneficiary(Model model) {
@@ -127,6 +133,9 @@ public class AssignBeneficiaryCommand extends Command {
         }
     }
 
+    /**
+     * check if the project has previously assigned any beneficiary.
+     */
     private boolean isValidPreAssignedBeneficiary(Model model) {
         return projectToAssign.getBeneficiaryAssigned().toString() != "nil"
             && model.getFilteredBeneficiaryList().filtered(

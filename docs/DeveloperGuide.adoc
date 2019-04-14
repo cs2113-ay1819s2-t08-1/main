@@ -244,8 +244,10 @@ If the password matches, it will set boolean `user` to be true. `UiManager` will
 .Data displayed to user upon entering the correct password
 image::login successful.png[width="800"]
 
+
 If the password is entered incorrectly for five times, the program will terminate itself.
 A sequence diagram is shown below to illustrate how it works in an abstract level.
+
 
 .Sequence diagram of Password Feature
 image::ArchitectureDiagram_password.png[width="800"]

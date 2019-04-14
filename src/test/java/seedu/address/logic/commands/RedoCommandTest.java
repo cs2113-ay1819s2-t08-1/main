@@ -5,7 +5,6 @@ import static seedu.address.logic.commands.volunteer.VolunteerCommandTestUtil.as
 import static seedu.address.logic.commands.volunteer.VolunteerCommandTestUtil.assertCommandSuccess;
 import static seedu.address.testutil.volunteer.TypicalVolunteers.getTypicalAddressBook;
 
-
 import org.junit.Before;
 import org.junit.Test;
 

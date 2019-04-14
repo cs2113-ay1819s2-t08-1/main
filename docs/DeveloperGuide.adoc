@@ -213,9 +213,6 @@ Classes used by multiple components are in the `seedu.voluncheerbook.commons` pa
 == Implementation
 
 This section describes some noteworthy details on how certain features are implemented.
-
-<<<<<<< HEAD
-
 //tag::PasswordFeature[]
 === Password Feature
 ==== Current Implementation
@@ -322,6 +319,7 @@ such as model.setProject(Project,Project) that sets the `Project`’s complete a
   - : We must ensure that the implementation of each individual command are correct.
 |=======================================================================
 
+
 === Assign Feature
 Assigning a Beneficiary / VolunteerList to Project.
 
@@ -346,7 +344,6 @@ i.	editedProject is created using ProjectBuilder to take in the `Beneficiary` as
 
 // end::Project[]
 
->>>>>>> 3ba3fae3591cd5ac236a1ea50b55b2d158e17b28
 // tag::BeneficiaryManagement[]
 === Beneficiary Management Feature
 ==== Implementation

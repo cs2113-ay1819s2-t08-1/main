@@ -20,6 +20,7 @@ import seedu.address.model.ModelManager;
 import seedu.address.model.UserPrefs;
 import seedu.address.model.project.Project;
 
+
 public class AssignVolunteerCommandTest {
 
     private static final CommandHistory commandHistory = new CommandHistory();
@@ -66,8 +67,8 @@ public class AssignVolunteerCommandTest {
         assertTrue(assignFirstCommand.equals(assignFirstCommand));
 
         // same values -> returns true
-        AssignVolunteerCommand assignFirstCommandCopy =
-                new AssignVolunteerCommand(PROJECT1.getProjectTitle(), 2);
+        AssignVolunteerCommand assignFirstCommandCopy = new AssignVolunteerCommand(PROJECT1.getProjectTitle(),
+            2);
         assertTrue(assignFirstCommand.equals(assignFirstCommandCopy));
 
         // different types -> returns false

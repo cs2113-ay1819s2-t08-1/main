@@ -2,8 +2,8 @@
 package seedu.address.logic.commands;
 
 import static org.junit.Assert.assertEquals;
-import static seedu.address.testutil.volunteer.TypicalVolunteers.getTypicalAddressBook;
-import static seedu.address.testutil.volunteer.TypicalVolunteers.getTypicalVolunteersPoints;
+import static seedu.address.testutil.TypicalVolunteers.getTypicalAddressBook;
+import static seedu.address.testutil.TypicalVolunteers.getTypicalVolunteersPoints;
 
 import java.util.ArrayList;
 

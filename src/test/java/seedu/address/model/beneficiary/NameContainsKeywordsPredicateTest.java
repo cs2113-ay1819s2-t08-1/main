@@ -42,7 +42,6 @@ public class NameContainsKeywordsPredicateTest {
     public void test_nameContainsKeywords_returnsTrue() {
         // One keyword
         NameContainsKeywordsPredicate predicate = new NameContainsKeywordsPredicate(Collections.singletonList("Alice"));
-
         assertTrue(predicate.test(new BeneficiaryBuilder().withName("Alice Bob").build()));
 
         // Multiple keywords
@@ -56,7 +55,6 @@ public class NameContainsKeywordsPredicateTest {
         // Mixed-case keywords
         predicate = new NameContainsKeywordsPredicate(Arrays.asList("aLIce", "bOB"));
         assertTrue(predicate.test(new BeneficiaryBuilder().withName("Alice Bob").build()));
-
     }
 
     @Test

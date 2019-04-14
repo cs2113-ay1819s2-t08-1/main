@@ -42,4 +42,3 @@ public class ProjectCommandTestUtil {
         assertEquals(1, model.getFilteredBeneficiaryList().size());
     }
 }
-

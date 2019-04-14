@@ -37,22 +37,22 @@ public class EditBeneficiaryDescriptorTest {
 
         // different name -> returns false
         EditBeneficiaryDescriptor editedAnimalShelter =
-                new EditBeneficiaryDescriptorBuilder(DESC_ANIMAL_SHELTER).withName(VALID_NAME_BABES).build();
+            new EditBeneficiaryDescriptorBuilder(DESC_ANIMAL_SHELTER).withName(VALID_NAME_BABES).build();
         assertFalse(DESC_ANIMAL_SHELTER.equals(editedAnimalShelter));
 
         // different phone -> returns false
         editedAnimalShelter = new EditBeneficiaryDescriptorBuilder(DESC_ANIMAL_SHELTER)
-                .withPhone(VALID_PHONE_BABES).build();
+            .withPhone(VALID_PHONE_BABES).build();
         assertFalse(DESC_ANIMAL_SHELTER.equals(editedAnimalShelter));
 
         // different email -> returns false
         editedAnimalShelter = new EditBeneficiaryDescriptorBuilder(DESC_ANIMAL_SHELTER)
-                .withEmail(VALID_EMAIL_BABES).build();
+            .withEmail(VALID_EMAIL_BABES).build();
         assertFalse(DESC_ANIMAL_SHELTER.equals(editedAnimalShelter));
 
         // different address -> returns false
         editedAnimalShelter = new EditBeneficiaryDescriptorBuilder(DESC_ANIMAL_SHELTER)
-                .withAddress(VALID_ADDRESS_BABES).build();
+            .withAddress(VALID_ADDRESS_BABES).build();
         assertFalse(DESC_ANIMAL_SHELTER.equals(editedAnimalShelter));
     }
 }

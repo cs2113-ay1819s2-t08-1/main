@@ -58,7 +58,7 @@ public class EditBeneficiaryCommandTest {
         EditBeneficiaryCommand editBeneficiaryCommand = new EditBeneficiaryCommand(INDEX_FIRST, descriptor);
 
         String expectedMessage = String.format(EditBeneficiaryCommand.MESSAGE_EDIT_BENEFICIARY_SUCCESS,
-                editedBeneficiary);
+            editedBeneficiary);
 
         Model expectedModel = new ModelManager(new AddressBook(model.getAddressBook()), new UserPrefs());
         expectedModel.setBeneficiary(model.getFilteredBeneficiaryList().get(0), editedBeneficiary);
@@ -74,14 +74,14 @@ public class EditBeneficiaryCommandTest {
 
         BeneficiaryBuilder beneficiaryInList = new BeneficiaryBuilder(lastBeneficiary);
         Beneficiary editedBeneficiary = beneficiaryInList.withName(VALID_NAME_BABES).withPhone(VALID_PHONE_BABES)
-                .build();
+            .build();
 
         EditBeneficiaryDescriptor descriptor = new EditBeneficiaryDescriptorBuilder().withName(VALID_NAME_BABES)
-                .withPhone(VALID_PHONE_BABES).build();
+            .withPhone(VALID_PHONE_BABES).build();
         EditBeneficiaryCommand editBeneficiaryCommand = new EditBeneficiaryCommand(indexLastBeneficiary, descriptor);
 
         String expectedMessage = String.format(EditBeneficiaryCommand.MESSAGE_EDIT_BENEFICIARY_SUCCESS,
-                editedBeneficiary);
+            editedBeneficiary);
 
         Model expectedModel = new ModelManager(new AddressBook(model.getAddressBook()), new UserPrefs());
         expectedModel.setBeneficiary(lastBeneficiary, editedBeneficiary);
@@ -93,11 +93,11 @@ public class EditBeneficiaryCommandTest {
     @Test
     public void execute_noFieldSpecifiedUnfilteredList_success() {
         EditBeneficiaryCommand editBeneficiaryCommand = new EditBeneficiaryCommand(
-                INDEX_FIRST, new EditBeneficiaryDescriptor());
+            INDEX_FIRST, new EditBeneficiaryDescriptor());
         Beneficiary editedBeneficiary = model.getFilteredBeneficiaryList().get(INDEX_FIRST.getZeroBased());
 
         String expectedMessage = String.format(EditBeneficiaryCommand.MESSAGE_EDIT_BENEFICIARY_SUCCESS,
-                editedBeneficiary);
+            editedBeneficiary);
 
         Model expectedModel = new ModelManager(new AddressBook(model.getAddressBook()), new UserPrefs());
         expectedModel.commitAddressBook();
@@ -111,12 +111,12 @@ public class EditBeneficiaryCommandTest {
 
         Beneficiary beneficiaryInFilteredList = model.getFilteredBeneficiaryList().get(INDEX_FIRST.getZeroBased());
         Beneficiary editedBeneficiary = new BeneficiaryBuilder(beneficiaryInFilteredList).withName(VALID_NAME_BABES)
-                .build();
+            .build();
         EditBeneficiaryCommand editBeneficiaryCommand = new EditBeneficiaryCommand(INDEX_FIRST,
-                new EditBeneficiaryDescriptorBuilder().withName(VALID_NAME_BABES).build());
+            new EditBeneficiaryDescriptorBuilder().withName(VALID_NAME_BABES).build());
 
         String expectedMessage = String.format(EditBeneficiaryCommand.MESSAGE_EDIT_BENEFICIARY_SUCCESS,
-                editedBeneficiary);
+            editedBeneficiary);
 
         Model expectedModel = new ModelManager(new AddressBook(model.getAddressBook()), new UserPrefs());
         expectedModel.setBeneficiary(model.getFilteredBeneficiaryList().get(0), editedBeneficiary);
@@ -129,11 +129,11 @@ public class EditBeneficiaryCommandTest {
     public void execute_invalidBeneficiaryIndexUnfilteredList_failure() {
         Index outOfBoundIndex = Index.fromOneBased(model.getFilteredBeneficiaryList().size() + 1);
         EditBeneficiaryDescriptor descriptor = new EditBeneficiaryDescriptorBuilder().withName(VALID_NAME_BABES)
-                .build();
+            .build();
         EditBeneficiaryCommand editBeneficiaryCommand = new EditBeneficiaryCommand(outOfBoundIndex, descriptor);
 
         assertCommandFailure(editBeneficiaryCommand, model, commandHistory,
-                Messages.MESSAGE_INVALID_BENEFICIARY_DISPLAYED_INDEX);
+            Messages.MESSAGE_INVALID_BENEFICIARY_DISPLAYED_INDEX);
     }
 
     /**
@@ -148,10 +148,10 @@ public class EditBeneficiaryCommandTest {
         assertTrue(outOfBoundIndex.getZeroBased() < model.getAddressBook().getBeneficiaryList().size());
 
         EditBeneficiaryCommand editBeneficiaryCommand = new EditBeneficiaryCommand(outOfBoundIndex,
-                new EditBeneficiaryDescriptorBuilder().withName(VALID_NAME_BABES).build());
+            new EditBeneficiaryDescriptorBuilder().withName(VALID_NAME_BABES).build());
 
         assertCommandFailure(editBeneficiaryCommand, model, commandHistory,
-                Messages.MESSAGE_INVALID_BENEFICIARY_DISPLAYED_INDEX);
+            Messages.MESSAGE_INVALID_BENEFICIARY_DISPLAYED_INDEX);
     }
 
     @Test
@@ -170,24 +170,24 @@ public class EditBeneficiaryCommandTest {
         // undo -> reverts addressbook back to previous state and filtered beneficiary list to show all beneficiarys
         expectedModel.undoAddressBook();
         BeneficiaryCommandTestUtil.assertCommandSuccess(
-                new UndoCommand(), model, commandHistory, UndoCommand.MESSAGE_SUCCESS, expectedModel);
+            new UndoCommand(), model, commandHistory, UndoCommand.MESSAGE_SUCCESS, expectedModel);
 
         // redo -> same first beneficiary edited again
         expectedModel.redoAddressBook();
         BeneficiaryCommandTestUtil.assertCommandSuccess(
-                new RedoCommand(), model, commandHistory, RedoCommand.MESSAGE_SUCCESS, expectedModel);
+            new RedoCommand(), model, commandHistory, RedoCommand.MESSAGE_SUCCESS, expectedModel);
     }
 
     @Test
     public void executeUndoRedo_invalidIndexUnfilteredList_failure() {
         Index outOfBoundIndex = Index.fromOneBased(model.getFilteredBeneficiaryList().size() + 1);
         EditBeneficiaryDescriptor descriptor = new EditBeneficiaryDescriptorBuilder().withName(VALID_NAME_BABES)
-                .build();
+            .build();
         EditBeneficiaryCommand editBeneficiaryCommand = new EditBeneficiaryCommand(outOfBoundIndex, descriptor);
 
         // execution failed -> address book state not added into model
         assertCommandFailure(editBeneficiaryCommand, model, commandHistory,
-                Messages.MESSAGE_INVALID_BENEFICIARY_DISPLAYED_INDEX);
+            Messages.MESSAGE_INVALID_BENEFICIARY_DISPLAYED_INDEX);
 
         // single address book state in model -> undoCommand and redoCommand fail
         assertCommandFailure(new UndoCommand(), model, commandHistory, UndoCommand.MESSAGE_FAILURE);
@@ -258,19 +258,19 @@ public class EditBeneficiaryCommandTest {
     @Test
     public void execute_editBeneficiary_checkSyncWithAttachedProjects() {
         Model model = new ModelManager(
-                getAddressBookForBeneficiarySyncTest(getAandBBeneficiaries(), getProjectA2B()), new UserPrefs());
+            getAddressBookForBeneficiarySyncTest(getAandBBeneficiaries(), getProjectA2B()), new UserPrefs());
         CommandHistory commandHistory = new CommandHistory();
         Model expectedModel = new ModelManager(model.getAddressBook(), new UserPrefs());
         EditBeneficiaryCommand editBeneficiaryCommand = new EditBeneficiaryCommand(INDEX_SECOND, BENEFICIARY_A_EDITED);
         Beneficiary editedBeneficiary = new BeneficiaryBuilder(BENEFICIARY_A)
-                .withName(BENEFICIARY_A_EDITED_NAME).build();
+            .withName(BENEFICIARY_A_EDITED_NAME).build();
         expectedModel.setBeneficiary(BENEFICIARY_A, editedBeneficiary);
         Project projectAttachedToA = buildProjectStub(ATTACH_TO_A_TITLE, editedBeneficiary);
         expectedModel.setProject(ATTACHED_PROJECT_A, projectAttachedToA);
         System.out.println(projectAttachedToA);
         expectedModel.commitAddressBook();
         String expectedMessage = String.format(
-                EditBeneficiaryCommand.MESSAGE_EDIT_BENEFICIARY_SUCCESS, editedBeneficiary);
+            EditBeneficiaryCommand.MESSAGE_EDIT_BENEFICIARY_SUCCESS, editedBeneficiary);
         assertCommandSuccess(editBeneficiaryCommand, model, commandHistory, expectedMessage, expectedModel);
     }
 

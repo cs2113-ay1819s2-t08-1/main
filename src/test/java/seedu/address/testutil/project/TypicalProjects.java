@@ -1,6 +1,6 @@
 package seedu.address.testutil.project;
 
-import static seedu.address.testutil.volunteer.TypicalVolunteers.getTypicalVolunteers;
+import static seedu.address.testutil.TypicalVolunteers.getTypicalVolunteers;
 
 import java.util.ArrayList;
 import java.util.Arrays;

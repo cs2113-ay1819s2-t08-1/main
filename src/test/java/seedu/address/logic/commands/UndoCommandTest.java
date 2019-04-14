@@ -1,9 +1,9 @@
 package seedu.address.logic.commands;
 
-import static seedu.address.logic.commands.volunteer.VolunteerCommandTestUtil.assertCommandFailure;
-import static seedu.address.logic.commands.volunteer.VolunteerCommandTestUtil.assertCommandSuccess;
-import static seedu.address.logic.commands.volunteer.VolunteerCommandTestUtil.deleteFirstVolunteer;
-import static seedu.address.testutil.volunteer.TypicalVolunteers.getTypicalAddressBook;
+import static seedu.address.logic.commands.CommandTestUtil.assertCommandFailure;
+import static seedu.address.logic.commands.CommandTestUtil.assertCommandSuccess;
+import static seedu.address.logic.commands.CommandTestUtil.deleteFirstVolunteer;
+import static seedu.address.testutil.TypicalVolunteers.getTypicalAddressBook;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -28,6 +28,7 @@ public class UndoCommandTest {
         deleteFirstVolunteer(expectedModel);
         deleteFirstVolunteer(expectedModel);
     }
+
 
     @Test
     public void execute() {

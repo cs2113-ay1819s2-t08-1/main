@@ -3,18 +3,25 @@
 :imagesDir: ../images
 :stylesDir: ../stylesheets
 
-== PROJECT: AddressBook - Level 4
+== PROJECT: VolunCHeer
 
 ---
-=== Introduction
-
-The purpose of this portfolio is to document and demonstrate my contribution to the project namely VolunCHeer.
-The project was carried out in AY 18/19 Sem 2 in NUS and was contribute by a team of four including myself.
 
 == Overview
 
-VolunCHeer is an open-source desktop management application for Volunteer Managers to manage various projects,
- beneficiaries and volunteers.
+This project portfolio page serves to document my contributions to the VolunCHeer project.
+
+VolunCHeer is an open-sourced Command Line Interface (CLI) management application designed for Volunteering Project Managers.
+We aim to help our target users alleviate the haystack of managing multiple projects, beneficiaries, and volunteers
+in an efficient and effective manner.
+
+Team T08-1 consists of Zhao Jun Ru, Wong Kai Wen Jeremy, Liow Zhu Hui and myself.
+
+The user interacts with VolunCHeer using a command-line interface, and has a GUI created with JavaFX. VolunCHeer is written
+in Java, and has about 10 kLoC.
+
+VolunCHeer's codebase draws from https://se-edu.github.io/[SE-EDU]'s AddressBook Level 4.
+
 
 == Terminology
 * Volunteer: The volunteers who participate in volunteer organization such as NUS Community Service Club, NUS Vietnamese
@@ -25,13 +32,12 @@ Orphanage.
 
 * Project: Projects that are set for volunteers to participate and help the beneficiary.
 
-* Volunteer Manager: The one who manages the arrangement of projects, assign volunteers and contact and associate
-beneficiaries with projects. In this project portfolio, the Volunteer manager will be referred as the user.
+* Volunteering Project Manager: The one who manages the arrangement of projects, assign volunteers and contact and associate
+beneficiaries with projects. In this project portfolio, the Volunteering Project Manager is mentioned as the user.
 
 == Role
-I am the Lead Developer, ensuring the application are as free of bugs as possible, especially in the early stage
-where test files are not updated. I am also the adviser for implementation of commands and bug fixes. I also handle
-damage control when problems arise.
+I am the Lead Developer, who ensure the application is bug free, or report bugs and assign developers to fix them.
+ I am also the adviser for implementation of commands and bug fixes.
 
 == Summary of contributions
 
@@ -44,40 +50,40 @@ damage control when problems arise.
 *** list beneficiaries: to list all beneficiary records.
 *** summarise beneficiaries' data: to enable the user to see most active beneficiary based on attached project list.
 
-** Justification: The beneficiary management feature allows the dynamic of tracking beneficiary records for the
-volunteer manager to revise, reuse every time a project initiation process starts, because it is likely that the
-volunteer manager will have projects related to previous beneficiary and the application creates a good starting point
-and efficiently save time in terms of searching beneficiary's details. Moreover, it also allows the volunteer manager
-to do consideration on which beneficiary to come for in terms of funding based on the activeness measurement of
-beneficiaries.
+** Justification: This feature improve the product significantly because:
+*** The beneficiary management feature allows the dynamic of tracking beneficiary records for the
+user to revise, and reuse every time a project initiation process starts with a known beneficiary.
+*** The feature efficiently saves time in terms of searching beneficiaries's details and navigate through beneficiary records.
+*** Moreover, it also allows the user to do consideration on which beneficiary to come for in terms of funding
+based on the activeness measurement of beneficiaries.
 
-** Highlights: This enhancement affects existing commands, data structure and commands to be added in future. It
-requires in-depth analysis of implementation alternatives. The implementation too was challenging as it required changes
-to existing commands and it involves the synchronization with related Projects and storage files.
+** Highlights: This enhancement affects the existing commands such as Undo and Redo Command. It also requires the analysis
+of resources we have in term of time and performance of algorithm in the context of VolunCHeer. Moreover, it requires challengingly
+synchronization with related Projects and storage files. The summary table also requires adaptation of Ui components and learning
+of JavaFX.
 
 ** Credits: The implementation of the order list is based on the code written for the person list in the Address Book
 Level 4 made by SE-EDU initiative.
 
-* *Major enhancement*: updated "Storage Management"
-** What it does: Storage is ensured to capture any change the user chooses to make in the application and to reflect
+* *Minor enhancement*: updated Storage Management https://github.com/cs2113-ay1819s2-t08-1/main/pull/55[#55]
+** What it does: Storage is ensured to capture any change the user makes in the application reflects
 them in the storage file. When the user reopens the application, these changes are correctly viewed or if the data is
-corrupted, the application will prompt the user.
+corrupted, such as duplicated data or two beneficiaries have the same attached project, the application will prompt the user.
 
 ** Justification: The data storage is important because the main purpose of the application is to reserve these data.
 Hence, storage management is essential for the application to work properly and serve its purposes.
 
-** Highlights: This enhancement is quite challenging as correlation between projects and beneficiaries, and projects and
-volunteers requires the checking of corruption in storage files (ie. duplication of a project assigning to multiple
-beneficiary).
-
 * *Minor enhancement*: quality control of synchronization of assigning beneficiary to project
-https://github.com/cs2113-ay1819s2-t08-1/main[#61]
+https://github.com/cs2113-ay1819s2-t08-1/main/issues/61[#61]
+https://github.com/cs2113-ay1819s2-t08-1/main/issues/125[#125]
 
 * *Minor enhancement*: UI update up to version 1.3
-https://github.com/cs2113-ay1819s2-t08-1/main[#43]
+https://github.com/cs2113-ay1819s2-t08-1/main/issues/43[#43]
+https://github.com/cs2113-ay1819s2-t08-1/main/issues/67[#67]
 
 * *Minor enhancement*: Bug reports and fixed
-https://github.com/cs2113-ay1819s2-t08-1/main[#43]
+https://github.com/cs2113-ay1819s2-t08-1/main/issues/67[#67]
+https://github.com/cs2113-ay1819s2-t08-1/main/pull/72[#72]
 
 
 
@@ -87,14 +93,13 @@ https://nuscs2113-ay1819s2.github.io/dashboard-beta/#search=huu&sort=displayName
 
 * *Other contributions*:
 
-** Giving substantial comments on Github
-** Enhancements to existing features:
-*** PENDING: Allow the selection of volunteers into details (Pull requests https://github.com[#33], https://github.com[#34])
-*** Wrote additional tests for existing features to increase coverage from 88% to 92% (Pull requests https://github.com[#36], https://github.com[#38])
+** Managing issue tracker: https://github.com/cs2113-ay1819s2-t08-1/main/issues/31[#31] https://github.com/cs2113-ay1819s2-t08-1/main/issues/61[#61]
 ** Documentation:
-*** Did cosmetic tweaks to existing contents of the User Guide: https://github.com[#14]
-** Community:
-*** PRs reviewed (with non-trivial review comments): https://github.com[#12], https://github.com[#32], https://github.com[#19], https://github.com[#42]
+*** Contribution to DG in early stage https://github.com/cs2113-ay1819s2-t08-1/main/pull/3[#2] https://github.com/cs2113-ay1819s2-t08-1/main/pull/2[#3]
+*** Did cosmetic tweaks to existing contents of the Developer Guide: https://github.com[#14]
+** Giving substantial comments on Github
+https://github.com/cs2113-ay1819s2-t08-1/main/pull/64[#64]
+https://github.com/cs2113-ay1819s2-t08-1/main/issues/124[#124]
 
 == Contributions to the User Guide
 
@@ -102,9 +107,8 @@ https://nuscs2113-ay1819s2.github.io/dashboard-beta/#search=huu&sort=displayName
 |_Given below are sections I contributed to the User Guide. They showcase my ability to write documentation targeting end-users._
 |===
 
-include::../UserGuide.adoc[tag=addBeneficiary]
+include::../UserGuide.adoc[tag=BeneficiaryManagement]
 
-include::../UserGuide.adoc[tag=editBeneficiary]
 
 == Contributions to the Developer Guide
 
@@ -112,6 +116,6 @@ include::../UserGuide.adoc[tag=editBeneficiary]
 |_Given below are sections I contributed to the Developer Guide. They showcase my ability to write technical documentation and the technical depth of my contributions to the project._
 |===
 
-include::../DeveloperGuide.adoc[tag=undoredo]
+include::../DeveloperGuide.adoc[tag=BeneficiaryManagement]
 
-include::../DeveloperGuide.adoc[tag=dataencryption]
+include::../DeveloperGuide.adoc[tag=BenefUseCases]

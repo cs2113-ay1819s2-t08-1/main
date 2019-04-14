@@ -25,7 +25,7 @@ import seedu.address.model.project.ProjectTitle;
  */
 public class DeleteBeneficiaryCommand extends Command {
 
-    public static final String COMMAND_WORD = "deleteB";
+    public static final String COMMAND_WORD = "deleteBeneficiary";
     public static final String COMMAND_WORD_ALIAS = "db";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD

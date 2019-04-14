@@ -36,7 +36,7 @@ import seedu.address.model.project.ProjectTitle;
  */
 public class EditBeneficiaryCommand extends Command {
 
-    public static final String COMMAND_WORD = "editB";
+    public static final String COMMAND_WORD = "editBeneficiary";
     public static final String COMMAND_WORD_ALIAS = "eb";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Edits the details of the beneficiary identified "

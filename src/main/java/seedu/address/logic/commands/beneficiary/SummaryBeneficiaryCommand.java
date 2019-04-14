@@ -32,7 +32,7 @@ import seedu.address.model.project.ProjectTitle;
  */
 public class SummaryBeneficiaryCommand extends Command {
 
-    public static final String COMMAND_WORD = "summariseB";
+    public static final String COMMAND_WORD = "summariseBeneficiary";
     public static final String COMMAND_WORD_ALIAS = "sb";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Summary statistics details of beneficiary list "

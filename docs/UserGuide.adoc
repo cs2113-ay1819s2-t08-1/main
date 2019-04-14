@@ -12,7 +12,7 @@ ifdef::env-github[]
 :tip-caption: :bulb:
 :note-caption: :information_source:
 endif::[]
-:repoURL: https://github.com/se-edu/addressbook-level4
+:repoURL: https://github.com/cs2113-ay1819s2-t08-1/main
 
 By: `CS2113T T08-01`      Since: `Feb 2019`      Licence: `MIT`
 
@@ -166,55 +166,97 @@ Format: `listProject`
 === Beneficiary
 
 
-==== Adding a beneficiary: `addBeneficiary`
+
+// tag::BeneficiaryManagement[]
+=== Adding a beneficiary: `addBeneficiary` / `ab`
+
 
 Adds a beneficiary to the list of Beneficiaries +
 Format: `addBeneficiary n/NAME a/ADDRESS e/EMAIL p/PHONE_NUMBER `
-
-****
-* "New beneficiary added: Orphanage Phone: 98765432 Email: Orphanage@example.com Address: 311, Clementi Ave 2,
- #02-25Attached Project List: []" message is prompted upon successfully adding a beneficiary
-****
 
 Examples:
 
 * `addBeneficiary n/Orphanage p/98765432 e/Orphanage@example.com a/311, Clementi Ave 2, #02-25`
 
-Consideration:
+.Add Beneficiary Command Result (pink: input, blue: output)
+image::AddBeneficiary.png[]
 
+In the figure above, after the add command, we can observe a new beneficiary card is shown on the GUI.
+
+****
 * The beneficiary will be used to assign to a project, this means that the project will benefit this beneficiary,
-i.e. Orphanage Home, Nursing home, etc.
+i.e. Orphanage Home, Nursing home, etc. +
 * When add a new beneficiary, the project lists assigned to it will be empty. You can assign projects to it by assign
-command stated below.
+command stated.
+****
 
-==== Editing a beneficiary: `editBeneficiary`
+
+=== Editing a beneficiary: `editBeneficiary` / `eb`
+
 
 Edits a beneficiary to the list of Beneficiaries +
 Format: `editBeneficiary  INDEX (must be a positive integer) [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] `
-
-****
-* "Edited Beneficiary: Old Folk Home Phone: 91234567 Email: Orphanage@example.com Address: 311, Clementi Ave 2,
- #02-25Attached Project List: []" message is prompted upon successfully editing a beneficiary
-****
 
 Examples:
 
 * `editBeneficiary 1 n/Old Folk Home p/91234567`
 
-Consideration:
+.Edit Beneficiary Command Result (pink: input, blue: output)
+image::EditBeneficiary.png[]
 
+In the figure, we can see that the WHO information including phone number and email haa changed, compared to the last figure.
+
+****
 * When a beneficiary is edited, the data of the beneficiary in its attached projects is in sync, meaning that that data
 is automatically updated in the mentioned projects.
+****
 
-==== Listing all beneficiary: `listBeneficiary`
+=== Deleting a beneficiary: `deleteBeneficiary` / `db`
+
+Deletes a beneficiary in the beneficiary pool. +
+Format: `deleteBeneficiary i/INDEX -D`
+
+[NOTE]
+`-D` is optional.
+
+****
+* There are two modes of deletion: *soft delete mode* and *hard delete mode*. +
+* In the *soft delete mode*, there is a safe check to help you avoid deleting beneficiary
+that has attached projects, leaving the projects unassigned.
+* In the *hard delete mode*,
+the beneficiary and all its attached projects will be deleted. +
+* Default is *soft delete mode*. To switch to *hard delete mode*, include `-D` in your command.
+****
+
+Examples:
+
+* `deleteBeneficiary i/1`  *soft delete mode*
+* `deleteBeneficiary i/1 -D`  *hard delete mode*
+
+.Delete Beneficiary Command (Soft Delete Mode) Result (pink: input, blue: output)
+image::SoftDelete.png[]
+`
+
+In Figure 3, we are trying to soft delete a beneficiary which was assigned to project *Run*. Hence, a message appears and informs us
+to switch to hard delete mode.
+
+.Delete Beneficiary Command (Hard Delete Mode) Result (pink: input, blue: output)
+image::HardDelete.png[]
+
+In Figure 4, the beneficiary and its attached project shave been deleted successfully.
+
+=== Listing all beneficiaries: `listBeneficiary` / `lb`
+
 
 Shows a list of all Beneficiaries in the beneficiary pool. +
 Format: `listBeneficiary`
 
-Consideration:
-* The command can be used to get back to full list after several commands changing the list.
+[TIP]
+The command can be used to get back to full list after several commands changing the list.
 
-==== Locating beneficiaries by name: `findBeneficiary`
+
+=== Locating beneficiaries by name: `findBeneficiary` / `fb`
+
 
 Finds beneficiaries whose names contain any of the given keywords. +
 Format: `findBeneficiary KEYWORD [MORE_KEYWORDS]`
@@ -233,11 +275,27 @@ Examples:
 * `find Nursing` +
 Returns `Nursing Home` and `Nursing Center`
 
-==== Summary Beneficiary
 
+=== Summarising all beneficiaries: `summariseBeneficiary` / `sb`
+
+Opens a pop up summary table of beneficiaries. You can use the arrow in header cells *number of Projects*
+to sort beneficiaries by the number of attached projects. A table sample is shown below. +
+
+Format: `summariseBeneficiary`
+
+.Beneficiary Summary Table
+image::SummaryBeneficiary.png[]
+
+[TIP]
+The command can be used to consider future partners or fundraising.
+// end::BeneficiaryManagement[]
+
+=== Listing all projects : `listProject`
+
+// tag::VolunteerManagement[]
 === Volunteer
 
-==== Adding a volunteer: `addVolunteer`
+==== Adding a volunteer: `addVolunteer` / `av`
 
 Adds a volunteer to the volunteer pool +
 Format: `addVolunteer n/NAME y/AGE g/GENDER r/RACE [rg/RELIGION] a/ADDRESS e/EMAIL p/PHONE_NUMBER
@@ -263,67 +321,7 @@ p/98765432 ec/Mary, Mother, 92221111 dp/vegetarian m/asthma`
 * `av n/Sarah Soh y/22 g/female r/chinese rg/buddhist a/betsy ave 6, 02-08 e/sarah08@example.com
 p/92345678 ec/Johnny, Husband, 81234568`
 
-
-
-
-
-
-==== Listing all volunteers : `listVolunteer`
-
-Shows a list of all volunteers in the volunteer pool. +
-Format: `listVolunteer`+
-Alternative Format: `lv`
-
-
-==== Editing a volunteer : `editVolunteer`
-
-Edits an existing volunteer in the volunteer list. +
-Format: `edit INDEX [n/NAME] [y/AGE] [g/GENDER] [r/RACE] [rg/RELIGION][p/PHONE] [a/ADDRESS] [e/EMAIL]
-[ec/EMERGENCYCONTACT] [dp/DIETARYPREFERENCE] [mc/MEDICALCONDITION] [[t/TAG]...`
-
-****
-* Edits the volunteer at the specified `INDEX`.
-The index refers to the index number shown in the displayed volunteer list.
-The index *must be a positive integer* 1, 2, 3, ...
-* At least one of the optional fields must be provided.
-* Existing values will be updated to the input values.
-* When editing tags, the existing tags of the volunteer will be removed i.e adding of tags is not cumulative.
-* You can remove all the volunteer's tags by typing `t/` without specifying any tags after it.
-****
-
-Examples:
-
-* `editVolunteer 1 p/91234567 e/johndoe@example.com` +
-Edits the phone number and email address of the 1st volunteer to be `91234567` and `johndoe@example.com` respectively.
-* `editVolunteer  2 n/Betsy Crower t/` +
-Edits the name of the 2nd volunteer to be `Betsy Crower` and clears all existing tags.
-
-==== Locating volunteers by name: `findVolunteer`
-
-Finds volunteers whose names contain any of the given keywords. +
-Format: `find KEYWORD [MORE_KEYWORDS]`
-
-Alternative Format: `fv KEYWORD [MORE_KEYWORDS]`
-
-****
-* The search is case insensitive. e.g `hans` will match `Hans`
-* The order of the keywords does not matter. e.g. `Hans Bo` will match `Bo Hans`
-* Only the name is searched.
-* Only full words will be matched e.g. `Han` will not match `Hans`
-* volunteers matching at least one keyword will be returned (i.e. `OR` search).
-* e.g. `Hans Bo` will return `Hans Gruber`, `Bo Yang`
-****
-
-Examples:
-
-* `findVolunteer John` +
-Returns `john` and `John Doe`
-* `findVolunteer Betsy Tim John` +
-Returns any volunteer having names `Betsy`, `Tim`, or `John`
-
-
-
-==== Deleting a volunteer : `deleteVolunteer`
+==== Deleting a volunteer : `deleteVolunteer` \ `dv`
 
 Deletes the specified volunteer from the volunteer list. +
 Format: `deleteVolunteer INDEX` +
@@ -342,12 +340,64 @@ Examples:
 `deleteVolunteer 2` +
 Deletes the 2nd volunteer in the volunteer list.
 * `findVolunteer Betsy` +
-`deleteVolunteer 1` +
+`dv 1` +
 Deletes the 1st volunteer in the searched volunteer list.
 
 
+==== Editing a volunteer : `editVolunteer` \ `ev`
 
+Edits an existing volunteer in the volunteer list. +
+Format: `editVolunteer INDEX [n/NAME] [y/AGE] [g/GENDER] [r/RACE] [rg/RELIGION][p/PHONE] [a/ADDRESS] [e/EMAIL]
+[ec/EMERGENCYCONTACT] [dp/DIETARYPREFERENCE] [mc/MEDICALCONDITION] [[t/TAG]...`
 
+Alternative Format: `ev INDEX [n/NAME] [y/AGE] [g/GENDER] [r/RACE] [rg/RELIGION][p/PHONE] [a/ADDRESS] [e/EMAIL]
+                    [ec/EMERGENCYCONTACT] [dp/DIETARYPREFERENCE] [mc/MEDICALCONDITION] [[t/TAG]...`
+****
+* Edits the volunteer at the specified `INDEX`.
+The index refers to the index number shown in the displayed volunteer list.
+The index *must be a positive integer* 1, 2, 3, ...
+* At least one of the optional fields must be provided.
+* Existing values will be updated to the input values.
+* When editing tags, the existing tags of the volunteer will be removed i.e adding of tags is not cumulative.
+* You can remove all the volunteer's tags by typing `t/` without specifying any tags after it.
+****
+
+Examples:
+
+* `editVolunteer 1 p/91234567 e/johndoe@example.com` +
+Edits the phone number and email address of the 1st volunteer to be `91234567` and `johndoe@example.com` respectively.
+* `ev 2 n/Betsy Crower t/` +
+Edits the name of the 2nd volunteer to be `Betsy Crower` and clears all existing tags.
+
+==== Locating volunteers by name: `findVolunteer` \ `fv`
+
+Finds volunteers whose names contain any of the given keywords.
+Format: `find KEYWORD [MORE_KEYWORDS]`
+
+Alternative Format: `fv KEYWORD [MORE_KEYWORDS]`
+
+****
+* The search is case insensitive. e.g `hans` will match `Hans`
+* The order of the keywords does not matter. e.g. `Hans Bo` will match `Bo Hans`
+* Only the name is searched.
+* Only full words will be matched e.g. `Han` will not match `Hans`
+* volunteers matching at least one keyword will be returned (i.e. `OR` search).
+* e.g. `Hans Bo` will return `Hans Gruber`, `Bo Yang`
+****
+
+Examples:
+
+* `findVolunteer John` +
+Returns `john` and `John Doe`
+* `fv Betsy Tim John` +
+Returns any volunteer having names `Betsy`, `Tim`, or `John`
+
+==== Listing all volunteers : `listVolunteer` \ `lv`
+
+Shows a list of all volunteers in the volunteer pool. +
+Format: `listVolunteer`
+
+Alternative Format: `lv`
 
 === Assigning mapping index to each volunteer : `map`
 
@@ -497,6 +547,9 @@ Track attendance of the volunteers and award frequent volunteers with certificat
 === Manage funding and sponsorships `[coming in v2.0]`
 Manage funds and sponsors for individual projects and track project spending.
 
+=== Auto-completion of command `[coming in v2.0]`
+Quick Auto-completion of command to enhance typing speed
+
 == FAQ
 
 *Q*: How do I transfer my data to another Computer? +
@@ -511,13 +564,27 @@ Manage funds and sponsors for individual projects and track project spending.
 == Command Summary
 
 * *AddProject* `addProject n/PROJECT_TITLE d/DATE b/BENEFICIARY [t/TAG]...` +
-e.g. `addProject n/Charity Run d/081219 b/Sunshine Old Folks Home`
+
 * *AddVolunteer* `addVolunteer n/NAME y/AGE g/GENDER r/RACE rg/RELIGION a/ADDRESS e/EMAIL p/PHONE_NUMBER ec/EMERGENCY_CONTACT
     d/DIETARY_PREFERENCE m/MEDICAL CONDITION [t/TAG]...` +
 e.g. `addVolunteer n/John Doe y/18 g/male r/eurasian rg/christian a/John street, block 123, #01-01 e/johnd@example.com
      p/98765432 ec/Mary, Mother, 92221111 dp/vegetarian m/asthma`
+
 * *AddBeneficiary* `addBeneficiary n/NAME a/ADDRESS e/EMAIL p/PHONE_NUMBER v/VOLUNTEERS_REQUIRED [t/TAG]...` +
 e.g. `addBeneficiary n/Sunshine Old Folks Home a/sunshine ave 5 e/sunny@oldfolks.sg p/67580392 v/20`
+
+
+* *AddBeneficiary* `addBeneficiary n/NAME a/ADDRESS e/EMAIL p/PHONE_NUMBER` +
+e.g. `addBeneficiary n/Orphanage p/98765432 e/Orphanage@example.com a/311, Clementi Ave 2, #02-25`
+* *EditBeneficiary* `editBeneficiary INDEX (must be a positive integer) [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS]` +
+e.g. `editBeneficiary 1 n/Old Folk Home p/91234567`
+* *DeleteBeneficiary* `deleteBeneficiary i/INDEX -D`
+e.g. `deleteBeneficiary i/1 -D`
+* *ListBeneficiary* `listBeneficiary`
+* *FindBeneficiary* `findBeneficiary KEYWORD`
+e.g. `findBeneficiary Old`
+* *SummariseBeneficiary* `summariseBeneficiary`
+
 * *List* : `list`
 * *EditProject* `editProject PROJECT_NAME [n/NAME] [d/DATE] [b/BENEFICIARY] [t/TAG]...` +
 e.g. `editProject Charity Run d/010319`

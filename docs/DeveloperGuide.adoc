@@ -1,4 +1,4 @@
-= Voluncheer - Developer Guide
+= VolunCHeer - Developer Guide
 :site-section: DeveloperGuide
 :toc:
 :toc-title:
@@ -19,22 +19,21 @@ By: `CS2113T T08-01`      Since: `Feb 2019`      Licence: `MIT`
 
 
 == Introduction
+
 === About VolunCHeer
 
-VolunCHeer is an open source Command Line Interface (CLI) addressbook
-designed for Project Managers to manage multiple projects, beneficiaries and volunteers
-effectively.
+VolunCHeer is an open-sourced  Command Line Interface (CLI) management application designed for Volunteering Project Managers.
+We aim to help our target users alleviate the haystack of managing multiple projects, beneficiaries, and volunteers in an efficient and effective manner.
 
 === How to Contribute
 
-We welcome you to contribute.
-Please refer to this developer guide to understand more about the design process behind VolunCHeer.
+There are lots of ways to contribute to VolunCHeer: coding, testing or improving our build process and tools. This developer's guide provides information that will help you get started as a VolunCHeer contributor. Even if you are an experienced VolunCHeer developer, you will still find this guide to be useful to refer to. +
 
-When you are ready to contribute, simply create a Pull Request on our Main Repository.
+If you are ready to contribute, simply create a Pull Request (PR) on our main repository.
 
-If you have encountered any bugs or have any suggestions to improve VolunCHeer, please
-create an issue https://github.com/cs2113-ay1819s2-t08-1/main/issues[here]
-or https://github.com/cs2113-ay1819s2-t08-1/main/blob/master/docs/ContactUs.adoc[contact us] directly.
+If you have found any bugs or have ideas to improve VolunCHeer, create an issue https://github.com/cs2113-ay1819s2-t08-1/main/issues[here] or https://github.com/cs2113-ay1819s2-t08-1/main/blob/master/docs/AboutUs.adoc[contact us] directly.
+
+=== How to use this Developer Guide
 
 == Setting up
 
@@ -66,10 +65,10 @@ Do not disable them. If you have disabled them, go to `File` > `Settings` > `Plu
 . Click `OK` to accept the default settings
 . Open a console and run the command `gradlew processResources` (Mac/Linux: `./gradlew processResources`). It should finish with the `BUILD SUCCESSFUL` message. +
 This will generate all resources required by the application and tests.
-. Open link:{repoURL}/src/main/java/seedu/Voluncheer/ui/MainWindow.java[`MainWindow.java`] and check for any code errors
+. Open link:{repoURL}/src/main/java/seedu/VolunCHeer/ui/MainWindow.java[`MainWindow.java`] and check for any code errors
 .. Due to an ongoing https://youtrack.jetbrains.com/issue/IDEA-189060[issue] with some of the newer versions of IntelliJ, code errors may be detected even if the project can be built and run successfully
 .. To resolve this, place your cursor over any of the code section highlighted in red. Press kbd:[ALT + ENTER], and select `Add '--add-modules=...' to module compiler options` for each error
-. Repeat this for the test folder as well (e.g. check link:{repoURL}/src/test/java/seedu/Voluncheer/ui/HelpWindowTest.java[`HelpWindowTest.java`] for code errors, and if so, resolve it the same way)
+. Repeat this for the test folder as well (e.g. check link:{repoURL}/src/test/java/seedu/VolunCHeer/ui/HelpWindowTest.java[`HelpWindowTest.java`] for code errors, and if so, resolve it the same way)
 
 === Verifying the setup
 
@@ -106,7 +105,7 @@ The *_Architecture Diagram_* given above explains the high-level design of the A
 [TIP]
 The `.pptx` files used to create diagrams in this document can be found in the link:{repoURL}/docs/diagrams/[diagrams] folder. To update a diagram, modify the diagram in the pptx file, select the objects of the diagram, and choose `Save as picture`.
 
-`Main` has only one class called link:{repoURL}/src/main/java/seedu/Voluncheer/MainApp.java[`MainApp`]. It is responsible for,
+`Main` has only one class called link:{repoURL}/src/main/java/seedu/VolunCHeer/MainApp.java[`MainApp`]. It is responsible for,
 
 * At app launch: Initializes the components in the correct sequence, and connects them up with each other.
 * At shut down: Shuts down the components and invokes cleanup method where necessary.
@@ -149,11 +148,11 @@ The sections below give more details of each component.
 .Structure of the UI Component
 image::UiClassDiagram.png[width="800"]
 
-*API* : link:{repoURL}/src/main/java/seedu/Voluncheer/ui/Ui.java[`Ui.java`]
+*API* : link:{repoURL}/src/main/java/seedu/VolunCHeer/ui/Ui.java[`Ui.java`]
 
 The UI consists of a `MainWindow` that is made up of parts e.g.`CommandBox`, `ResultDisplay`, `StatusBarFooter`, `BrowserPanel` etc. All these, including the `MainWindow`, inherit from the abstract `UiPart` class.
 
-The `UI` component uses JavaFx UI framework. The layout of these UI parts are defined in matching `.fxml` files that are in the `src/main/resources/view` folder. For example, the layout of the link:{repoURL}/src/main/java/seedu/Voluncheer/ui/MainWindow.java[`MainWindow`] is specified in link:{repoURL}/src/main/resources/view/MainWindow.fxml[`MainWindow.fxml`]
+The `UI` component uses JavaFx UI framework. The layout of these UI parts are defined in matching `.fxml` files that are in the `src/main/resources/view` folder. For example, the layout of the link:{repoURL}/src/main/java/seedu/VolunCHeer/ui/MainWindow.java[`MainWindow`] is specified in link:{repoURL}/src/main/resources/view/MainWindow.fxml[`MainWindow.fxml`]
 
 The `UI` component,
 
@@ -168,9 +167,9 @@ The `UI` component,
 image::LogicClassDiagram.png[width="800"]
 
 *API* :
-link:{repoURL}/src/main/java/seedu/Voluncheer/logic/Logic.java[`Logic.java`]
+link:{repoURL}/src/main/java/seedu/VolunCHeer/logic/Logic.java[`Logic.java`]
 
-.  `Logic` uses the `VoluncheerBookParser` class to parse the user command.
+.  `Logic` uses the `VolunCHeerParser` class to parse the user command.
 .  This results in a `Command` object which is executed by the `LogicManager`.
 .  The command execution can affect the `Model` (e.g. adding a volunteer).
 .  The result of the command execution is encapsulated as a `CommandResult` object which is passed back to the `Ui`.
@@ -183,13 +182,13 @@ link:{repoURL}/src/main/java/seedu/Voluncheer/logic/Logic.java[`Logic.java`]
 .Structure of the Model Component
 image::ModelClassDiagram.png[width="800"]
 
-*API* : link:{repoURL}/src/main/java/seedu/Voluncheer/model/Model.java[`Model.java`]
+*API* : link:{repoURL}/src/main/java/seedu/address/model/Model.java[`Model.java`]
 
 The `Model`,
 
 * stores a `UserPref` object that represents the user's preferences.
 * stores the Volunteer Book, Beneficiary Book, Project Book data.
-* manages the interaction and relationship between different objects (Vounteer, Beneficiary, Project)
+* manages the interaction and relationship between different objects (Volunteer, Beneficiary, Project)
 * exposes an unmodifiable `ObservableList<Object>` that can be 'observed' (Object can be Vounteer, Beneficiary, Project). e.g. the UI can be bound to this list so that the UI automatically updates when the data in the list change.
 * does not depend on any of the other three components.
 
@@ -199,12 +198,12 @@ The `Model`,
 .Structure of the Storage Component
 image::StorageClassDiagram.png[width="800"]
 
-*API* : link:{repoURL}/src/main/java/seedu/Voluncheer/storage/Storage.java[`Storage.java`]
+*API* : link:{repoURL}/src/main/java/seedu/address/storage/Storage.java[`Storage.java`]
 
 The `Storage` component,
 
 * can save `UserPref` objects in json format and read it back.
-* can save the Voluncheer Book data in json format and read it back.
+* can save the VolunCHeer Book data in json format and read it back.
 
 [[Design-Commons]]
 === Common classes
@@ -216,7 +215,7 @@ Classes used by multiple components are in the `seedu.voluncheerbook.commons` pa
 This section describes some noteworthy details on how certain features are implemented.
 
 
-//tag::ValidatePassword
+//tag::PasswordFeature[]
 === Password Feature
 ==== Current Implementation
 A password is required to grant access to the project manager at the start of the program.
@@ -245,15 +244,24 @@ image::ArchitectureDiagram_password.png[width="800"]
 
 ==== Design Considerations
 
-Aspect: Login fields for password protection
 
-* **Alternative 1 (current choice)**: UI with a password field.
-** Pros: It is simple and user friendly. It serves its purpose as a offline application for a single user.
-** Cons: The current alternative does not allow the user to change password.
+[width="100%", cols="1, 1, 1 "options="header",]
+|=======================================================================
+| Aspect | Alternatives | Pros (+)/ Cons(-)
+.2+| Implementation of Synchronization
+| *UI with a password field. (current choice)*
+| + : It is simple and user friendly. It serves its purpose as a offline application for a single user.
+ +
+    {empty} +
+ - : The current alternative does not allow the user to change password.
+| Using Command Line Interface
+| + : It allows more flexibility to implement more parameters such as custom security questions to improve its security. +
+  {empty} +
+  - : It may not be as user friendly as the UI.
 
-* **Alternative 2**: Using Command Line Interface
-** Pros: It is able to implement more parameters such as custom security questions to improve its security.
-** Cons: It may not be as intuitive as a UI application.
+
+|=======================================================================
+// end::PasswordFeature[]
 
 // tag::[recommendationCommandLine][]
 === [Proposed] Command Line Recommendation feature
@@ -261,43 +269,80 @@ Aspect: Login fields for password protection
 The command line recommendation feature is facilitated by the `CommandLineParser`. It imports the 'CliSyntax.Java'
 and stores internally the `UserClosestInput` and `CommandUsed`. It updates the `UserClosestInput` and process to
 give suggestions.
+=======
+// tag::BeneficiaryManagement[]
+=== Beneficiary Management Feature
+==== Implementation
+Beneficiary is implement in order to manage the information a benefited volunteer organization. These organizations interact
+with the user's organization through projects. Hence, `Beneficiary` class has a bidirectional navigability with `Project` class,
+as shown in the Figure 8.
+
+.Structure of the `Beneficiary` class including its attributes, and its bidirectional navigability with `Project` class.
+image::BeneficiaryClassDiagram.jpg[width="800"]
+
+
+This means that if an operation such as deletion is done on a beneficiary, this should be updated on the projects that the
+beneficiary is assigned to. The figure below shows how the delete beneficiary command works:
+
+.Beneficiary deletion sequence diagram, hard deletion mode.
+image::BeneficiaryHardDeletionSequenceDiagram.png[width="800"]
+
+. The `DeleteBeneficiaryParser` parses the index of the beneficiary that is required to delete.
 +
-Given below is an example usage scenario and how the command line recommendation feature behaves at each step.
+[NOTE]
+"-D" indicates that the deletion is in
+the hard mode, meaning that the respective projects that are attached to this beneficiary will be deleted.
++
+. The `ModelManager` is then called to update the deletion of the respective projects.
+. The `ModelManager` is then called to update the deletion of the beneficiary and update all the changes.
 
-Step 1: The user types in a command keyword then type [space], the CommandLineParser is initialized which stores the
-`UserClosestInput` and `CommandUsed`. Then the command line show the command syntax.
+The summarised statistics information of beneficiary based on their activeness is generated by using the summarised command.
 
-Step 2: The user continues to type, `UserClosestInput` takes the input and stores. There are 2 alternatives:
-* If the user types a slash [\] the `UserClosestInput` waits for syntax and when syntax match, shows the recommandation
-list for that particular slash sub syntax.
+[NOTE]
+The activeness of a beneficiary is measured by the number of projects that beneficiary has collaborated with the user's organization
 
-* If the user types without the slash [\] the example remains.
 
-Step 3: After the users type [Enter] the class is cleared.
+The sequence diagram below shows how the summarise command works.
 
-image::CommandLineRecommendationSequenceDiagram.png[width="800"]
+.Summarise beneficiary command sequence diagram.
+image::SummaryBeneficiaryCommandSequenceDiagram.png[width=800]
+
+. `SummaryBeneficiaryCommand` calls the `Model` to get the beneficiary list.
+. A summary list is generated and passed to `Logic`.
+. The Ui component which is `MainWindow` does handling of summarised list by generate a summary table and show on the screen.
 
 ==== Design Considerations
 
-===== Aspect: How often should the `UserClosestInput` refresh itself
 
-* **Alternative 1 (current choice):** Everytime the [space] key is used.
-** Pros: Easy to implement.
-** Cons: Unable to dynamicay support the user.
-* **Alternative 2:** Every time a new character is type.
-** Pros: Very dynamic in the UI and supporting the user.
-** Cons: Potential to cause lagging, harder to implement.
+[width="100%", cols="1, 1, 1 "options="header",]
+|=======================================================================
+| Aspect | Alternatives | Pros (+)/ Cons(-)
+.2+| Implementation of Synchronization
+| *Update the by linear search for designed object*
+| + : It is easier to implement because the code base are list based. Moreover, the use of the application is limited to only local
+use without a large amount of data. Hence, this method gives a good performance in the context. +
+    {empty} +
+ - : Unoptimized in terms of complexity, which requires more work for scaling of the application.
+| Hash Table of the data
+| + : It has a better time complexity and reduce the work in scaling stage since this data structure is more optimized (O(1) can be achieved). +
+  {empty} +
+  - : Take more resources to implement.
 
-===== Aspect (proposed): Choices for user to quickly choose the recommendation
+.2+| Display and use of attached project list
+| The beneficiary card shows the list
+| + : The synchronization can be observed throughout the execution of commands. +
+    {empty} +
+ - : The beneficiary card is full with information and not reader friendly. Moreover, it is unnecessary to see the projects when operating single operations such as add, and edit
 
-* **Alternative 1 (current choice):** [tab] when only 1 choice left.
-** Pros: Easy to implement.
-** Cons: Unoptimized for this particular purpose.
-* **Alternative 2:** Arrow key.
-** Pros: Good for user experiences.
-** Cons: Might be difficult to implement.
+| *Generation of summary table*
+| + : The summary gives a good way to look at the statistics of the beneficiary list. As it allows the dynamic of sorting in ascending or descending order
+of the list based on the beneficiary's activeness +
+  {empty} +
+  - : The adaptation of Ui is required.
 
-// end::recommendationCommandLine[]
+
+|=======================================================================
+// end::BeneficiaryManagement[]
 
 // tag::filterexport[]
 === Filtered Export feature
@@ -415,54 +460,54 @@ Below are certain considerations made when designing the filtered export feature
 === Undo/Redo feature
 ==== Current Implementation
 
-The undo/redo mechanism is facilitated by `VersionedVoluncheerBook`.
-It extends `VoluncheerBook` with an undo/redo history, stored internally as an `voluncheerBookStateList` and `currentStatePointer`.
+The undo/redo mechanism is facilitated by `VersionedVolunCHeer`.
+It extends `VolunCHeer` with an undo/redo history, stored internally as an `voluncheerBookStateList` and `currentStatePointer`.
 Additionally, it implements the following operations:
 
-* `VersionedVoluncheerBook#commit()` -- Saves the current Voluncheer book state in its history.
-* `VersionedVoluncheerBook#undo()` -- Restores the previous Voluncheer book state from its history.
-* `VersionedVoluncheerBook#redo()` -- Restores a previously undone Voluncheer book state from its history.
+* `VersionedVolunCHeer#commit()` -- Saves the current VolunCHeer book state in its history.
+* `VersionedVolunCHeer#undo()` -- Restores the previous VolunCHeer book state from its history.
+* `VersionedVolunCHeer#redo()` -- Restores a previously undone VolunCHeer book state from its history.
 
-These operations are exposed in the `Model` interface as `Model#commitVoluncheerBook()`, `Model#undoVoluncheerBook()` and `Model#redoVoluncheerBook()` respectively.
+These operations are exposed in the `Model` interface as `Model#commitVolunCHeer()`, `Model#undoVolunCHeer()` and `Model#redoVolunCHeer()` respectively.
 
 Given below is an example usage scenario and how the undo/redo mechanism behaves at each step.
 
-Step 1. The user launches the application for the first time. The `VersionedVoluncheerBook` will be initialized with the initial Voluncheer book state, and the `currentStatePointer` pointing to that single Voluncheer book state.
+Step 1. The user launches the application for the first time. The `VersionedVolunCHeer` will be initialized with the initial VolunCHeer book state, and the `currentStatePointer` pointing to that single VolunCHeer book state.
 
 image::UndoRedoStartingStateListDiagram.png[width="800"]
 
-Step 2. The user executes `deleteVolunteer 5` command to delete the 5th Volunteer in the Voluncheer book. The `deleteVolunteer` command calls `Model#commitVoluncheerBook()`, causing the modified state of the Voluncheer book after the `delete 5` command executes to be saved in the `VoluncheerBookStateList`, and the `currentStatePointer` is shifted to the newly inserted Voluncheer book state.
+Step 2. The user executes `deleteVolunteer 5` command to delete the 5th Volunteer in the VolunCHeer book. The `deleteVolunteer` command calls `Model#commitVolunCHeer()`, causing the modified state of the VolunCHeer book after the `delete 5` command executes to be saved in the `VolunCHeerStateList`, and the `currentStatePointer` is shifted to the newly inserted VolunCHeer book state.
 
 image::UndoRedoNewCommand1StateListDiagram.png[width="800"]
 
-Step 3. The user executes `add n/David ...` to add a new volunteer. The `add` command also calls `Model#commitVoluncheerBook()`, causing another modified Voluncheer book state to be saved into the `VoluncheerBookStateList`.
+Step 3. The user executes `add n/David ...` to add a new volunteer. The `add` command also calls `Model#commitVolunCHeer()`, causing another modified VolunCHeer book state to be saved into the `VolunCHeerStateList`.
 
 image::UndoRedoNewCommand2StateListDiagram.png[width="800"]
 
 [NOTE]
-If a command fails its execution, it will not call `Model#commitVoluncheerBook()`, so the Voluncheer book state will not be saved into the `VoluncheerBookStateList`.
+If a command fails its execution, it will not call `Model#commitVolunCHeer()`, so the VolunCHeer book state will not be saved into the `VolunCHeerStateList`.
 
-Step 4. The user now decides that adding the volunteer was a mistake, and decides to undo that action by executing the `undo` command. The `undo` command will call `Model#undoVoluncheerBook()`, which will shift the `currentStatePointer` once to the left, pointing it to the previous Voluncheer book state, and restores the Voluncheer book to that state.
+Step 4. The user now decides that adding the volunteer was a mistake, and decides to undo that action by executing the `undo` command. The `undo` command will call `Model#undoVolunCHeer()`, which will shift the `currentStatePointer` once to the left, pointing it to the previous VolunCHeer book state, and restores the VolunCHeer book to that state.
 
 image::UndoRedoExecuteUndoStateListDiagram.png[width="800"]
 
 [NOTE]
-If the `currentStatePointer` is at index 0, pointing to the initial Voluncheer book state, then there are no previous Voluncheer book states to restore. The `undo` command uses `Model#canUndoVoluncheerBook()` to check if this is the case. If so, it will return an error to the user rather than attempting to perform the undo.
+If the `currentStatePointer` is at index 0, pointing to the initial VolunCHeer book state, then there are no previous VolunCHeer book states to restore. The `undo` command uses `Model#canUndoVolunCHeer()` to check if this is the case. If so, it will return an error to the user rather than attempting to perform the undo.
 
 The following sequence diagram shows how the undo operation works:
 
 image::UndoRedoSequenceDiagram.png[width="800"]
 
-The `redo` command does the opposite -- it calls `Model#redoVoluncheerBook()`, which shifts the `currentStatePointer` once to the right, pointing to the previously undone state, and restores the Voluncheer book to that state.
+The `redo` command does the opposite -- it calls `Model#redoVolunCHeer()`, which shifts the `currentStatePointer` once to the right, pointing to the previously undone state, and restores the VolunCHeer book to that state.
 
 [NOTE]
-If the `currentStatePointer` is at index `VoluncheerBookStateList.size() - 1`, pointing to the latest Voluncheer book state, then there are no undone Voluncheer book states to restore. The `redo` command uses `Model#canRedoVoluncheerBook()` to check if this is the case. If so, it will return an error to the user rather than attempting to perform the redo.
+If the `currentStatePointer` is at index `VolunCHeerStateList.size() - 1`, pointing to the latest VolunCHeer book state, then there are no undone VolunCHeer book states to restore. The `redo` command uses `Model#canRedoVolunCHeer()` to check if this is the case. If so, it will return an error to the user rather than attempting to perform the redo.
 
-Step 5. The user then decides to execute the command `list`. Commands that do not modify the Voluncheer book, such as `list`, will usually not call `Model#commitVoluncheerBook()`, `Model#undoVoluncheerBook()` or `Model#redoVoluncheerBook()`. Thus, the `VoluncheerBookStateList` remains unchanged.
+Step 5. The user then decides to execute the command `list`. Commands that do not modify the VolunCHeer book, such as `list`, will usually not call `Model#commitVolunCHeer()`, `Model#undoVolunCHeer()` or `Model#redoVolunCHeer()`. Thus, the `VolunCHeerStateList` remains unchanged.
 
 image::UndoRedoNewCommand3StateListDiagram.png[width="800"]
 
-Step 6. The user executes `clear`, which calls `Model#commitVoluncheerBook()`. Since the `currentStatePointer` is not pointing at the end of the `VoluncheerBookStateList`, all Voluncheer book states after the `currentStatePointer` will be purged. We designed it this way because it no longer makes sense to redo the `add n/David ...` command. This is the behavior that most modern desktop applications follow.
+Step 6. The user executes `clear`, which calls `Model#commitVolunCHeer()`. Since the `currentStatePointer` is not pointing at the end of the `VolunCHeerStateList`, all VolunCHeer book states after the `currentStatePointer` will be purged. We designed it this way because it no longer makes sense to redo the `add n/David ...` command. This is the behavior that most modern desktop applications follow.
 
 image::UndoRedoNewCommand4StateListDiagram.png[width="800"]
 
@@ -472,23 +517,32 @@ image::UndoRedoActivityDiagram.png[width="650"]
 
 ==== Design Considerations
 
-===== Aspect: How undo & redo executes
+[width="100%", cols="1, 1, 1 "options="header",]
+|=======================================================================
+| Aspect | Alternatives | Pros (+)/ Cons(-)
+.2+| How undo & redo executes
+| *Saves the entire VolunCHeer book.*
+| + : Easy to implement. +
+    {empty} +
+ - :  May have performance issues in terms of memory usage.
+| Individual command knows how to undo/redo by itself.
+| + : Will use less memory (e.g. for `deleteVolunteer`, just save the volunteer being deleted).
+    {empty} +
+  - : We must ensure that the implementation of each individual command are correct.
 
-* **Alternative 1 (current choice):** Saves the entire Voluncheer book.
-** Pros: Easy to implement.
-** Cons: May have performance issues in terms of memory usage.
-* **Alternative 2:** Individual command knows how to undo/redo by itself.
-** Pros: Will use less memory (e.g. for `deleteVolunteer`, just save the volunteer being deleted).
-** Cons: We must ensure that the implementation of each individual command are correct.
+.2+| Data structure to support the undo/redo commands
+| *Use a list to store the history of VolunCHeer book states.*
+| + : Easy for new Computer Science student undergraduates to understand, who are likely to be the new incoming developers of our project.+
+    {empty} +
+ - : Logic is duplicated twice. For example, when a new command is executed, we must remember to update both `HistoryManager` and `VersionedVolunCHeer`.
 
-===== Aspect: Data structure to support the undo/redo commands
+| Use `HistoryManager` for undo/redo
+| + : We do not need to maintain a separate list, and just reuse what is already in the codebase. +
+  {empty} +
+  - : Requires dealing with commands that have already been undone: We must remember to skip these commands. Violates Single Responsibility Principle and Separation of Concerns as `HistoryManager` now needs to do two different things.
 
-* **Alternative 1 (current choice):** Use a list to store the history of Voluncheer book states.
-** Pros: Easy for new Computer Science student undergraduates to understand, who are likely to be the new incoming developers of our project.
-** Cons: Logic is duplicated twice. For example, when a new command is executed, we must remember to update both `HistoryManager` and `VersionedVoluncheerBook`.
-* **Alternative 2:** Use `HistoryManager` for undo/redo
-** Pros: We do not need to maintain a separate list, and just reuse what is already in the codebase.
-** Cons: Requires dealing with commands that have already been undone: We must remember to skip these commands. Violates Single Responsibility Principle and Separation of Concerns as `HistoryManager` now needs to do two different things.
+
+|=======================================================================
 // end::undoredo[]
 
 // tag::projectcalendar[]
@@ -664,14 +718,14 @@ We have two types of tests:
 
 .  *GUI Tests* - These are tests involving the GUI. They include,
 .. _System Tests_ that test the entire App by simulating user actions on the GUI. These are in the `systemtests` package.
-.. _Unit tests_ that test the individual components. These are in `seedu.Voluncheer.ui` package.
+.. _Unit tests_ that test the individual components. These are in `seedu.VolunCHeer.ui` package.
 .  *Non-GUI Tests* - These are tests not involving the GUI. They include,
 ..  _Unit tests_ targeting the lowest level methods/classes. +
-e.g. `seedu.Voluncheer.commons.StringUtilTest`
+e.g. `seedu.VolunCHeer.commons.StringUtilTest`
 ..  _Integration tests_ that are checking the integration of multiple code units (those code units are assumed to be working). +
-e.g. `seedu.Voluncheer.storage.StorageManagerTest`
+e.g. `seedu.VolunCHeer.storage.StorageManagerTest`
 ..  Hybrids of unit and integration tests. These test are checking multiple code units as well as how the are connected together. +
-e.g. `seedu.Voluncheer.logic.LogicManagerTest`
+e.g. `seedu.VolunCHeer.logic.LogicManagerTest`
 
 
 === Troubleshooting Testing
@@ -701,14 +755,14 @@ When a pull request has changes to asciidoc files, you can use https://www.netli
 
 Here are the steps to create a new release.
 
-.  Update the version number in link:{repoURL}/src/main/java/seedu/Voluncheer/MainApp.java[`MainApp.java`].
+.  Update the version number in link:{repoURL}/src/main/java/seedu/VolunCHeer/MainApp.java[`MainApp.java`].
 .  Generate a JAR file <<UsingGradle#creating-the-jar-file, using Gradle>>.
 .  Tag the repo with the version number. e.g. `v0.1`
 .  https://help.github.com/articles/creating-releases/[Create a new release using GitHub] and upload the JAR file you created.
 
 === Managing Dependencies
 
-A project often depends on third-party libraries. For example, Voluncheer Book depends on the https://github.com/FasterXML/jackson[Jackson library] for JSON parsing. Managing these _dependencies_ can be automated using Gradle. For example, Gradle can download the dependencies automatically, which is better than these alternatives:
+A project often depends on third-party libraries. For example, VolunCHeer Book depends on the https://github.com/FasterXML/jackson[Jackson library] for JSON parsing. Managing these _dependencies_ can be automated using Gradle. For example, Gradle can download the dependencies automatically, which is better than these alternatives:
 
 [loweralpha]
 . Include those libraries in the repo (this bloats the repo size)
@@ -732,6 +786,7 @@ A project often depends on third-party libraries. For example, Voluncheer Book d
 *Value proposition*:
 * manage volunteers, beneficiaries, projects' details faster than a typical mouse/GUI driven app
 
+// tag::userStories[]
 [appendix]
 == User Stories
 
@@ -742,56 +797,60 @@ Priorities: High (must have) - `* * \*`, Medium (nice to have) - `* \*`, Low (un
 |Priority |As a ... |I want to ... |So that I can...
 |`* * *` |new user |see usage instructions |refer to instructions when I forget how to use the App
 
-|`* * *` |volunteer manager |add a new volunteer |have their information in the system to manage and distribute them
+|`* * *` |volunteering project manager |add a new volunteer |have their information in the system to manage and distribute them
 
-|`* * *` |volunteer manager |delete an existing volunteer |remove the volunteer that no longer needs
+|`* * *` |volunteering project manager |delete an existing volunteer |remove the volunteer that no longer needs
 
-|`* * *` |volunteer manager |edit a volunteer |update information of volunteer
+|`* * *` |volunteering project manager |edit a volunteer |update information of volunteer
 
-|`* * *` |volunteer manager |find a volunteer by name |locate details of the volunteer without having to go through the entire list
+|`* * *` |volunteering project manager |find a volunteer by name |locate details of the volunteer without having to go through the entire list
 
-|`* * *` |volunteer manager |hide <<private-contact-detail,private contact details>> by default |minimize chance of someone else seeing them by accident
+|`* * *` |volunteering project manager |hide <<private-contact-detail,private contact details>> by default |minimize chance of someone else seeing them by accident.
 
-|`* * *` |volunteer manager |sort volunteer list by name |locate a the volunteer easily
+|`* * *` |volunteering project manager |sort volunteer list by name |locate a the volunteer easily
 
-|`* * *` |volunteer manager |add a beneficiary |have their information in the system to manage
+|`* * *` |volunteering project manager |add a beneficiary |have their infomation in the system to manage
 
-|`* * *` |volunteer manager |add beneficiary's description |have a description of beneficiary to refer to
+|`* * *` |volunteering project manager |add beneficiary's description |have a description of beneficiary to refer to
 
-|`* ` |volunteer manager |highlight details/ keywords in the beneficiary's description |read and scan through the information easily
 
-|`* * *` |volunteer manager |delete a beneficiary |remove beneficary
+|`* ` |volunteering project manager |highlight details/ keywords in the beneficiary's description |read and scan through the information easily
 
-|`* * *` |volunteer manager |edit a beneficiary |update details if there is any changes
+|`* * *` |volunteering project manager |delete a beneficiary |remove beneficary
 
-|`* * *` |volunteer manager |sort the beneficiary by name or more |easily manange the list of beneficiary
+|`* * *` |volunteering project manager |edit a beneficiary |update details if there is any changes
 
-|`* * *` |volunteer manager |add a new project with specific details |manage the project and allocate volunteers in the project
+|`* * *` |volunteering project manager |sort the beneficiary by name or more |easily manage the list of beneficiary
 
-|`* * *` |volunteer manager |edit a project |change details of the project if needed
+|`* *` |volunteering project manager |see the summary of beneficiary based on their activeness |gain overview of beneficiaries to collaborate with or seek funding from
 
-|`* * *` |volunteer manager |delete a project |remove projects that is abundant, cancelled or outdated
+|`* * *` |volunteering project manager |add a new project with specific details |manage the project and allocate volunteers in the project
 
-|`* *` |volunteer manager |take attendance of volunteers for a project |keep track of volunteers's attendance
+|`* * *` |volunteering project manager |edit a project |change details of the project if needed
 
-|`* *` |volunteer manager |remind the most prioritised/ closed to dealine project |remind me to work of pay special attention to that project's progress
+|`* * *` |volunteering project manager |delete a project |remove projects that is abundant, cancelled or outdated
 
-|`*` |volunteer manager |have a calendar of projects on the GUI |easily visualize the timeline of work and projects
+|`* *` |volunteering project manager |take attendance of volunteers for a project |keep track of volunteers's attendance
 
-|`* *` |volunteer manager |have a recommendation list of volunteer based on several factors |easily adding relevant volunteers in a project
+|`* *` |volunteering project manager |remind the most prioritised/ closed to dealine project |remind me to work of pay special attention to that project's progress
 
-|`* *` |volunteer manager |import, export data |easily transfer the data to other machines to use
+|`*` |volunteering project manager |have a calendar of projects on the GUI |easily visualize the timeline of work and projects
 
-|`* *` |volunteer manager |undo, redo |go back to my preferred state if I make a mistake
+|`* *` |volunteering project manager |have a recommendation list of volunteer based on several factors |easily adding relevant volunteers in a project
 
-|`* *` |volunteer manager |have autofill function on command line |type faster
+|`* *` |volunteering project manager |import, export data |easily transfer the data to other machines to use
+
+|`* *` |volunteering project manager |undo, redo |go back to my preferred state if I make a mistake
+
+|`*` |user |have autofill function on command line |type faster
 
 |=======================================================================
+// end::userStories[]
 
 [appendix]
 == Use Cases
 
-(For all use cases below, the *System* is the `VoluncheerBook` and the *Actor* is the `user`, unless specified otherwise)
+(For all use cases below, the *System* is the `VolunCHeer` and the *Actor* is the `user`, unless specified otherwise)
 
 [discrete]
 === Use case 1: Delete volunteer
@@ -799,9 +858,9 @@ Priorities: High (must have) - `* * \*`, Medium (nice to have) - `* \*`, Low (un
 *MSS*
 
 1.  User requests to list volunteers
-2.  VoluncheerBook shows a list of volunteers
+2.  VolunCHeer shows a list of volunteers
 3.  User requests to delete a specific volunteer in the list
-4.  VoluncheerBook deletes the volunteer
+4.  VolunCHeer deletes the volunteer
 +
 Use case ends.
 
@@ -815,7 +874,7 @@ Use case ends.
 * 3a. The given index is invalid.
 +
 [none]
-** 3a1. VoluncheerBook shows an error message.
+** 3a1. VolunCHeer shows an error message.
 +
 Use case resumes at step 2.
 
@@ -826,7 +885,7 @@ Use case resumes at step 2.
 *MSS*
 
 1.  User requests to add a volunteer, including name, age, email, address, etc.
-2.  VoluncheerBook shows the successful add message
+2.  VolunCHeer shows the successful add message
 +
 Use case ends.
 
@@ -840,7 +899,7 @@ Use case ends.
 * 3a. The given command line is invalid.
 +
 [none]
-** 3a1. VoluncheerBook shows an error message.
+** 3a1. VolunCHeer shows an error message.
 +
 Use case ends.
 
@@ -851,7 +910,7 @@ Use case ends.
 
 1.  Users requests to find a volunteer.
 2.  User requests to edit the volunteer.
-3.  VoluncheerBook shows the successful edit message.
+3.  VolunCHeer shows the successful edit message.
 +
 Use case ends.
 
@@ -865,7 +924,7 @@ Use case ends.
 * 2a. Given index for edit command is invalid.
 +
 [none]
-** 2a1. VoluncheerBook shows an error message.
+** 2a1. VolunCHeer shows an error message.
 +
 Use case ends.
 
@@ -875,7 +934,7 @@ Use case ends.
 *MSS*
 
 1.  Users requests to add a project.
-2.  VoluncheerBook shows the successful add message.
+2.  VolunCHeer shows the successful add message.
 +
 Use case ends.
 
@@ -885,21 +944,21 @@ Use case ends.
 * 2a. The command line is invalid.
 +
 [none]
-** 2a1. VoluncheerBook shows an error message.
+** 2a1. VolunCHeer shows an error message.
 +
 Use case ends.
 [none]
 * 2b. The beneficiary is not existed.
 +
 [none]
-** 2b1. VoluncheerBook shows an error message.
+** 2b1. VolunCHeer shows an error message.
 +
 
 [none]
 * 2b. The date is invalid.
 +
 [none]
-** 2b1. VoluncheerBook shows an error message.
+** 2b1. VolunCHeer shows an error message.
 +
 Use case ends.
 
@@ -907,7 +966,7 @@ Use case ends.
 * 2c. The project is existed.
 +
 [none]
-** 2c1. VoluncheerBook shows edit option.
+** 2c1. VolunCHeer shows edit option.
 +
 Use case ends.
 
@@ -917,7 +976,7 @@ Use case ends.
 *MSS*
 
 1.  Users requests to edit a project.
-2.  VoluncheerBook shows the successful edit message.
+2.  VolunCHeer shows the successful edit message.
 +
 Use case ends.
 
@@ -927,7 +986,7 @@ Use case ends.
 * 2a. The project is not existed.
 +
 [none]
-** 2a1. VoluncheerBook shows an error message.
+** 2a1. VolunCHeer shows an error message.
 +
 Use case ends.
 
@@ -937,7 +996,7 @@ Use case ends.
 *MSS*
 
 1.  Users requests to find (a) volunteer/volunteers by name.
-2.  VoluncheerBook shows the list of volunteers who share the name.
+2.  VolunCHeer shows the list of volunteers who share the name.
 +
 Use case ends.
 
@@ -947,7 +1006,7 @@ Use case ends.
 * 2a. There is no volunteer with that name.
 +
 [none]
-** 2a1. VoluncheerBook returns an empty list.
+** 2a1. VolunCHeer returns an empty list.
 +
 Use case ends.
 
@@ -957,7 +1016,7 @@ Use case ends.
 *MSS*
 
 1.  User requests to delete a specific project by name
-2.  VoluncheerBook deletes the project
+2.  VolunCHeer deletes the project
 +
 Use case ends.
 
@@ -967,7 +1026,7 @@ Use case ends.
 * 2a. project is not existed.
 +
 [none]
-** 2a1. VoluncheerBook shows an error message.
+** 2a1. VolunCHeer shows an error message.
 +
 Use case ends.
 
@@ -977,7 +1036,7 @@ Use case ends.
 *MSS*
 
 1.  User requests to import a volunteer file
-2.  VoluncheerBook imports the volunteer file to the volunteer list
+2.  VolunCHeer imports the volunteer file to the volunteer list
 +
 Use case ends.
 
@@ -987,7 +1046,7 @@ Use case ends.
 * 2a. file cannot be found.
 +
 [none]
-** 2a1. VoluncheerBook shows an error message.
+** 2a1. VolunCHeer shows an error message.
 +
 Use case ends.
 
@@ -997,7 +1056,7 @@ Use case ends.
 *MSS*
 
 1.  User requests to export a volunteer file
-2.  VoluncheerBook exports new volunteer data file
+2.  VolunCHeer exports new volunteer data file
 +
 Use case ends.
 
@@ -1007,7 +1066,7 @@ Use case ends.
 * 2a. the file has existed.
 +
 [none]
-** 2a1. VoluncheerBook overwritten the file.
+** 2a1. VolunCHeer overwritten the file.
 +
 Use case ends.
 
@@ -1017,7 +1076,7 @@ Use case ends.
 *MSS*
 
 1.  User requests to export a volunteer file
-2.  VoluncheerBook exports new volunteer data file
+2.  VolunCHeer exports new volunteer data file
 +
 Use case ends.
 
@@ -1027,33 +1086,83 @@ Use case ends.
 * 2a. the file has existed.
 +
 [none]
-** 2a1. VoluncheerBook overwritten the file.
+** 2a1. VolunCHeer overwritten the file.
 +
 Use case ends.
 
+// tag::BenefUseCases[]
 [discrete]
-=== Use case 10: Add beneficiary
+=== Use case 10: Add a beneficiary
 
 *MSS*
 
 1.  User requests to add a beneficiary.
-2.  VoluncheerBook shows the successful add message
+2.  VolunCHeer shows the successful add message
 +
 Use case ends.
 
 *Extensions*
 
 [none]
-* 2a. The beneficiary has existed, show edit option
+* 2a. The beneficiary has existed, show error message
 +
 Use case ends.
 
-* 3a. The given command line is invalid.
+* 2b. The given command line is invalid.
 +
 [none]
-** 3a1. VoluncheerBook shows an error message.
+** 2b1. VolunCHeer shows an error message.
 +
 Use case ends.
+
+[discrete]
+=== Use case 11: Edit a beneficiary
+
+*MSS*
+
+1.  Users requests to edit a beneficiary.
+2.  VolunCHeer shows the successful edit message.
++
+Use case ends.
+
+*Extensions*
+
+[none]
+* 2a. The beneficiary is not existed.
++
+[none]
+** 2a1. VolunCHeer shows an error message.
++
+Use case ends.
+
+=== Use case 12: Delete a beneficiary (soft delete)
+
+*MSS*
+
+1.  Users requests to delete a beneficiary.
+2.  VolunCHeer shows the successful delete message.
++
+Use case ends.
+
+*Extensions*
+
+[none]
+* 2a. The beneficiary is not existed.
++
+[none]
+** 2a1. VolunCHeer shows an error message.
++
+Use case ends.
+
+[none]
+* 2b. The beneficiary has attached projects.
++
+[none]
+** 2b1. VolunCHeer shows an error message.
++
+Use case ends.
+
+// end::BenefUseCases[]
 
 [discrete]
 === Use case 11: Sort volunteers based on PRIORITY_SCORE
@@ -1062,7 +1171,7 @@ Use case ends.
 
 1.  User uses "map" command to calculate PRIORITY_SCORE.
 2.  User requests to make a sorted list of volunteers based on PRIORITY_SCORE.
-3.  VoluncheerBook shows the successful sorted list.
+3.  VolunCHeer shows the successful sorted list.
 +
 Use case ends.
 
@@ -1071,7 +1180,7 @@ Use case ends.
 [none]
 * 2a. Invalid map features.
 +
-** 2b1. VoluncheerBook shows error message.
+** 2b1. VolunCHeer shows error message.
 Use case ends.
 
 [appendix]
@@ -1094,7 +1203,7 @@ A contact detail that is not meant to be shared with others
 [appendix]
 == Product Survey
 
-*Voluncheer*
+*VolunCHeer*
 
 Author: ...
 

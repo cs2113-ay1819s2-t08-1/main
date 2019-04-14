@@ -14,7 +14,7 @@ import seedu.address.model.Model;
  */
 public class ListBeneficiaryCommand extends Command {
 
-    public static final String COMMAND_WORD = "listB";
+    public static final String COMMAND_WORD = "listBeneficiary";
     public static final String COMMAND_WORD_ALIAS = "lb";
 
     public static final String MESSAGE_SUCCESS = "Listed all beneficiaries";

@@ -47,31 +47,24 @@
                 </StackPane>
 
                 <SplitPane id="splitPane" fx:id="splitPane" dividerPositions="0.3" VBox.vgrow="ALWAYS">
-                    <VBox fx:id="projectList" minWidth="250" prefWidth="220" SplitPane.resizableWithParent="false">
+                    <VBox fx:id="projectList" minWidth="300" prefWidth="220" SplitPane.resizableWithParent="false">
                         <padding>
                             <Insets top="10" right="10" bottom="10" left="10"/>
                         </padding>
                         <StackPane fx:id="projectListPanelPlaceholder" VBox.vgrow="ALWAYS"/>
                     </VBox>
-                    <VBox fx:id="beneficiaryList" minWidth="250" prefWidth="220" SplitPane.resizableWithParent="false">
+                    <VBox fx:id="beneficiaryList" minWidth="300" prefWidth="220" SplitPane.resizableWithParent="false">
                         <padding>
                             <Insets top="10" right="10" bottom="10" left="10"/>
                         </padding>
                         <StackPane fx:id="beneficiaryListPanelPlaceholder" VBox.vgrow="ALWAYS"/>
                     </VBox>
-                    <VBox fx:id="volunteerList" minWidth="250" prefWidth="220" SplitPane.resizableWithParent="false">
+                    <VBox fx:id="volunteerList" minWidth="400" prefWidth="220" SplitPane.resizableWithParent="false">
                         <padding>
                             <Insets top="10" right="10" bottom="10" left="10"/>
                         </padding>
                         <StackPane fx:id="volunteerListPanelPlaceholder" VBox.vgrow="ALWAYS"/>
                     </VBox>
-
-
-                    <StackPane fx:id="browserPlaceholder" prefWidth="340">
-                        <padding>
-                            <Insets top="10" right="10" bottom="10" left="10"/>
-                        </padding>
-                    </StackPane>
                 </SplitPane>
 
                 <StackPane fx:id="calendarPanelPlaceholder" prefWidth="340">

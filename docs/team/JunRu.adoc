@@ -1,6 +1,6 @@
 = Zhao Jun Ru - Project Portfolio
 :site-section: AboutUs
-:imagesDir: C:\Users\Quinn\Desktop\Y2S2\CS2113T\Project\AddressBook4\docs\images\quinnzzzzz.png
+:imagesDir: ../images
 :stylesDir: ../stylesheets
 
 == PROJECT: VolunCHeer V1.3

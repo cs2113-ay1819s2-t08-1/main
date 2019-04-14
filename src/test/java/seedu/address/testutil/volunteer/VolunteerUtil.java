@@ -63,7 +63,8 @@ public class VolunteerUtil {
         descriptor.getAge().ifPresent(age -> sb.append(PREFIX_AGE).append(age.ageOutput).append(" "));
         descriptor.getGender().ifPresent(gender -> sb.append(PREFIX_AGE).append(gender.genderOutput).append(" "));
         descriptor.getRace().ifPresent(race -> sb.append(PREFIX_RACE).append(race.raceOutput).append(" "));
-        descriptor.getReligion().ifPresent(religion -> sb.append(PREFIX_AGE).append(religion.religionOutput).append(" "));
+        descriptor.getReligion().ifPresent
+                (religion -> sb.append(PREFIX_AGE).append(religion.religionOutput).append(" "));
         descriptor.getPhone().ifPresent(phone -> sb.append(PREFIX_PHONE).append(phone.value).append(" "));
         descriptor.getEmail().ifPresent(email -> sb.append(PREFIX_EMAIL).append(email.value).append(" "));
         descriptor.getEmergencyContact().ifPresent(emergency_contact -> sb.append(PREFIX_EMERGENCY_CONTACT)

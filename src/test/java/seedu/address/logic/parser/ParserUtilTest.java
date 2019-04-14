@@ -10,19 +10,16 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
-import static seedu.address.logic.parser.ParserUtilVolunteer.MESSAGE_INVALID_INDEX;
-
-
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 import seedu.address.logic.parser.exceptions.ParseException;
-import seedu.address.model.tag.Tag;
 import seedu.address.model.volunteer.Address;
 import seedu.address.model.volunteer.Email;
 import seedu.address.model.volunteer.Name;
 import seedu.address.model.volunteer.Phone;
+import seedu.address.model.tag.Tag;
 import seedu.address.testutil.Assert;
 
 public class ParserUtilTest {

@@ -32,13 +32,15 @@ public class ListBeneficiaryCommandTest {
     @Test
     public void execute_listIsNotFiltered_showsSameList() {
         BeneficiaryCommandTestUtil.assertCommandSuccess(
-                new ListBeneficiaryCommand(), model, commandHistory, ListBeneficiaryCommand.MESSAGE_SUCCESS, expectedModel);
+                new ListBeneficiaryCommand(), model, commandHistory,
+                ListBeneficiaryCommand.MESSAGE_SUCCESS, expectedModel);
     }
 
     @Test
     public void execute_listIsFiltered_showsEverything() {
         showBeneficiaryAtIndex(model, INDEX_FIRST);
         assertCommandSuccess(
-                new ListBeneficiaryCommand(), model, commandHistory, ListBeneficiaryCommand.MESSAGE_SUCCESS, expectedModel);
+                new ListBeneficiaryCommand(), model, commandHistory,
+                ListBeneficiaryCommand.MESSAGE_SUCCESS, expectedModel);
     }
 }

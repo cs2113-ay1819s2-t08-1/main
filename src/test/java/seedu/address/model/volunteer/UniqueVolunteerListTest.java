@@ -17,8 +17,6 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
-import seedu.address.model.volunteer.Volunteer;
-import seedu.address.model.volunteer.UniqueVolunteerList;
 import seedu.address.model.volunteer.exceptions.DuplicateVolunteerException;
 import seedu.address.model.volunteer.exceptions.VolunteerNotFoundException;
 import seedu.address.testutil.volunteer.VolunteerBuilder;

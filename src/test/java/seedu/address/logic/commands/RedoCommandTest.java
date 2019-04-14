@@ -1,17 +1,14 @@
 package seedu.address.logic.commands;
 
-import static seedu.address.logic.commands.CommandTestUtil.*;
+
 import static seedu.address.logic.commands.volunteer.VolunteerCommandTestUtil.assertCommandFailure;
 import static seedu.address.logic.commands.volunteer.VolunteerCommandTestUtil.assertCommandSuccess;
-import static seedu.address.testutil.TypicalIndexes.INDEX_FIRST;
-import static seedu.address.testutil.TypicalIndexes.INDEX_SECOND;
 import static seedu.address.testutil.volunteer.TypicalVolunteers.getTypicalAddressBook;
 
 import org.junit.Before;
-
 import org.junit.Test;
+
 import seedu.address.logic.CommandHistory;
-import seedu.address.logic.commands.project.DeleteProjectCommand;
 import seedu.address.model.Model;
 import seedu.address.model.ModelManager;
 import seedu.address.model.UserPrefs;

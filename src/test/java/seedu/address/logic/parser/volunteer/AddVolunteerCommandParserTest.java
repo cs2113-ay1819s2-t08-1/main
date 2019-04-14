@@ -16,7 +16,6 @@ import static seedu.address.logic.commands.volunteer.VolunteerCommandTestUtil.GE
 import static seedu.address.logic.commands.volunteer.VolunteerCommandTestUtil.INVALID_ADDRESS_DESC;
 import static seedu.address.logic.commands.volunteer.VolunteerCommandTestUtil.INVALID_AGE_DESC;
 import static seedu.address.logic.commands.volunteer.VolunteerCommandTestUtil.INVALID_DIETARY_PREFERENCE_DESC;
-import static seedu.address.logic.commands.volunteer.VolunteerCommandTestUtil.INVALID_EMAIL_DESC;
 import static seedu.address.logic.commands.volunteer.VolunteerCommandTestUtil.INVALID_EMERGENCY_CONTACT_DESC;
 import static seedu.address.logic.commands.volunteer.VolunteerCommandTestUtil.INVALID_GENDER_DESC;
 import static seedu.address.logic.commands.volunteer.VolunteerCommandTestUtil.INVALID_MEDICAL_CONDITION_DESC;
@@ -54,6 +53,7 @@ import org.junit.Test;
 
 import seedu.address.logic.commands.volunteer.AddVolunteerCommand;
 import seedu.address.logic.parser.AddVolunteerCommandParser;
+import seedu.address.model.tag.Tag;
 import seedu.address.model.volunteer.Address;
 import seedu.address.model.volunteer.Age;
 import seedu.address.model.volunteer.DietaryPreference;
@@ -62,11 +62,10 @@ import seedu.address.model.volunteer.EmergencyContact;
 import seedu.address.model.volunteer.Gender;
 import seedu.address.model.volunteer.MedicalCondition;
 import seedu.address.model.volunteer.Name;
+import seedu.address.model.volunteer.Phone;
 import seedu.address.model.volunteer.Race;
 import seedu.address.model.volunteer.Religion;
 import seedu.address.model.volunteer.Volunteer;
-import seedu.address.model.volunteer.Phone;
-import seedu.address.model.tag.Tag;
 import seedu.address.testutil.volunteer.VolunteerBuilder;
 
 public class AddVolunteerCommandParserTest {
@@ -127,7 +126,7 @@ public class AddVolunteerCommandParserTest {
         // multiple addresses - last address accepted
         assertParseSuccess(parser, NAME_DESC_BOB + AGE_DESC_BOB + GENDER_DESC_BOB
                 + RACE_DESC_BOB + RELIGION_DESC_BOB + PHONE_DESC_BOB + ADDRESS_DESC_AMY
-                + EMAIL_DESC_BOB +ADDRESS_DESC_BOB + EMERGENCY_CONTACT_DESC_BOB + DIETARY_PREFERENCE_DESC_BOB
+                + EMAIL_DESC_BOB + ADDRESS_DESC_BOB + EMERGENCY_CONTACT_DESC_BOB + DIETARY_PREFERENCE_DESC_BOB
                 + MEDICAL_CONDITION_DESC_BOB + TAG_DESC_INJURY, new AddVolunteerCommand(expectedVolunteer));
 
         // multiple emergency contacts - last emergency contact accepted

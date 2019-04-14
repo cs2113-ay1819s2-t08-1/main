@@ -1,3 +1,4 @@
+//@@swalahlah
 package seedu.address.logic.commands.volunteer;
 
 import static java.util.Objects.requireNonNull;
@@ -55,7 +56,8 @@ public class AddVolunteerCommandTest {
 
         CommandResult commandResult = new AddVolunteerCommand(validVolunteer).execute(modelStub, commandHistory);
 
-        assertEquals(String.format(AddVolunteerCommand.MESSAGE_SUCCESS, validVolunteer), commandResult.getFeedbackToUser());
+        assertEquals(String.format(AddVolunteerCommand.MESSAGE_SUCCESS, validVolunteer),
+                commandResult.getFeedbackToUser());
         assertEquals(Arrays.asList(validVolunteer), modelStub.volunteersAdded);
         assertEquals(EMPTY_COMMAND_HISTORY, commandHistory);
     }
@@ -106,22 +108,26 @@ public class AddVolunteerCommandTest {
 
         @Override
         public ReadOnlyUserPrefs getUserPrefs() {
-            throw new AssertionError("This method should not be called.");
+            throw new AssertionError
+                    ("This method should not be called.");
         }
 
         @Override
         public GuiSettings getGuiSettings() {
-            throw new AssertionError("This method should not be called.");
+            throw new AssertionError
+                    ("This method should not be called.");
         }
 
         @Override
         public void setGuiSettings(GuiSettings guiSettings) {
-            throw new AssertionError("This method should not be called.");
+            throw new AssertionError
+                    ("This method should not be called.");
         }
 
         @Override
         public Path getAddressBookFilePath() {
-            throw new AssertionError("This method should not be called.");
+            throw new AssertionError
+                    ("This method should not be called.");
         }
 
         @Override
@@ -131,7 +137,8 @@ public class AddVolunteerCommandTest {
 
         @Override
         public void addVolunteer(Volunteer volunteer) {
-            throw new AssertionError("This method should not be called.");
+            throw new AssertionError
+                    ("This method should not be called.");
         }
 
         @Override
@@ -251,27 +258,32 @@ public class AddVolunteerCommandTest {
 
         @Override
         public boolean canUndoAddressBook() {
-            throw new AssertionError("This method should not be called.");
+            throw new AssertionError
+                    ("This method should not be called.");
         }
 
         @Override
         public boolean canRedoAddressBook() {
-            throw new AssertionError("This method should not be called.");
+            throw new AssertionError
+                    ("This method should not be called.");
         }
 
         @Override
         public void undoAddressBook() {
-            throw new AssertionError("This method should not be called.");
+            throw new AssertionError
+                    ("This method should not be called.");
         }
 
         @Override
         public void redoAddressBook() {
-            throw new AssertionError("This method should not be called.");
+            throw new AssertionError
+                    ("This method should not be called.");
         }
 
         @Override
         public void commitAddressBook() {
-            throw new AssertionError("This method should not be called.");
+            throw new AssertionError
+                    ("This method should not be called.");
         }
 
         @Override
@@ -291,7 +303,8 @@ public class AddVolunteerCommandTest {
 
         @Override
         public Volunteer getSelectedVolunteer() {
-            throw new AssertionError("This method should not be called.");
+            throw new AssertionError
+                    ("This method should not be called.");
         }
 
         @Override

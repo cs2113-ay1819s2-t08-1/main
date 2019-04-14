@@ -124,7 +124,7 @@ public class MainWindow extends UiPart<Stage> {
         });
     }
 
-
+    //@@swalahlah
     /**
      * Returns true if password is correct, indicating User has logged in.
      */
@@ -136,6 +136,9 @@ public class MainWindow extends UiPart<Stage> {
         } else {
             return false;
         }
+    }
+    void show() {
+        primaryStage.show();
     }
 
     /**
@@ -202,9 +205,6 @@ public class MainWindow extends UiPart<Stage> {
         stage.show();
     }
 
-    void show() {
-        primaryStage.show();
-    }
 
     /**
      * Closes the application.

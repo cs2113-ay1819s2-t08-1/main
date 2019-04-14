@@ -331,26 +331,26 @@ public class ModelManager implements Model {
     public int checkAge(MapObject map, Volunteer currentVol) {
         switch (map.getComparator()) {
 
-            case "<":
-                if (Integer.parseInt(currentVol.getAge().toString()) < map.getAgePair().getValue()) {
-                    return map.getAgePair().getKey();
-                }
-                break;
+        case "<":
+            if (Integer.parseInt(currentVol.getAge().toString()) < map.getAgePair().getValue()) {
+                return map.getAgePair().getKey();
+            }
+            break;
 
-            case ">":
-                if (Integer.parseInt(currentVol.getAge().toString()) > map.getAgePair().getValue()) {
-                    return map.getAgePair().getKey();
-                }
-                break;
+        case ">":
+            if (Integer.parseInt(currentVol.getAge().toString()) > map.getAgePair().getValue()) {
+                return map.getAgePair().getKey();
+            }
+            break;
 
-            case "=":
-                if (Integer.parseInt(currentVol.getAge().toString()) == map.getAgePair().getValue()) {
-                    return map.getAgePair().getKey();
-                }
-                break;
+        case "=":
+            if (Integer.parseInt(currentVol.getAge().toString()) == map.getAgePair().getValue()) {
+                return map.getAgePair().getKey();
+            }
+            break;
 
-            default:
-                return 0;
+        default:
+            return 0;
         }
         return 0;
     }
@@ -420,56 +420,56 @@ public class ModelManager implements Model {
             prefixToBePrinted.forEach(prefix -> {
                 switch (prefix) {
 
-                    case "n/":
-                        tempVolunteer.add(vol.getName().toString());
-                        break;
+                case "n/":
+                    tempVolunteer.add(vol.getName().toString());
+                    break;
 
-                    case "y/":
-                        tempVolunteer.add(vol.getAge().toString());
-                        break;
+                case "y/":
+                    tempVolunteer.add(vol.getAge().toString());
+                    break;
 
-                    case "g/":
-                        tempVolunteer.add(vol.getGender().toString());
-                        break;
+                case "g/":
+                    tempVolunteer.add(vol.getGender().toString());
+                    break;
 
-                    case "r/":
-                        tempVolunteer.add(vol.getRace().toString());
-                        break;
+                case "r/":
+                    tempVolunteer.add(vol.getRace().toString());
+                    break;
 
-                    case "rg/":
-                        tempVolunteer.add(vol.getReligion().toString());
-                        break;
+                case "rg/":
+                    tempVolunteer.add(vol.getReligion().toString());
+                    break;
 
-                    case "p/":
-                        tempVolunteer.add(vol.getPhone().toString());
-                        break;
+                case "p/":
+                    tempVolunteer.add(vol.getPhone().toString());
+                    break;
 
-                    case "a/":
-                        tempVolunteer.add(vol.getAddress().toString());
-                        break;
+                case "a/":
+                    tempVolunteer.add(vol.getAddress().toString());
+                    break;
 
-                    case "e/":
-                        tempVolunteer.add(vol.getEmail().toString());
-                        break;
+                case "e/":
+                    tempVolunteer.add(vol.getEmail().toString());
+                    break;
 
-                    case "m/":
-                        tempVolunteer.add(vol.getMedicalCondition().toString());
-                        break;
+                case "m/":
+                    tempVolunteer.add(vol.getMedicalCondition().toString());
+                    break;
 
-                    case "dp/":
-                        tempVolunteer.add(vol.getDietaryPreference().toString());
-                        break;
+                case "dp/":
+                    tempVolunteer.add(vol.getDietaryPreference().toString());
+                    break;
 
-                    case "ec/":
-                        tempVolunteer.add(vol.getEmergencyContact().toString());
-                        break;
+                case "ec/":
+                    tempVolunteer.add(vol.getEmergencyContact().toString());
+                    break;
 
-                    case "t/":
-                        tempVolunteer.add(vol.getTags().toString());
-                        break;
+                case "t/":
+                    tempVolunteer.add(vol.getTags().toString());
+                    break;
 
-                    default:
-                        break;
+                default:
+                    break;
                 }
             });
             finalData.add(tempVolunteer.toArray(new String[0]));

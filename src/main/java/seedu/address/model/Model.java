@@ -164,7 +164,7 @@ public interface Model {
      */
     boolean hasVolunteer(Volunteer volunteer);
 
-     /** Deletes the given volunteer.
+    /** Deletes the given volunteer.
      * The volunteer must exist in the address book.
      */
     void deleteVolunteer(Volunteer target);

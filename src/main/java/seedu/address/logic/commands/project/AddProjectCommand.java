@@ -49,7 +49,7 @@ public class AddProjectCommand extends Command {
             throw new CommandException(MESSAGE_DUPLICATE_PROJECT);
         }
         model.addProject(toAdd);
-        model.sortProjectByDate();//Sorts the list of project in ascending date order
+        model.sortProjectByDate(); //Sorts the list of project in ascending date order
         model.commitAddressBook();
         return new CommandResult(String.format(MESSAGE_SUCCESS, toAdd));
     }

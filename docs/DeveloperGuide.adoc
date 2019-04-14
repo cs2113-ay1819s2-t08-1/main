@@ -278,7 +278,7 @@ The complete feature allows users to indicate a project as completed.
 To facilitate the complete feature, an association with a new `Complete` class is added to the `Project` class:
 
 .Structure of the attributes of a Project in the Model component.
-image::ProjectClassDiagram.png[width="800"]
+image::ProjectClassDiagram.png[]
 
 
 The diagram shows that the Project class is associated with the Complete class.

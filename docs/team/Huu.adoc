@@ -17,25 +17,12 @@ in an efficient and effective manner.
 
 Team T08-1 consists of Zhao Jun Ru, Wong Kai Wen Jeremy, Liow Zhu Hui and myself.
 
-image::Ui.png[]
+image::Ui.png[400]
 
 The user interacts with VolunCHeer using a command-line interface, and has a GUI created with JavaFX. VolunCHeer is written
 in Java, and has about 10 kLoC.
 
 VolunCHeer's codebase draws from https://se-edu.github.io/[SE-EDU]'s AddressBook Level 4.
-
-
-== Terminology
-* Volunteer: The volunteers who participate in volunteer organization such as NUS Community Service Club, NUS Vietnamese
-Community's CIP Committee.
-
-* Beneficiary: Organizations who benefit from volunteering activities such as Old Folk Home, Nursing Home, and
-Orphanage.
-
-* Project: Projects that are set for volunteers to participate and help the beneficiary.
-
-* Volunteering Project Manager: The one who manages the arrangement of projects, assign volunteers and contact and associate
-beneficiaries with projects. In this project portfolio, the Volunteering Project Manager is mentioned as the user.
 
 == Role
 I am the Lead Developer, who ensure the application is bug free, or report bugs and assign developers to fix them.
@@ -119,5 +106,3 @@ include::../UserGuide.adoc[tag=BeneficiaryManagement]
 |===
 
 include::../DeveloperGuide.adoc[tag=BeneficiaryManagement]
-
-include::../DeveloperGuide.adoc[tag=BenefUseCases]

@@ -1,7 +1,12 @@
 package seedu.address.logic.commands.project;
 
+<<<<<<< HEAD
 import static junit.framework.TestCase.assertTrue;
 import static org.junit.Assert.assertFalse;
+=======
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+>>>>>>> 3ba3fae3591cd5ac236a1ea50b55b2d158e17b28
 import static seedu.address.logic.commands.CommandTestUtil.assertCommandFailure;
 import static seedu.address.logic.commands.CommandTestUtil.assertCommandSuccess;
 import static seedu.address.logic.commands.project.ProjectCommandTestUtil.showBeneficiaryAtIndex;
@@ -26,11 +31,10 @@ import seedu.address.model.project.Project;
 
 public class AssignBeneficiaryCommandTest {
 
-    private Model model = new ModelManager(getTypicalAddressBook(), new UserPrefs());
     private static final CommandHistory commandHistory = new CommandHistory();
-
     @Rule
     public ExpectedException thrown = ExpectedException.none();
+    private Model model = new ModelManager(getTypicalAddressBook(), new UserPrefs());
 
     @Test
     public void execute_validProjectAndIndexUnfilteredList_success() {
@@ -56,7 +60,7 @@ public class AssignBeneficiaryCommandTest {
     public void execute_invalidProjectValidIndexUnfilteredList_throwsCommandException() {
         Project invalidProject = PROJECT3;
         AssignBeneficiaryCommand assignBeneficiaryCommand = new AssignBeneficiaryCommand(invalidProject
-            .getProjectTitle(),INDEX_FIRST);
+            .getProjectTitle(), INDEX_FIRST);
         assertCommandFailure(assignBeneficiaryCommand, model, commandHistory,
             Messages.MESSAGE_PROJECT_NOT_FOUND);
     }
@@ -101,14 +105,17 @@ public class AssignBeneficiaryCommandTest {
 
     @Test
     public void equals() {
-        final AssignBeneficiaryCommand assignFirstCommand = new AssignBeneficiaryCommand(PROJECT1.getProjectTitle(),INDEX_FIRST);
-        final AssignBeneficiaryCommand assignSecondCommand = new AssignBeneficiaryCommand(PROJECT2.getProjectTitle(),INDEX_SECOND);
+        final AssignBeneficiaryCommand assignFirstCommand = new AssignBeneficiaryCommand(PROJECT1.getProjectTitle(),
+            INDEX_FIRST);
+        final AssignBeneficiaryCommand assignSecondCommand = new AssignBeneficiaryCommand(PROJECT2.getProjectTitle(),
+            INDEX_SECOND);
 
         // same object -> returns true
         assertTrue(assignFirstCommand.equals(assignFirstCommand));
 
         // same values -> returns true
-        AssignBeneficiaryCommand assignFirstCommandCopy =  new AssignBeneficiaryCommand(PROJECT1.getProjectTitle(),INDEX_FIRST);
+        AssignBeneficiaryCommand assignFirstCommandCopy = new AssignBeneficiaryCommand(PROJECT1.getProjectTitle(),
+            INDEX_FIRST);
         assertTrue(assignFirstCommand.equals(assignFirstCommandCopy));
 
         // different types -> returns false

@@ -11,6 +11,7 @@ import seedu.address.logic.commands.MapCommand;
 public class MapCommandParserTest {
 
     private MapCommandParser parser = new MapCommandParser();
+
     @Test
     public void parse_compulsoryFieldMissing_failure() {
         String expectedMessage = String.format(MESSAGE_INVALID_COMMAND_FORMAT, MapCommand.MESSAGE_USAGE);

@@ -21,6 +21,7 @@ import seedu.address.model.project.Project;
 public class DeleteProjectCommand extends Command {
 
     public static final String COMMAND_WORD = "deleteProject";
+    public static final String COMMAND_WORD_ALIAS = "dp";
     public static final String MESSAGE_USAGE = COMMAND_WORD
         + ": Deletes the project identified by the index number used in the displayed project list.\n"
         + "Parameters: INDEX (must be a positive integer)\n"

@@ -214,6 +214,7 @@ Classes used by multiple components are in the `seedu.voluncheerbook.commons` pa
 
 This section describes some noteworthy details on how certain features are implemented.
 
+<<<<<<< HEAD
 
 //tag::PasswordFeature[]
 === Password Feature
@@ -270,6 +271,82 @@ The command line recommendation feature is facilitated by the `CommandLineParser
 and stores internally the `UserClosestInput` and `CommandUsed`. It updates the `UserClosestInput` and process to
 give suggestions.
 =======
+=======
+// tag::Project[]
+=== Project Complete Feature
+The complete feature allows users to indicate a project as completed.
+
+==== Implementation
+To facilitate the complete feature, an association with a new `Complete` class is added to the `Project` class:
+
+.Structure of the attributes of a Project in the Model component.
+image::ProjectClassDiagram.PNG[width="800"]
+
+
+The diagram shows that the Project class is associated with the Complete class.
+
+The following sequence diagram shows how the complete command works:
+
+.Figure Sequence diagram for the complete command.
+image::CompleteSequenceDiagram.png[width="800"]
+
+
+1.	The CompleteCommandParser parses the user input to obtain the target project index and constructs a ne CompleteCommand with this index.
+2.	The logic portion of the complete command will be executed by the CompleteCommand method. To mark a Project object as complete:
+i.  The CompleteCommand() method creates a targetProject based on the provided project index.
+i. In the executeCommandResult() method then creates a editedProject with Complete attribute set to “true”.
+    The editedProject is created with ProjectBuilder as shown below:
+
+    Project editedProject = newProjectBuilder(targetProject).withComplete(true).build();
+
+3.	In the executeCommandResult() method
+
+    model.setProject(targetProject, editedProject)
+
+is called to replace `Project`’s complete attribute from “false” to “true” in the VolunCHeer in-memory.
+
+==== Design Considerations
+[width="100%", cols="1, 1, 1 "options="header",]
+|=======================================================================
+| Aspect | Alternatives | Pros (+)/ Cons(-)
+.2+| Implementation of ‘CompleteCommand’
+| *Add a Complete attribute to Project (current choice)
+   -Completed projects indicated “Red”*
+| + : It is easy to tag complete status as an attribute to the `Project` as we can make use of current implementations
+such as model.setProject(Project,Project) that sets the `Project`’s complete attribute to “true”. +
+    {empty} +
+ - :  Unable to have a observable list of complete projects.
+| Create a new CompletedProjectList that consists of all the complete projects, a listComplete command to show all completed tasks..
+| + : Will use less memory (e.g. for deleteVolunteer, just save the volunteer being deleted).
+    {empty} +
+  - : We must ensure that the implementation of each individual command are correct.
+|=======================================================================
+
+=== Assign Feature
+Assigning a Beneficiary / VolunteerList to Project.
+
+==== Implementations
+Since the implementation of commands AssignBeneficiary and AssignVolunteer are similar, we will describe the
+implementation of AssignBeneficiary command only and provide the difference between the two.
+
+The following sequence diagram shows how the AssignBeneficiaryCommand works:
+
+1.	The AssignBeneficiaryCommand(ProjectTitle, Index) takes in the targetProject’s projectTitle attribute and targetBeneficiary’s index.
+2.	The executeCommandResult() method
+i.	Sets up projectToAssign by calling a predicate to compare with the ProjectTitle in FilteredProjectList:
+
+    model. getFilteredProjectList(). filtered(equalProjectTitle).get(0);
+
+i.	updateBeneficiary(model) methods updates the `Beneficiary` object so that ProjectTitle is tracked within the Beneficiary class.
+
+i.	editedProject is created using ProjectBuilder to take in the `Beneficiary` assigned. The following method is called
+    to store the `Project` in VolunCHeer with specific `Beneficiary` attached to it.
+
+    model.setProject(projectToAssign, editedProject)
+
+// end::Project[]
+
+>>>>>>> 3ba3fae3591cd5ac236a1ea50b55b2d158e17b28
 // tag::BeneficiaryManagement[]
 === Beneficiary Management Feature
 ==== Implementation

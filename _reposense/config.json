@@ -1,25 +1,33 @@
 {
-  "authors":
-  [
+  "authors": [
     {
       "githubId": "ndhuu",
       "displayName": "NGU...HUU",
-      "authorNames": ["ndhuu"]
+      "authorNames": [
+        "ndhuu"
+      ]
     },
     {
       "githubId": "articstranger",
       "displayName": "WON...EMY",
-      "authorNames": ["articstranger"]
+      "authorNames": [
+        "articstranger"
+      ]
     },
     {
       "githubId": "swalahlah",
       "displayName": "LIO...HUI",
-      "authorNames": ["swalahlah"]
+      "authorNames": [
+        "swalahlah"
+      ]
     },
     {
       "githubId": "quinnzzzzz",
       "displayName": "ZHA... RU",
-      "authorNames": ["quinnzzzzz", "Quinn Zhao"]
+      "authorNames": [
+        "quinnzzzzz",
+        "Quinn Zhao"
+      ]
     }
   ]
 }

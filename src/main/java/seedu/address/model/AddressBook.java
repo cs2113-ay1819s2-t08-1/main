@@ -34,7 +34,8 @@ public class AddressBook implements ReadOnlyAddressBook {
      *
      * Note that non-static init blocks are not recommended to use. There are other ways to avoid duplication
      *   among constructors.
-    */ {
+     */
+    {
         volunteers = new UniqueVolunteerList();
         projects = new UniqueProjectList();
         beneficiaries = new UniqueBeneficiaryList();
@@ -204,8 +205,8 @@ public class AddressBook implements ReadOnlyAddressBook {
     @Override
     public boolean equals(Object other) {
         return other == this // short circuit if same object
-            || (other instanceof AddressBook // instanceof handles nulls
-            && projects.equals(((AddressBook) other).projects));
+                || (other instanceof AddressBook // instanceof handles nulls
+                && projects.equals(((AddressBook) other).projects));
     }
 
     /**
@@ -231,7 +232,7 @@ public class AddressBook implements ReadOnlyAddressBook {
     }
 
     public void setProject(Project target, Project edited)
-        throws DuplicateProjectException, ProjectNotFoundException {
+            throws DuplicateProjectException, ProjectNotFoundException {
         requireNonNull(edited);
         projects.setProject(target, edited);
     }
@@ -252,5 +253,4 @@ public class AddressBook implements ReadOnlyAddressBook {
         volunteers.sortByPoints();
         indicateModified();
     }
-
 }

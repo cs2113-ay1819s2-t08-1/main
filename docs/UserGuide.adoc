@@ -91,20 +91,97 @@ can be used as `add n/John Doe`.
 
 Format: `help`
 
+<<<<<<< HEAD
 === Project
 
 ==== Adding a project: `addProject`
+=======
+=== Adding a project: `addProject` / `ap`
+>>>>>>> 3ba3fae3591cd5ac236a1ea50b55b2d158e17b28
 Adds a new project +
 Format: `addProject n/PROJECT_NAME d/DATE`
 
 ****
-* Please enter DATE in yyyymmdd format.
-* Project Title should not have duplicates in the project list.
+* Please enter DATE in DD/MM/YYYY format, date should be after today.
+* Project Title should not have dupliates in the project list.
+* Projects are automatically sorted in ascending date order for easier tracking or Project tasks.
 ****
 
-Examples:
+.When `addProject p/Old Folk Home Visit d/25/05/2019` is executed.
+image::addProject.png[]
 
-* `addProject n/Charity Run d/081219`
+Examples:
+* `addProject n/Charity Run d/06/12/2020.
+
+=== Deleting a project ： `deleteProject` / `dp`
+
+Deletes the specified project from the application. +
+Format: `deleteProject INDEX`
+
+****
+* Deletes the project at index "INDEX".
+* The INDEX refers to the index of the project in the project list, use 'listProject' to view all projects if unsure.
+* Error message is shown if the INDEX entered is invalid
+****
+
+.When `deleteProject 3` command is executed.
+
+image::deleteProject.png[]
+
+=== Listing all projects : `listProject` / `lp`
+
+Shows a list of all projects. +
+Format: `listProject`
+
+=== Assigning a Beneficiary to Project: `assignB`
+
+Assigns the Beneficiary at INDEX to the Project with ProjectTitle indicated. +
+Format: `assignBeneficiary p/PROJECT_TITLE i/INDEX
+
+****
+* Assign the Beneficiary to the Project specified with PROJECT_TITLE
+* The assigned Beneficiary can then be seen under the Project card as shown below.
+* There can be only one beneficiary for each project, however, one beneficiary can be assigned to multiple projects.
+* The index *must be a positive integer* `1, 2, 3, ...`
+****
+
+.When `assignB p/Old Folks Home Visit i/1` command executed
+image::assignB.png[]
+
+[TIP]
+Use listBeneficiary to view a full list of Beneficiary to assign.
+Use summaryBeneficiary command to view the Projects attached to each Beneficiary.
+
+=== Assigning one or more Volunteers to Project: `assignV`
+
+Assigns a specific number of volunteers to the Project with ProjectTitle indicated. +
+Format: `assignVolunteer p/PROJECT_TITLE rv/REQUIRED_NUMBER_OF_VOLUNTEERS
+
+****
+* Assigns the specific number of Volunteers to the Project specified with PROJECT_TITLE
+* The number of volunteers assigned to the Project can be seen under the Project card as shown below.
+****
+
+.When `assignV p/Old Folks Home Visit rv/2` is executed.
+
+image::assignV.png[]
+
+[TIP]
+Use Map and Sort commands to filter out the desired list of volunteers.
+
+=== Mark project as complete: 'complete'
+
+Marks project with at index "INDEX" as complete.
+
+Format: `complete i/INDEX`
+
+.When `complete i/1` command is executed
+
+image::complete.png[]
+
+****
+* Once marked as complete, project title will be displayed in red colour font
+****
 
 ==== Assigning a beneficiary to project: 'assign'
 
@@ -290,6 +367,7 @@ image::SummaryBeneficiary.png[]
 The command can be used to consider future partners or fundraising.
 // end::BeneficiaryManagement[]
 
+<<<<<<< HEAD
 === Listing all projects : `listProject`
 
 // tag::VolunteerManagement[]
@@ -302,8 +380,12 @@ Format: `addVolunteer n/NAME y/AGE g/GENDER r/RACE [rg/RELIGION] a/ADDRESS e/EMA
 ec/EMERGENCY_CONTACT [dp/DIETARY_PREFERENCE] [m/MEDICAL_CONDITION] [t/TAG]...` +
 Alternative Format: `av n/NAME y/AGE g/GENDER r/RACE [rg/RELIGION] a/ADDRESS e/EMAIL p/PHONE_NUMBER
                     ec/EMERGENCY_CONTACT [dp/DIETARY_PREFERENCE] [m/MEDICAL_CONDITION] [t/TAG]...`
+=======
+=== Listing all volunteers : `list`
+>>>>>>> 3ba3fae3591cd5ac236a1ea50b55b2d158e17b28
 
 
+<<<<<<< HEAD
 ****
 * "Add Successful!" message is prompted upon successfully adding a volunteer
 * An invalid message will be prompted if a Volunteer with the same exact name is present in the existing database
@@ -345,6 +427,9 @@ Deletes the 1st volunteer in the searched volunteer list.
 
 
 ==== Editing a volunteer : `editVolunteer` \ `ev`
+=======
+=== Editing a volunteer : `editVolunteer`
+>>>>>>> 3ba3fae3591cd5ac236a1ea50b55b2d158e17b28
 
 Edits an existing volunteer in the volunteer list. +
 Format: `editVolunteer INDEX [n/NAME] [y/AGE] [g/GENDER] [r/RACE] [rg/RELIGION][p/PHONE] [a/ADDRESS] [e/EMAIL]
@@ -392,12 +477,55 @@ Returns `john` and `John Doe`
 * `fv Betsy Tim John` +
 Returns any volunteer having names `Betsy`, `Tim`, or `John`
 
+<<<<<<< HEAD
 ==== Listing all volunteers : `listVolunteer` \ `lv`
 
 Shows a list of all volunteers in the volunteer pool. +
 Format: `listVolunteer`
 
 Alternative Format: `lv`
+=======
+=== Deleting a volunteer : `deleteVolunteer`
+
+Deletes the specified volunteer from the volunteer list. +
+Format: `delete INDEX`
+
+****
+* Deletes the volunteer at the specified `INDEX`.
+* The index refers to the index number shown in the displayed volunteer list.
+* The index *must be a positive integer* 1, 2, 3, ...
+* Error message is shown if the given index is invalid
+****
+
+Examples:
+
+* `list` +
+`delete 2` +
+Deletes the 2nd volunteer in the volunteer list.
+* `find Betsy` +
+`delete 1` +
+Deletes the 1st volunteer in the results of the `find` command.
+
+=== Selecting a volunteer : `select`
+
+Selects the volunteer identified by the index number used in the displayed volunteer list. +
+Format: `select INDEX`
+
+****
+* Selects the volunteer and loads the Google search page the volunteer at the specified `INDEX`.
+* The index refers to the index number shown in the displayed volunteer list.
+* The index *must be a positive integer* `1, 2, 3, ...`
+****
+
+Examples:
+
+* `list` +
+`select 2` +
+Selects the 2nd volunteer in the volunteer list.
+* `find Betsy` +
+`select 1` +
+Selects the 1st volunteer in the results of the `find` command.
+>>>>>>> 3ba3fae3591cd5ac236a1ea50b55b2d158e17b28
 
 === Assigning mapping index to each volunteer : `map`
 

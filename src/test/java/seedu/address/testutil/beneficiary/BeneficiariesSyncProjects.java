@@ -54,6 +54,7 @@ public class BeneficiariesSyncProjects {
 
     /**
      * A method to build a project stub
+     *
      * @param projectTitle
      * @param beneficiary
      * @return a project stub model

@@ -102,10 +102,16 @@ public class AssignBeneficiaryCommand extends Command {
 
     /**
      * update the previous assigned beneficiary in the following procedure:
+<<<<<<< HEAD
      *  get the beneficiary
      *  add the project record in that beneficiary
+=======
+     * get the beneficiary
+     * add the project record in that beneficiary
+     *
+>>>>>>> 3ba3fae3591cd5ac236a1ea50b55b2d158e17b28
      * @param model
-     * @return
+     * @return beneficiary
      */
     private Beneficiary updateBeneficiary(Model model) {
         Beneficiary beneficiary = model.getFilteredBeneficiaryList().get(targetBeneficiaryIndex.getZeroBased());
@@ -119,8 +125,14 @@ public class AssignBeneficiaryCommand extends Command {
 
     /**
      * update the previous assigned beneficiary in the following procedure:
+<<<<<<< HEAD
      *  get the previous beneficiary.
      *  delete the project record in that beneficiary.
+=======
+     * get the previous beneficiary.
+     * delete the project record in that beneficiary.
+     *
+>>>>>>> 3ba3fae3591cd5ac236a1ea50b55b2d158e17b28
      * @param model
      */
     private void updatePreBeneficiary(Model model) {
@@ -138,7 +150,12 @@ public class AssignBeneficiaryCommand extends Command {
      */
     private boolean isValidPreAssignedBeneficiary(Model model) {
         return projectToAssign.getBeneficiaryAssigned().toString() != "nil"
+<<<<<<< HEAD
             && model.getFilteredBeneficiaryList()
                 .filtered(x -> x.getName().equals(projectToAssign.getBeneficiaryAssigned())).size() != 0;
+=======
+            && model.getFilteredBeneficiaryList().filtered(
+                x -> x.getName().equals(projectToAssign.getBeneficiaryAssigned())).size() != 0;
+>>>>>>> 3ba3fae3591cd5ac236a1ea50b55b2d158e17b28
     }
 }

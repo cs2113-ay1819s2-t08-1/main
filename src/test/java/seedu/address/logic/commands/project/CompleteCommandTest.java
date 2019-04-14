@@ -8,7 +8,11 @@ import static seedu.address.logic.commands.CommandTestUtil.assertCommandSuccess;
 import static seedu.address.testutil.project.TypicalProjects.getTypicalAddressBook;
 import static seedu.address.testutil.TypicalIndexes.INDEX_FIRST;
 import static seedu.address.testutil.TypicalIndexes.INDEX_SECOND;
+<<<<<<< HEAD
 
+=======
+import static seedu.address.testutil.project.TypicalProjects.getTypicalAddressBook;
+>>>>>>> 3ba3fae3591cd5ac236a1ea50b55b2d158e17b28
 
 import org.junit.Rule;
 import org.junit.Test;
@@ -24,24 +28,23 @@ import seedu.address.model.project.ProjectTitle;
 
 public class CompleteCommandTest {
 
-    private CommandHistory commandHistory = new CommandHistory();
-    private Model model = new ModelManager(getTypicalAddressBook(), new UserPrefs());
-
     @Rule
     public ExpectedException thrown = ExpectedException.none();
+    private CommandHistory commandHistory = new CommandHistory();
+    private Model model = new ModelManager(getTypicalAddressBook(), new UserPrefs());
 
     @Test
     public void execute_validIndexUnfilteredList_success() {
         CompleteCommand completeCommand = new CompleteCommand(INDEX_FIRST);
         ProjectTitle projectTitle = model.getFilteredProjectList().get(0).getProjectTitle();
-        String expectedMessage = String.format(CompleteCommand.MESSAGE_SUCCESS,projectTitle );
+        String expectedMessage = String.format(CompleteCommand.MESSAGE_SUCCESS, projectTitle);
         Model expectedModel = new ModelManager(model.getAddressBook(), new UserPrefs());
         expectedModel.commitAddressBook();
         assertCommandSuccess(completeCommand, model, commandHistory, expectedMessage, expectedModel);
     }
 
     @Test
-    public void execute_InvalidIndexUnfilteredList_throwsCommandException() {
+    public void execute_invalidIndexUnfilteredList_throwsCommandException() {
         Index outOfBoundIndex = Index.fromOneBased(model.getFilteredProjectList().size() + 1);
         CompleteCommand completeCommand = new CompleteCommand(outOfBoundIndex);
         assertCommandFailure(completeCommand, model, commandHistory, Messages.MESSAGE_INVALID_PROJECT_DISPLAYED_INDEX);
@@ -56,7 +59,7 @@ public class CompleteCommandTest {
         assertTrue(completeFirstCommand.equals(completeFirstCommand));
 
         // same values -> returns true
-        CompleteCommand completeFirstCommandCopy =  new CompleteCommand(INDEX_FIRST);
+        CompleteCommand completeFirstCommandCopy = new CompleteCommand(INDEX_FIRST);
         assertTrue(completeFirstCommand.equals(completeFirstCommandCopy));
 
         // different types -> returns false

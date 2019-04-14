@@ -81,7 +81,6 @@ public class TypicalVolunteers {
     }
 
 
-
     public static ArrayList<Integer> getTypicalVolunteersPoints() {
         ArrayList<Integer> points = new ArrayList<>();
         points.add(6);

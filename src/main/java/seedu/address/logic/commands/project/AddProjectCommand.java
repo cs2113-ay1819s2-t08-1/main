@@ -18,13 +18,17 @@ import seedu.address.model.project.Project;
 public class AddProjectCommand extends Command {
 
     public static final String COMMAND_WORD = "addProject";
+<<<<<<< HEAD
     public static final String COMMAND_PARAMETERS = PREFIX_PROJECT_TITLE + "Project Title "
             + PREFIX_DATE + "DATE ";
+=======
+    public static final String COMMAND_WORD_ALIAS = "ap";
+>>>>>>> 3ba3fae3591cd5ac236a1ea50b55b2d158e17b28
 
-    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Adds a new project to VolunCHeer.\n"
+    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Adds a new project to VolunCHeer. "
         + "Parameters: "
         + PREFIX_PROJECT_TITLE + "Project Title "
-        + PREFIX_DATE + "Date of Project "
+        + PREFIX_DATE + "Date of Project \n"
         + "Example: " + COMMAND_WORD + " "
         + PREFIX_PROJECT_TITLE + "Charity Run "
         + PREFIX_DATE + "01/06/2019 ";

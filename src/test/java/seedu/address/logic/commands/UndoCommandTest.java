@@ -28,6 +28,7 @@ public class UndoCommandTest {
         deleteFirstVolunteer(expectedModel);
         deleteFirstVolunteer(expectedModel);
     }
+
     @Test
     public void execute() {
         // multiple undoable states in model

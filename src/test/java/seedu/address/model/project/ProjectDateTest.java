@@ -5,7 +5,6 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-import org.junit.runner.Description;
 import seedu.address.testutil.Assert;
 
 public class ProjectDateTest {
@@ -36,7 +35,7 @@ public class ProjectDateTest {
         assertFalse(ProjectDate.isValidDate("12/1/2001")); // single digit month
         assertFalse(ProjectDate.isValidDate("1/1/2001")); // Single digit day and month
         assertFalse(ProjectDate.isValidDate("A/random/string")); // invalid date format
-        assertFalse(ProjectDate.isValidDate("some string"));  // invalid date format
+        assertFalse(ProjectDate.isValidDate("some string")); // invalid date format
         assertFalse(ProjectDate.isValidDate("02/03/2019")); //before current date
 
         // valid description

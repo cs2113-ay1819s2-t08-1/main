@@ -15,6 +15,7 @@ import seedu.address.model.Model;
 public class ListProjectCommand extends Command {
 
     public static final String COMMAND_WORD = "listProject";
+    public static final String COMMAND_WORD_ALIAS = "lp";
 
     public static final String MESSAGE_SUCCESS = "Listed all projects";
 

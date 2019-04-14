@@ -45,6 +45,7 @@ public class ParserUtilTest {
     @Test
     public void parseIndex_invalidInput_throwsParseException() throws Exception {
         thrown.expect(ParseException.class);
+        ParserUtil.parseIndex("10 a");
     }
 
     @Test
@@ -203,6 +204,8 @@ public class ParserUtilTest {
         Set<Tag> expectedTagSet = new HashSet<Tag>(Arrays.asList(new Tag(VALID_TAG_1), new Tag(VALID_TAG_2)));
 
         assertEquals(expectedTagSet, actualTagSet);
+
+        ParserUtil.parseIndex(Long.toString(Integer.MAX_VALUE + 1));
 
     }
 }

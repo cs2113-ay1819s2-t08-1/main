@@ -1,7 +1,7 @@
 package seedu.address.testutil.project;
 
-import static seedu.address.logic.parser.CliSyntaxProject.PREFIX_PROJECT_TITLE;
 import static seedu.address.logic.parser.CliSyntaxProject.PREFIX_DATE;
+import static seedu.address.logic.parser.CliSyntaxProject.PREFIX_PROJECT_TITLE;
 
 import seedu.address.logic.commands.project.AddProjectCommand;
 import seedu.address.model.project.Project;

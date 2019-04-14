@@ -100,6 +100,7 @@ public class VolunteerBuilder {
 
     /**
      * build with age.
+     *
      * @param age
      * @return
      */
@@ -110,6 +111,7 @@ public class VolunteerBuilder {
 
     /**
      * guild with gender.
+     *
      * @param gender
      * @return
      */
@@ -120,6 +122,7 @@ public class VolunteerBuilder {
 
     /**
      * build with race.
+     *
      * @param race
      * @return
      */
@@ -130,6 +133,7 @@ public class VolunteerBuilder {
 
     /**
      * build with religion
+     *
      * @param religion
      * @return
      */
@@ -196,6 +200,7 @@ public class VolunteerBuilder {
 
     /**
      * build
+     *
      * @return
      */
     public Volunteer build() {

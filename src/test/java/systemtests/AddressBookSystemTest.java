@@ -19,7 +19,6 @@ import guitests.guihandles.MainMenuHandle;
 import guitests.guihandles.MainWindowHandle;
 import guitests.guihandles.ResultDisplayHandle;
 import guitests.guihandles.StatusBarFooterHandle;
-import guitests.guihandles.VolunteerListPanelHandle;
 import seedu.address.TestApp;
 import seedu.address.logic.commands.ClearCommand;
 import seedu.address.logic.commands.volunteer.FindVolunteerCommand;
@@ -143,8 +142,8 @@ public abstract class AddressBookSystemTest {
      */
     protected void showVolunteersWithName(String keyword) {
         executeCommand(FindVolunteerCommand.COMMAND_WORD + " " + keyword);
-        assertTrue(getModel().getFilteredVolunteerList().size() <
-                getModel().getAddressBook().getVolunteerList().size());
+        assertTrue(getModel().getFilteredVolunteerList().size()
+                < getModel().getAddressBook().getVolunteerList().size());
     }
 
     /**
@@ -258,9 +257,9 @@ public abstract class AddressBookSystemTest {
         //        assertEquals(expectedSyncStatus, handle.getSyncStatus());
         //        assertFalse(handle.isSaveLocationChanged());
         //    }
-        /**
-         * Asserts that the starting state of the application is correct.
-         */
+    /**
+     * Asserts that the starting state of the application is correct.
+     */
         //    private void assertApplicationStartingStateIsCorrect() {
         //        assertEquals("", getCommandBox().getInput());
         //        assertEquals("", getResultDisplay().getText());

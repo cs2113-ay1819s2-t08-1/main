@@ -190,7 +190,7 @@ public class AddVolunteerCommandTest {
         public void setBeneficiary(Beneficiary target, Beneficiary editedBeneficiary) { }
 
         @Override
-        public Beneficiary getSelectedBeneficiary() { return null; }
+        public Beneficiary getSelectedBeneficiary() { return null; };
 
         @Override
         public void setSelectedBeneficiary(Beneficiary beneficiary) { }
@@ -242,14 +242,12 @@ public class AddVolunteerCommandTest {
 
         @Override
         public boolean canUndoAddressBook() {
-            throw new AssertionError
-                    ("This method should not be called.");
+            throw new AssertionError("This method should not be called.");
         }
 
         @Override
         public boolean canRedoAddressBook() {
-            throw new AssertionError
-                    ("This method should not be called.");
+            throw new AssertionError("This method should not be called.");
         }
 
         @Override
@@ -260,14 +258,12 @@ public class AddVolunteerCommandTest {
 
         @Override
         public void redoAddressBook() {
-            throw new AssertionError
-                    ("This method should not be called.");
+            throw new AssertionError("This method should not be called.");
         }
 
         @Override
         public void commitAddressBook() {
-            throw new AssertionError
-                    ("This method should not be called.");
+            throw new AssertionError("This method should not be called.");
         }
 
         @Override

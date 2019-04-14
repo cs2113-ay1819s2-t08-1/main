@@ -9,13 +9,11 @@ import static seedu.address.logic.commands.CommandTestUtil.VALID_PHONE_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_TAG_HUSBAND;
 import static seedu.address.testutil.volunteer.TypicalVolunteers.ALICE;
 import static seedu.address.testutil.volunteer.TypicalVolunteers.BOB;
-import seedu.address.testutil.volunteer.VolunteerBuilder;
 
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
-
-
+import seedu.address.testutil.volunteer.VolunteerBuilder;
 
 public class VolunteerTest {
     @Rule
@@ -37,7 +35,8 @@ public class VolunteerTest {
         assertFalse(ALICE.isSameVolunteer(null));
 
         // different phone and email -> returns false
-        Volunteer editedAlice = new VolunteerBuilder(ALICE).withPhone(VALID_PHONE_BOB).withEmail(VALID_EMAIL_BOB).build();
+        Volunteer editedAlice = new VolunteerBuilder(ALICE).withPhone
+                (VALID_PHONE_BOB).withEmail(VALID_EMAIL_BOB).build();
         assertFalse(ALICE.isSameVolunteer(editedAlice));
 
         // different name -> returns false

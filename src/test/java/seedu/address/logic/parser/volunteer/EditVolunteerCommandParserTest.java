@@ -115,8 +115,8 @@ public class EditVolunteerCommandParserTest {
         String userInput = targetIndex.getOneBased() + PHONE_DESC_BOB + TAG_DESC_HUSBAND
                 + EMAIL_DESC_AMY + ADDRESS_DESC_AMY + NAME_DESC_AMY + TAG_DESC_FRIEND;
 
-        EditVolunteerCommand.EditVolunteerDescriptor descriptor
-                = new EditVolunteerDescriptorBuilder().withName(VALID_NAME_AMY)
+        EditVolunteerCommand.EditVolunteerDescriptor descriptor =
+                new EditVolunteerDescriptorBuilder().withName(VALID_NAME_AMY)
                 .withPhone(VALID_PHONE_BOB).withEmail(VALID_EMAIL_AMY).withAddress(VALID_ADDRESS_AMY)
                 .withTags(VALID_TAG_HUSBAND, VALID_TAG_FRIEND).build();
         EditVolunteerCommand expectedCommand = new EditVolunteerCommand(targetIndex, descriptor);
@@ -129,8 +129,8 @@ public class EditVolunteerCommandParserTest {
         Index targetIndex = INDEX_FIRST_VOLUNTEER;
         String userInput = targetIndex.getOneBased() + PHONE_DESC_BOB + EMAIL_DESC_AMY;
 
-        EditVolunteerCommand.EditVolunteerDescriptor descriptor
-                = new EditVolunteerDescriptorBuilder().withPhone(VALID_PHONE_BOB)
+        EditVolunteerCommand.EditVolunteerDescriptor descriptor =
+                new EditVolunteerDescriptorBuilder().withPhone(VALID_PHONE_BOB)
                 .withEmail(VALID_EMAIL_AMY).build();
         EditVolunteerCommand expectedCommand = new EditVolunteerCommand(targetIndex, descriptor);
 
@@ -142,8 +142,8 @@ public class EditVolunteerCommandParserTest {
         // name
         Index targetIndex = INDEX_THIRD_VOLUNTEER;
         String userInput = targetIndex.getOneBased() + NAME_DESC_AMY;
-        EditVolunteerCommand.EditVolunteerDescriptor descriptor
-                = new EditVolunteerDescriptorBuilder().withName(VALID_NAME_AMY).build();
+        EditVolunteerCommand.EditVolunteerDescriptor descriptor =
+                new EditVolunteerDescriptorBuilder().withName(VALID_NAME_AMY).build();
         EditVolunteerCommand expectedCommand = new EditVolunteerCommand(targetIndex, descriptor);
         assertParseSuccess(parser, userInput, expectedCommand);
 
@@ -179,8 +179,8 @@ public class EditVolunteerCommandParserTest {
                 + TAG_DESC_FRIEND + PHONE_DESC_AMY + ADDRESS_DESC_AMY + EMAIL_DESC_AMY + TAG_DESC_FRIEND
                 + PHONE_DESC_BOB + ADDRESS_DESC_BOB + EMAIL_DESC_BOB + TAG_DESC_HUSBAND;
 
-        EditVolunteerCommand.EditVolunteerDescriptor descriptor
-                = new EditVolunteerDescriptorBuilder().withPhone(VALID_PHONE_BOB)
+        EditVolunteerCommand.EditVolunteerDescriptor descriptor =
+                new EditVolunteerDescriptorBuilder().withPhone(VALID_PHONE_BOB)
                 .withEmail(VALID_EMAIL_BOB).withAddress(VALID_ADDRESS_BOB).withTags(VALID_TAG_FRIEND, VALID_TAG_HUSBAND)
                 .build();
         EditVolunteerCommand expectedCommand = new EditVolunteerCommand(targetIndex, descriptor);
@@ -193,8 +193,8 @@ public class EditVolunteerCommandParserTest {
         // no other valid values specified
         Index targetIndex = INDEX_FIRST_VOLUNTEER;
         String userInput = targetIndex.getOneBased() + INVALID_PHONE_DESC + PHONE_DESC_BOB;
-        EditVolunteerCommand.EditVolunteerDescriptor descriptor
-                = new EditVolunteerDescriptorBuilder().withPhone(VALID_PHONE_BOB).build();
+        EditVolunteerCommand.EditVolunteerDescriptor descriptor =
+                new EditVolunteerDescriptorBuilder().withPhone(VALID_PHONE_BOB).build();
         EditVolunteerCommand expectedCommand = new EditVolunteerCommand(targetIndex, descriptor);
         assertParseSuccess(parser, userInput, expectedCommand);
 
@@ -212,8 +212,8 @@ public class EditVolunteerCommandParserTest {
         Index targetIndex = INDEX_THIRD_VOLUNTEER;
         String userInput = targetIndex.getOneBased() + TAG_EMPTY;
 
-        EditVolunteerCommand.EditVolunteerDescriptor descriptor
-                = new EditVolunteerDescriptorBuilder().withTags().build();
+        EditVolunteerCommand.EditVolunteerDescriptor descriptor =
+                new EditVolunteerDescriptorBuilder().withTags().build();
         EditVolunteerCommand expectedCommand = new EditVolunteerCommand(targetIndex, descriptor);
 
         assertParseSuccess(parser, userInput, expectedCommand);

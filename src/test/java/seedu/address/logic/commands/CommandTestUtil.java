@@ -108,7 +108,7 @@ public class CommandTestUtil {
      * Executes the given {@code command}, confirms that <br>
      * - a {@code CommandException} is thrown <br>
      * - the CommandException message matches {@code expectedMessage} <br>
-     * - the address book, filtered person list and selected person in {@code actualModel} remain unchanged <br>
+     * - the address book, filtered volunteer list and selected volunteer in {@code actualModel} remain unchanged <br>
      * - {@code actualCommandHistory} remains unchanged.
      */
     public static void assertCommandFailure(Command command, Model actualModel, CommandHistory actualCommandHistory,
@@ -142,21 +142,21 @@ public class CommandTestUtil {
     }
 
     /**
-     * Updates {@code model}'s filtered list to show only the person at the given {@code targetIndex} in the
+     * Updates {@code model}'s filtered list to show only the volunteer at the given {@code targetIndex} in the
      * {@code model}'s address book.
      */
     public static void showVolunteerAtIndex(Model model, Index targetIndex) {
         assertTrue(targetIndex.getZeroBased() < model.getFilteredVolunteerList().size());
 
-        Volunteer person = model.getFilteredVolunteerList().get(targetIndex.getZeroBased());
-        final String[] splitName = person.getName().fullName.split("\\s+");
+        Volunteer volunteer = model.getFilteredVolunteerList().get(targetIndex.getZeroBased());
+        final String[] splitName = volunteer.getName().fullName.split("\\s+");
         model.updateFilteredVolunteerList(new NameContainsKeywordsPredicate(Arrays.asList(splitName[0])));
 
         assertEquals(1, model.getFilteredVolunteerList().size());
     }
 
     /**
-     * Deletes the first person in {@code model}'s filtered list from {@code model}'s address book.
+     * Deletes the first volunteer in {@code model}'s filtered list from {@code model}'s address book.
      */
     public static void deleteFirstVolunteer(Model model) {
         Volunteer firstVolunteer = model.getFilteredVolunteerList().get(0);

@@ -42,7 +42,7 @@
 <li><a href="#filtered-export-feature">4.4. Filtered Export feature</a></li>
 <li><a href="#undo-redo-feature">4.5. Undo/Redo feature</a></li>
 <li><a href="#proposed-project-calendar">4.6. [Proposed] Project Calendar</a></li>
-<li><a href="#proposed-delete-project">4.7. [Proposed] Delete Project</a></li>
+<li><a href="#password-feature-coming-in-v2-0">4.7. Password Feature (coming in v2.0)</a></li>
 <li><a href="#logging">4.8. Logging</a></li>
 <li><a href="#Implementation-Configuration">4.9. Configuration</a></li>
 </ul>
@@ -76,11 +76,7 @@
 </li>
 <li><a href="#GetStartedProgramming">Appendix A: Product Scope</a></li>
 <li><a href="#user-stories">Appendix B: User Stories</a></li>
-<li><a href="#use-cases">Appendix C: Use Cases</a>
-<ul class="sectlevel2">
-<li><a href="#use-case-13-delete-a-beneficiary-soft-delete">C.1. Use case 13: Delete a beneficiary (soft delete)</a></li>
-</ul>
-</li>
+<li><a href="#use-cases">Appendix C: Use Cases</a></li>
 <li><a href="#non-functional-requirements">Appendix D: Non Functional Requirements</a></li>
 <li><a href="#glossary">Appendix E: Glossary</a></li>
 <li><a href="#product-survey">Appendix F: Product Survey</a></li>
@@ -102,6 +98,11 @@
 <div class="paragraph">
 <p>VolunCHeer is an open-sourced  Command Line Interface (CLI) management application designed for Volunteering Project Managers.
 We aim to help our target users alleviate the haystack of managing multiple projects, beneficiaries, and volunteers in an efficient and effective manner.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/Ui.png" alt="Ui">
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -1230,10 +1231,80 @@ If the <code>currentStatePointer</code> is at index <code>VolunCHeerStateList.si
 </div>
 </div>
 <div class="sect2">
-<h3 id="proposed-delete-project"><a class="link" href="#proposed-delete-project">4.7. [Proposed] Delete Project</a></h3>
+<h3 id="password-feature-coming-in-v2-0"><a class="link" href="#password-feature-coming-in-v2-0">4.7. Password Feature (coming in v2.0)</a></h3>
+<div class="sect3">
+<h4 id="current-implementation-3"><a class="link" href="#current-implementation-3">4.7.1. Current Implementation</a></h4>
 <div class="paragraph">
-<p>_{The deleteProject is facilitated by DeleterProjectCommand Parser. deleteProject(index) removes the project with index, alongside with date attribute but beneficiary remains.
-if the project index is not found, DeleteProjectCommand throws ParseException.</p>
+<p>A password is required to grant access to the project manager at the start of the program.
+It serves as a security mechanism to
+protect the important data within.</p>
+</div>
+<div class="paragraph">
+<p>At the start of the program, the UI is initialised by <code>UiManager</code>. A password window will pop out and prompt the user
+to enter the password.<br></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/password%20prompt.jpg" alt="password prompt" width="800">
+</div>
+<div class="title">Figure 16. Program prompting user for password</div>
+</div>
+<div class="paragraph">
+<p>The password feature uses <code>ValidatePassword</code> to check if the user input matches the password stored in the program.
+If the password matches, it will set boolean <code>user</code> to be true. <code>UiManager</code> will thus instantiate
+ <code>fillInnerParts()</code>, displaying the hidden data to the project manager.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/login%20successful.jpg" alt="login successful" width="800">
+</div>
+<div class="title">Figure 17. Data displayed to user upon entering the correct password</div>
+</div>
+<div class="paragraph">
+<p>If the password is entered incorrectly for five times, the program will terminate itself.</p>
+</div>
+<div class="paragraph">
+<p>A sequence diagram is shown below to illustrate how it works in an abstract level.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ArchitectureDiagram_password.png" alt="ArchitectureDiagram password" width="800">
+</div>
+<div class="title">Figure 18. Sequence diagram of Password Feature</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">4.7.2. Design Considerations</a></h4>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Aspect</th>
+<th class="tableblock halign-left valign-top">Alternatives</th>
+<th class="tableblock halign-left valign-top">Pros (+)/ Cons(-)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">Implementation of Synchronization</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>UI with a password field. (current choice)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">+ : It is simple and user friendly. It serves its purpose as a offline application for a single user.
+<br>
+    <br>
+ - : The current alternative does not allow the user to change password.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Using Command Line Interface</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">+ : It allows more flexibility to implement more parameters such as custom security questions to improve its security.<br>
+  <br>
+  - : It may not be as user friendly as the UI.</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="sect2">
@@ -1341,7 +1412,7 @@ Alternatively, you can download the AsciiDoc plugin for IntelliJ, which allows y
 <div class="content">
 <img src="images/chrome_save_as_pdf.png" alt="chrome save as pdf" width="300">
 </div>
-<div class="title">Figure 16. Saving documentation as PDF files in Chrome</div>
+<div class="title">Figure 19. Saving documentation as PDF files in Chrome</div>
 </div>
 </div>
 <div class="sect2">
@@ -2414,8 +2485,7 @@ e.g. <code>seedu.VolunCHeer.logic.LogicManagerTest</code></p>
 </li>
 </ul>
 </div>
-<div class="sect2">
-<h3 id="use-case-13-delete-a-beneficiary-soft-delete"><a class="link" href="#use-case-13-delete-a-beneficiary-soft-delete">C.1. Use case 13: Delete a beneficiary (soft delete)</a></h3>
+<h3 id="use-case-13-delete-a-beneficiary-soft-delete" class="discrete">Use case 13: Delete a beneficiary (soft delete)</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -2506,7 +2576,6 @@ Use case ends.</p>
 </div>
 </li>
 </ul>
-</div>
 </div>
 </div>
 </div>
@@ -2691,4 +2760,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 15:12:12 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 15:40:26 UTC</div></div></div></body></html>

@@ -233,19 +233,19 @@ At the start of the program, the UI is initialised by `UiManager`. A password wi
 to enter the password. +
 
 .Program prompting user for password
-image::password prompt.png[width="800"] 
+
+image::password_prompt.jpg[width="800"]
 
 The password feature uses `ValidatePassword` to check if the user input matches the password stored in the program.
-If the password matches, it will set boolean `user` to be true. `UiManager` will thus instantiate
- `fillInnerParts()`, displaying the hidden data to the project manager.
 
+If the password matches, it will set boolean `user` to be true. `UiManager` will thus instantiate
+`fillInnerParts()`, displaying the hidden data to the project manager.
 
 .Data displayed to user upon entering the correct password
-image::login successful.png[width="800"] 
+image::login successful.png[width="800"]
 
 
 If the password is entered incorrectly for five times, the program will terminate itself.
-
 A sequence diagram is shown below to illustrate how it works in an abstract level.
 
 

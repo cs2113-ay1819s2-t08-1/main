@@ -469,7 +469,7 @@ Gives volunteers above the AGE of 18 3 points, RACE chinese 2 points and MEDICAL
 Only gives volunteers with no MEDICAL_CONDITION 3 points.
 
 .map command execution
-image::MapCommand.png[]
+image::MapCommand.PNG[]
 
 Upon executing a successful map command, the message on figure 12 will appear.
 
@@ -512,7 +512,7 @@ Extracts the first 20 volunteers in the sorted list.
 Extracts volunteer number 5 to 15 in the list.
 
 .Extracted volunteer details
-image::Export.png[]
+image::Export.PNG[]
 
 The Excel file will look like figure 15.
 // end::FilteredExport[]

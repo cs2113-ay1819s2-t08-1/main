@@ -57,13 +57,6 @@ compared to using the command line interface.
 
 ** UI interface:
 *** Ensure that UI is running smoothly
-** Enhancements to existing features:
-*** PENDING: Allow the selection of volunteers into details (Pull requests https://github.com[#33], https://github.com[#34])
-*** Wrote additional tests for existing features to increase coverage from 88% to 92% (Pull requests https://github.com[#36], https://github.com[#38])
-** Documentation:
-*** Did cosmetic tweaks to existing contents of the User Guide: https://github.com[#14]
-** Community:
-*** PRs reviewed (with non-trivial review comments): https://github.com[#12], https://github.com[#32], https://github.com[#19], https://github.com[#42])
 
 == Contributions to the User Guide
 
@@ -71,8 +64,8 @@ compared to using the command line interface.
 |_Given below are sections I contributed to the User Guide. They showcase my ability to write documentation targeting end-users._
 |===
 
-*Volunteer Class
-include::../UserGuide.adoc[tag=volunteerfeature]
+*Volunteer Feature
+include::../UserGuide.adoc[tag=VolunteerManagement]
 
 == Contributions to the Developer Guide
 

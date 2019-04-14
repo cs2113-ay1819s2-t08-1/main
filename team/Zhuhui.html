@@ -208,31 +208,31 @@ The <code>redo</code> command fails as there are no <code>undo</code> commands e
 <div class="sect3">
 <h4 id="current-implementation"><a class="link" href="#current-implementation">Current Implementation</a></h4>
 <div class="paragraph">
-<p>The undo/redo mechanism is facilitated by <code>VersionedVoluncheerBook</code>.
-It extends <code>VoluncheerBook</code> with an undo/redo history, stored internally as an <code>voluncheerBookStateList</code> and <code>currentStatePointer</code>.
+<p>The undo/redo mechanism is facilitated by <code>VersionedVolunCHeer</code>.
+It extends <code>VolunCHeer</code> with an undo/redo history, stored internally as an <code>voluncheerBookStateList</code> and <code>currentStatePointer</code>.
 Additionally, it implements the following operations:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>VersionedVoluncheerBook#commit()</code>&#8201;&#8212;&#8201;Saves the current Voluncheer book state in its history.</p>
+<p><code>VersionedVolunCHeer#commit()</code>&#8201;&#8212;&#8201;Saves the current VolunCHeer book state in its history.</p>
 </li>
 <li>
-<p><code>VersionedVoluncheerBook#undo()</code>&#8201;&#8212;&#8201;Restores the previous Voluncheer book state from its history.</p>
+<p><code>VersionedVolunCHeer#undo()</code>&#8201;&#8212;&#8201;Restores the previous VolunCHeer book state from its history.</p>
 </li>
 <li>
-<p><code>VersionedVoluncheerBook#redo()</code>&#8201;&#8212;&#8201;Restores a previously undone Voluncheer book state from its history.</p>
+<p><code>VersionedVolunCHeer#redo()</code>&#8201;&#8212;&#8201;Restores a previously undone VolunCHeer book state from its history.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>These operations are exposed in the <code>Model</code> interface as <code>Model#commitVoluncheerBook()</code>, <code>Model#undoVoluncheerBook()</code> and <code>Model#redoVoluncheerBook()</code> respectively.</p>
+<p>These operations are exposed in the <code>Model</code> interface as <code>Model#commitVolunCHeer()</code>, <code>Model#undoVolunCHeer()</code> and <code>Model#redoVolunCHeer()</code> respectively.</p>
 </div>
 <div class="paragraph">
 <p>Given below is an example usage scenario and how the undo/redo mechanism behaves at each step.</p>
 </div>
 <div class="paragraph">
-<p>Step 1. The user launches the application for the first time. The <code>VersionedVoluncheerBook</code> will be initialized with the initial Voluncheer book state, and the <code>currentStatePointer</code> pointing to that single Voluncheer book state.</p>
+<p>Step 1. The user launches the application for the first time. The <code>VersionedVolunCHeer</code> will be initialized with the initial VolunCHeer book state, and the <code>currentStatePointer</code> pointing to that single VolunCHeer book state.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -240,7 +240,7 @@ Additionally, it implements the following operations:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Step 2. The user executes <code>deleteVolunteer 5</code> command to delete the 5th Volunteer in the Voluncheer book. The <code>deleteVolunteer</code> command calls <code>Model#commitVoluncheerBook()</code>, causing the modified state of the Voluncheer book after the <code>delete 5</code> command executes to be saved in the <code>VoluncheerBookStateList</code>, and the <code>currentStatePointer</code> is shifted to the newly inserted Voluncheer book state.</p>
+<p>Step 2. The user executes <code>deleteVolunteer 5</code> command to delete the 5th Volunteer in the VolunCHeer book. The <code>deleteVolunteer</code> command calls <code>Model#commitVolunCHeer()</code>, causing the modified state of the VolunCHeer book after the <code>delete 5</code> command executes to be saved in the <code>VolunCHeerStateList</code>, and the <code>currentStatePointer</code> is shifted to the newly inserted VolunCHeer book state.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -248,7 +248,7 @@ Additionally, it implements the following operations:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Step 3. The user executes <code>add n/David &#8230;&#8203;</code> to add a new volunteer. The <code>add</code> command also calls <code>Model#commitVoluncheerBook()</code>, causing another modified Voluncheer book state to be saved into the <code>VoluncheerBookStateList</code>.</p>
+<p>Step 3. The user executes <code>add n/David &#8230;&#8203;</code> to add a new volunteer. The <code>add</code> command also calls <code>Model#commitVolunCHeer()</code>, causing another modified VolunCHeer book state to be saved into the <code>VolunCHeerStateList</code>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -262,13 +262,13 @@ Additionally, it implements the following operations:</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-If a command fails its execution, it will not call <code>Model#commitVoluncheerBook()</code>, so the Voluncheer book state will not be saved into the <code>VoluncheerBookStateList</code>.
+If a command fails its execution, it will not call <code>Model#commitVolunCHeer()</code>, so the VolunCHeer book state will not be saved into the <code>VolunCHeerStateList</code>.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>Step 4. The user now decides that adding the volunteer was a mistake, and decides to undo that action by executing the <code>undo</code> command. The <code>undo</code> command will call <code>Model#undoVoluncheerBook()</code>, which will shift the <code>currentStatePointer</code> once to the left, pointing it to the previous Voluncheer book state, and restores the Voluncheer book to that state.</p>
+<p>Step 4. The user now decides that adding the volunteer was a mistake, and decides to undo that action by executing the <code>undo</code> command. The <code>undo</code> command will call <code>Model#undoVolunCHeer()</code>, which will shift the <code>currentStatePointer</code> once to the left, pointing it to the previous VolunCHeer book state, and restores the VolunCHeer book to that state.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -282,7 +282,7 @@ If a command fails its execution, it will not call <code>Model#commitVoluncheerB
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-If the <code>currentStatePointer</code> is at index 0, pointing to the initial Voluncheer book state, then there are no previous Voluncheer book states to restore. The <code>undo</code> command uses <code>Model#canUndoVoluncheerBook()</code> to check if this is the case. If so, it will return an error to the user rather than attempting to perform the undo.
+If the <code>currentStatePointer</code> is at index 0, pointing to the initial VolunCHeer book state, then there are no previous VolunCHeer book states to restore. The <code>undo</code> command uses <code>Model#canUndoVolunCHeer()</code> to check if this is the case. If so, it will return an error to the user rather than attempting to perform the undo.
 </td>
 </tr>
 </table>
@@ -296,7 +296,7 @@ If the <code>currentStatePointer</code> is at index 0, pointing to the initial V
 </div>
 </div>
 <div class="paragraph">
-<p>The <code>redo</code> command does the opposite&#8201;&#8212;&#8201;it calls <code>Model#redoVoluncheerBook()</code>, which shifts the <code>currentStatePointer</code> once to the right, pointing to the previously undone state, and restores the Voluncheer book to that state.</p>
+<p>The <code>redo</code> command does the opposite&#8201;&#8212;&#8201;it calls <code>Model#redoVolunCHeer()</code>, which shifts the <code>currentStatePointer</code> once to the right, pointing to the previously undone state, and restores the VolunCHeer book to that state.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -305,13 +305,13 @@ If the <code>currentStatePointer</code> is at index 0, pointing to the initial V
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-If the <code>currentStatePointer</code> is at index <code>VoluncheerBookStateList.size() - 1</code>, pointing to the latest Voluncheer book state, then there are no undone Voluncheer book states to restore. The <code>redo</code> command uses <code>Model#canRedoVoluncheerBook()</code> to check if this is the case. If so, it will return an error to the user rather than attempting to perform the redo.
+If the <code>currentStatePointer</code> is at index <code>VolunCHeerStateList.size() - 1</code>, pointing to the latest VolunCHeer book state, then there are no undone VolunCHeer book states to restore. The <code>redo</code> command uses <code>Model#canRedoVolunCHeer()</code> to check if this is the case. If so, it will return an error to the user rather than attempting to perform the redo.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>Step 5. The user then decides to execute the command <code>list</code>. Commands that do not modify the Voluncheer book, such as <code>list</code>, will usually not call <code>Model#commitVoluncheerBook()</code>, <code>Model#undoVoluncheerBook()</code> or <code>Model#redoVoluncheerBook()</code>. Thus, the <code>VoluncheerBookStateList</code> remains unchanged.</p>
+<p>Step 5. The user then decides to execute the command <code>list</code>. Commands that do not modify the VolunCHeer book, such as <code>list</code>, will usually not call <code>Model#commitVolunCHeer()</code>, <code>Model#undoVolunCHeer()</code> or <code>Model#redoVolunCHeer()</code>. Thus, the <code>VolunCHeerStateList</code> remains unchanged.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -319,7 +319,7 @@ If the <code>currentStatePointer</code> is at index <code>VoluncheerBookStateLis
 </div>
 </div>
 <div class="paragraph">
-<p>Step 6. The user executes <code>clear</code>, which calls <code>Model#commitVoluncheerBook()</code>. Since the <code>currentStatePointer</code> is not pointing at the end of the <code>VoluncheerBookStateList</code>, all Voluncheer book states after the <code>currentStatePointer</code> will be purged. We designed it this way because it no longer makes sense to redo the <code>add n/David &#8230;&#8203;</code> command. This is the behavior that most modern desktop applications follow.</p>
+<p>Step 6. The user executes <code>clear</code>, which calls <code>Model#commitVolunCHeer()</code>. Since the <code>currentStatePointer</code> is not pointing at the end of the <code>VolunCHeerStateList</code>, all VolunCHeer book states after the <code>currentStatePointer</code> will be purged. We designed it this way because it no longer makes sense to redo the <code>add n/David &#8230;&#8203;</code> command. This is the behavior that most modern desktop applications follow.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -337,73 +337,49 @@ If the <code>currentStatePointer</code> is at index <code>VoluncheerBookStateLis
 </div>
 <div class="sect3">
 <h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
-<div class="sect4">
-<h5 id="aspect-how-undo-redo-executes"><a class="link" href="#aspect-how-undo-redo-executes">Aspect: How undo &amp; redo executes</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Alternative 1 (current choice):</strong> Saves the entire Voluncheer book.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Easy to implement.</p>
-</li>
-<li>
-<p>Cons: May have performance issues in terms of memory usage.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Alternative 2:</strong> Individual command knows how to undo/redo by itself.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Will use less memory (e.g. for <code>deleteVolunteer</code>, just save the volunteer being deleted).</p>
-</li>
-<li>
-<p>Cons: We must ensure that the implementation of each individual command are correct.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect4">
-<h5 id="aspect-data-structure-to-support-the-undo-redo-commands"><a class="link" href="#aspect-data-structure-to-support-the-undo-redo-commands">Aspect: Data structure to support the undo/redo commands</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Alternative 1 (current choice):</strong> Use a list to store the history of Voluncheer book states.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Easy for new Computer Science student undergraduates to understand, who are likely to be the new incoming developers of our project.</p>
-</li>
-<li>
-<p>Cons: Logic is duplicated twice. For example, when a new command is executed, we must remember to update both <code>HistoryManager</code> and <code>VersionedVoluncheerBook</code>.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Alternative 2:</strong> Use <code>HistoryManager</code> for undo/redo</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: We do not need to maintain a separate list, and just reuse what is already in the codebase.</p>
-</li>
-<li>
-<p>Cons: Requires dealing with commands that have already been undone: We must remember to skip these commands. Violates Single Responsibility Principle and Separation of Concerns as <code>HistoryManager</code> now needs to do two different things.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Aspect</th>
+<th class="tableblock halign-left valign-top">Alternatives</th>
+<th class="tableblock halign-left valign-top">Pros (+)/ Cons(-)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">How undo &amp; redo executes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Saves the entire VolunCHeer book.</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">+ : Easy to implement.<br>
+    <br>
+ - :  May have performance issues in terms of memory usage.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Individual command knows how to undo/redo by itself.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">+ : Will use less memory (e.g. for <code>deleteVolunteer</code>, just save the volunteer being deleted).
+    <br>
+  - : We must ensure that the implementation of each individual command are correct.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">Data structure to support the undo/redo commands</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Use a list to store the history of VolunCHeer book states.</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">+ : Easy for new Computer Science student undergraduates to understand, who are likely to be the new incoming developers of our project.+
+    <br>
+ - : Logic is duplicated twice. For example, when a new command is executed, we must remember to update both <code>HistoryManager</code> and <code>VersionedVolunCHeer</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use <code>HistoryManager</code> for undo/redo</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">+ : We do not need to maintain a separate list, and just reuse what is already in the codebase.<br>
+  <br>
+  - : Requires dealing with commands that have already been undone: We must remember to skip these commands. Violates Single Responsibility Principle and Separation of Concerns as <code>HistoryManager</code> now needs to do two different things.</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
-</div>
-</div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 04:05:52 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 08:29:49 UTC</div></div></div></body></html>

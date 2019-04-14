@@ -37,7 +37,8 @@ public class DeleteVolunteerCommandTest {
         Volunteer volunteerToDelete = model.getFilteredVolunteerList().get(INDEX_FIRST_VOLUNTEER.getZeroBased());
         DeleteVolunteerCommand deleteVolunteerCommand = new DeleteVolunteerCommand(INDEX_FIRST_VOLUNTEER, false);
 
-        String expectedMessage = String.format(DeleteVolunteerCommand.MESSAGE_DELETE_VOLUNTEER_SUCCESS, volunteerToDelete);
+        String expectedMessage = String.format
+                (DeleteVolunteerCommand.MESSAGE_DELETE_VOLUNTEER_SUCCESS, volunteerToDelete);
 
         ModelManager expectedModel = new ModelManager(model.getAddressBook(), new UserPrefs());
         expectedModel.deleteVolunteer(volunteerToDelete);
@@ -51,7 +52,8 @@ public class DeleteVolunteerCommandTest {
         Index outOfBoundIndex = Index.fromOneBased(model.getFilteredVolunteerList().size() + 1);
         DeleteVolunteerCommand deleteVolunteerCommand = new DeleteVolunteerCommand(outOfBoundIndex, false);
 
-        assertCommandFailure(deleteVolunteerCommand, model, commandHistory, Messages.MESSAGE_INVALID_VOLUNTEER_DISPLAYED_INDEX);
+        assertCommandFailure(deleteVolunteerCommand, model, commandHistory,
+                Messages.MESSAGE_INVALID_VOLUNTEER_DISPLAYED_INDEX);
     }
 
     @Test
@@ -61,7 +63,8 @@ public class DeleteVolunteerCommandTest {
         Volunteer volunteerToDelete = model.getFilteredVolunteerList().get(INDEX_FIRST_VOLUNTEER.getZeroBased());
         DeleteVolunteerCommand deleteVolunteerCommand = new DeleteVolunteerCommand(INDEX_FIRST_VOLUNTEER, false);
 
-        String expectedMessage = String.format(DeleteVolunteerCommand.MESSAGE_DELETE_VOLUNTEER_SUCCESS, volunteerToDelete);
+        String expectedMessage = String.format
+                (DeleteVolunteerCommand.MESSAGE_DELETE_VOLUNTEER_SUCCESS, volunteerToDelete);
 
         Model expectedModel = new ModelManager(model.getAddressBook(), new UserPrefs());
         expectedModel.deleteVolunteer(volunteerToDelete);
@@ -81,7 +84,8 @@ public class DeleteVolunteerCommandTest {
 
         DeleteVolunteerCommand deleteVolunteerCommand = new DeleteVolunteerCommand(outOfBoundIndex, false);
 
-        assertCommandFailure(deleteVolunteerCommand, model, commandHistory, Messages.MESSAGE_INVALID_VOLUNTEER_DISPLAYED_INDEX);
+        assertCommandFailure(deleteVolunteerCommand, model, commandHistory,
+                Messages.MESSAGE_INVALID_VOLUNTEER_DISPLAYED_INDEX);
     }
 
     @Test
@@ -110,7 +114,8 @@ public class DeleteVolunteerCommandTest {
         DeleteVolunteerCommand deleteVolunteerCommand = new DeleteVolunteerCommand(outOfBoundIndex, false);
 
         // execution failed -> address book state not added into model
-        assertCommandFailure(deleteVolunteerCommand, model, commandHistory, Messages.MESSAGE_INVALID_VOLUNTEER_DISPLAYED_INDEX);
+        assertCommandFailure(deleteVolunteerCommand, model, commandHistory,
+                Messages.MESSAGE_INVALID_VOLUNTEER_DISPLAYED_INDEX);
 
         // single address book state in model -> undoCommand and redoCommand fail
         assertCommandFailure(new UndoCommand(), model, commandHistory, UndoCommand.MESSAGE_FAILURE);

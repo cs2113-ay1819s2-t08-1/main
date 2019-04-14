@@ -10,7 +10,6 @@ import static seedu.address.testutil.volunteer.TypicalVolunteers.ALICE;
 import static seedu.address.testutil.volunteer.TypicalVolunteers.BENSON;
 import static seedu.address.testutil.volunteer.TypicalVolunteers.BOB;
 
-
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;

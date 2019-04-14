@@ -34,7 +34,8 @@ import seedu.address.testutil.volunteer.EditVolunteerDescriptorBuilder;
 import seedu.address.testutil.volunteer.VolunteerBuilder;
 
 /**
- * Contains integration tests (interaction with the Model, UndoCommand and RedoCommand) and unit tests for EditVolunteerCommand.
+ * Contains integration tests (interaction with the Model,
+ * UndoCommand and RedoCommand) and unit tests for EditVolunteerCommand.
  */
 public class EditVolunteerCommandTest {
 
@@ -80,15 +81,12 @@ public class EditVolunteerCommandTest {
 
     @Test
     public void execute_noFieldSpecifiedUnfilteredList_success() {
-        EditVolunteerCommand editVolunteerCommand = new EditVolunteerCommand
-                (INDEX_FIRST_VOLUNTEER, new EditVolunteerDescriptor());
+        EditVolunteerCommand editVolunteerCommand = new EditVolunteerCommand(INDEX_FIRST_VOLUNTEER,
+                new EditVolunteerDescriptor());
         Volunteer editedVolunteer = model.getFilteredVolunteerList().get(INDEX_FIRST_VOLUNTEER.getZeroBased());
-
         String expectedMessage = String.format(EditVolunteerCommand.MESSAGE_EDIT_VOLUNTEER_SUCCESS, editedVolunteer);
-
         Model expectedModel = new ModelManager(new AddressBook(model.getAddressBook()), new UserPrefs());
         expectedModel.commitAddressBook();
-
         assertCommandSuccess(editVolunteerCommand, model, commandHistory, expectedMessage, expectedModel);
     }
 

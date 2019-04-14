@@ -37,7 +37,8 @@ public class EditVolunteerDescriptorTest {
         assertFalse(DESC_AMY.equals(DESC_BOB));
 
         // different name -> returns false
-        EditVolunteerDescriptor editedAmy = new EditVolunteerDescriptorBuilder(DESC_AMY).withName(VALID_NAME_BOB).build();
+        EditVolunteerDescriptor editedAmy =
+                new EditVolunteerDescriptorBuilder(DESC_AMY).withName(VALID_NAME_BOB).build();
         assertFalse(DESC_AMY.equals(editedAmy));
 
         // different phone -> returns false

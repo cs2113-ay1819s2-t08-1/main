@@ -119,7 +119,7 @@ public class AddVolunteerCommandParserTest {
 
         // multiple emails - last email accepted
         assertParseSuccess(parser, NAME_DESC_BOB + AGE_DESC_BOB + GENDER_DESC_BOB
-                + RACE_DESC_BOB + RELIGION_DESC_BOB + PHONE_DESC_BOB  + ADDRESS_DESC_BOB + EMAIL_DESC_AMY
+                + RACE_DESC_BOB + RELIGION_DESC_BOB + PHONE_DESC_BOB + ADDRESS_DESC_BOB + EMAIL_DESC_AMY
                 + EMAIL_DESC_BOB + EMERGENCY_CONTACT_DESC_BOB + DIETARY_PREFERENCE_DESC_BOB
                 + MEDICAL_CONDITION_DESC_BOB + TAG_DESC_INJURY, new AddVolunteerCommand(expectedVolunteer));
 

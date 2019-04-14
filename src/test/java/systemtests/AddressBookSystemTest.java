@@ -134,7 +134,8 @@ public abstract class AddressBookSystemTest {
      */
     protected void showAllVolunteers() {
         executeCommand(ListVolunteerCommand.COMMAND_WORD);
-        assertEquals(getModel().getAddressBook().getVolunteerList().size(), getModel().getFilteredVolunteerList().size());
+        assertEquals(getModel().getAddressBook().getVolunteerList().size(),
+                getModel().getFilteredVolunteerList().size());
     }
 
     /**
@@ -142,7 +143,8 @@ public abstract class AddressBookSystemTest {
      */
     protected void showVolunteersWithName(String keyword) {
         executeCommand(FindVolunteerCommand.COMMAND_WORD + " " + keyword);
-        assertTrue(getModel().getFilteredVolunteerList().size() < getModel().getAddressBook().getVolunteerList().size());
+        assertTrue(getModel().getFilteredVolunteerList().size() <
+                getModel().getAddressBook().getVolunteerList().size());
     }
 
     /**
@@ -207,7 +209,8 @@ public abstract class AddressBookSystemTest {
         //        }
         //        assertEquals(expectedUrl, getBrowserPanel().getLoadedUrl());
         //
-        //        assertEquals(expectedSelectedCardIndex.getZeroBased(), getVolunteerListPanel().getSelectedCardIndex());
+        //        assertEquals(expectedSelectedCardIndex.getZeroBased(),
+        //        getVolunteerListPanel().getSelectedCardIndex());
         //    }
         //
         //    /**
@@ -258,15 +261,15 @@ public abstract class AddressBookSystemTest {
         /**
          * Asserts that the starting state of the application is correct.
          */
-    //    private void assertApplicationStartingStateIsCorrect() {
-    //        assertEquals("", getCommandBox().getInput());
-    //        assertEquals("", getResultDisplay().getText());
-    //        assertListMatching(getVolunteerListPanel(), getModel().getFilteredVolunteerList());
-    //        assertEquals(BrowserPanel.DEFAULT_PAGE, getBrowserPanel().getLoadedUrl());
-    //        assertEquals(Paths.get(".").resolve(testApp.getStorageSaveLocation()).toString(),
-    //            getStatusBarFooter().getSaveLocation());
-    //        assertEquals(SYNC_STATUS_INITIAL, getStatusBarFooter().getSyncStatus());
-    //    }
+        //    private void assertApplicationStartingStateIsCorrect() {
+        //        assertEquals("", getCommandBox().getInput());
+        //        assertEquals("", getResultDisplay().getText());
+        //        assertListMatching(getVolunteerListPanel(), getModel().getFilteredVolunteerList());
+        //        assertEquals(BrowserPanel.DEFAULT_PAGE, getBrowserPanel().getLoadedUrl());
+        //        assertEquals(Paths.get(".").resolve(testApp.getStorageSaveLocation()).toString(),
+        //            getStatusBarFooter().getSaveLocation());
+        //        assertEquals(SYNC_STATUS_INITIAL, getStatusBarFooter().getSyncStatus());
+        //    }
 
     /**
      * Returns a defensive copy of the current model.

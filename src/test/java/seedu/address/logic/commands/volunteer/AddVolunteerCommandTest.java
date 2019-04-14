@@ -108,26 +108,22 @@ public class AddVolunteerCommandTest {
 
         @Override
         public ReadOnlyUserPrefs getUserPrefs() {
-            throw new AssertionError
-                    ("This method should not be called.");
+            throw new AssertionError("This method should not be called.");
         }
 
         @Override
         public GuiSettings getGuiSettings() {
-            throw new AssertionError
-                    ("This method should not be called.");
+            throw new AssertionError("This method should not be called.");
         }
 
         @Override
         public void setGuiSettings(GuiSettings guiSettings) {
-            throw new AssertionError
-                    ("This method should not be called.");
+            throw new AssertionError("This method should not be called.");
         }
 
         @Override
         public Path getAddressBookFilePath() {
-            throw new AssertionError
-                    ("This method should not be called.");
+            throw new AssertionError("This method should not be called.");
         }
 
         @Override
@@ -137,8 +133,7 @@ public class AddVolunteerCommandTest {
 
         @Override
         public void addVolunteer(Volunteer volunteer) {
-            throw new AssertionError
-                    ("This method should not be called.");
+            throw new AssertionError("This method should not be called.");
         }
 
         @Override
@@ -157,7 +152,8 @@ public class AddVolunteerCommandTest {
         }
 
         @Override
-        public void setProject(Project target, Project editedProject) throws DuplicateProjectException, ProjectNotFoundException {
+        public void setProject(Project target, Project editedProject)
+                throws DuplicateProjectException, ProjectNotFoundException {
 
         }
 
@@ -177,14 +173,10 @@ public class AddVolunteerCommandTest {
         }
 
         @Override
-        public void setSelectedProject(Project project) {
-
-        }
+        public void setSelectedProject(Project project) { }
 
         @Override
-        public void addBeneficiary(Beneficiary beneficiary) {
-
-        }
+        public void addBeneficiary(Beneficiary beneficiary) { }
 
         @Override
         public boolean hasBeneficiary(Beneficiary beneficiary) {
@@ -192,24 +184,16 @@ public class AddVolunteerCommandTest {
         }
 
         @Override
-        public void deleteBeneficiary(Beneficiary target) {
-
-        }
+        public void deleteBeneficiary(Beneficiary target) {}
 
         @Override
-        public void setBeneficiary(Beneficiary target, Beneficiary editedBeneficiary) {
-
-        }
+        public void setBeneficiary(Beneficiary target, Beneficiary editedBeneficiary) { }
 
         @Override
-        public Beneficiary getSelectedBeneficiary() {
-            return null;
-        }
+        public Beneficiary getSelectedBeneficiary() { return null; }
 
         @Override
-        public void setSelectedBeneficiary(Beneficiary beneficiary) {
-
-        }
+        public void setSelectedBeneficiary(Beneficiary beneficiary) { }
 
         @Override
         public ReadOnlyAddressBook getAddressBook() {

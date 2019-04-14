@@ -36,11 +36,11 @@ import org.junit.Test;
 import seedu.address.commons.core.index.Index;
 import seedu.address.logic.commands.volunteer.EditVolunteerCommand;
 import seedu.address.logic.parser.EditVolunteerCommandParser;
+import seedu.address.model.tag.Tag;
 import seedu.address.model.volunteer.Address;
 import seedu.address.model.volunteer.Email;
 import seedu.address.model.volunteer.Name;
 import seedu.address.model.volunteer.Phone;
-import seedu.address.model.tag.Tag;
 import seedu.address.testutil.volunteer.EditVolunteerDescriptorBuilder;
 
 public class EditVolunteerCommandParserTest {
@@ -84,7 +84,7 @@ public class EditVolunteerCommandParserTest {
         assertParseFailure(parser, "1" + INVALID_NAME_DESC, Name.MESSAGE_CONSTRAINTS); // invalid name
         assertParseFailure(parser, "1" + INVALID_PHONE_DESC, Phone.MESSAGE_CONSTRAINTS); // invalid phone
         assertParseFailure(parser, "1" + INVALID_EMAIL_DESC, Email.MESSAGE_CONSTRAINTS); // invalid email
-        assertParseFailure(parser, "1" + INVALID_ADDRESS_DESC, Address.MESSAGE_CONSTRAINTS); // invalid address
+        assertParseFailure(parser, "1" + INVALID_ADDRESS_DESC, Address.MESSAGE_CONSTRAINTS); //invalid address
         assertParseFailure(parser, "1" + INVALID_TAG_DESC, Tag.MESSAGE_CONSTRAINTS); // invalid tag
 
         // invalid phone followed by valid email
@@ -96,12 +96,16 @@ public class EditVolunteerCommandParserTest {
 
         // while parsing {@code PREFIX_TAG} alone will reset the tags of the {@code Volunteer} being edited,
         // parsing it together with a valid tag results in error
-        assertParseFailure(parser, "1" + TAG_DESC_FRIEND + TAG_DESC_HUSBAND + TAG_EMPTY, Tag.MESSAGE_CONSTRAINTS);
-        assertParseFailure(parser, "1" + TAG_DESC_FRIEND + TAG_EMPTY + TAG_DESC_HUSBAND, Tag.MESSAGE_CONSTRAINTS);
-        assertParseFailure(parser, "1" + TAG_EMPTY + TAG_DESC_FRIEND + TAG_DESC_HUSBAND, Tag.MESSAGE_CONSTRAINTS);
+        assertParseFailure(parser, "1" + TAG_DESC_FRIEND
+                + TAG_DESC_HUSBAND + TAG_EMPTY, Tag.MESSAGE_CONSTRAINTS);
+        assertParseFailure(parser, "1" + TAG_DESC_FRIEND
+                + TAG_EMPTY + TAG_DESC_HUSBAND, Tag.MESSAGE_CONSTRAINTS);
+        assertParseFailure(parser, "1" + TAG_EMPTY
+                + TAG_DESC_FRIEND + TAG_DESC_HUSBAND, Tag.MESSAGE_CONSTRAINTS);
 
         // multiple invalid values, but only the first invalid value is captured
-        assertParseFailure(parser, "1" + INVALID_NAME_DESC + INVALID_EMAIL_DESC + VALID_ADDRESS_AMY + VALID_PHONE_AMY,
+        assertParseFailure(parser, "1" + INVALID_NAME_DESC
+                        + INVALID_EMAIL_DESC + VALID_ADDRESS_AMY + VALID_PHONE_AMY,
                 Name.MESSAGE_CONSTRAINTS);
     }
 
@@ -111,7 +115,8 @@ public class EditVolunteerCommandParserTest {
         String userInput = targetIndex.getOneBased() + PHONE_DESC_BOB + TAG_DESC_HUSBAND
                 + EMAIL_DESC_AMY + ADDRESS_DESC_AMY + NAME_DESC_AMY + TAG_DESC_FRIEND;
 
-        EditVolunteerCommand.EditVolunteerDescriptor descriptor = new EditVolunteerDescriptorBuilder().withName(VALID_NAME_AMY)
+        EditVolunteerCommand.EditVolunteerDescriptor descriptor
+                = new EditVolunteerDescriptorBuilder().withName(VALID_NAME_AMY)
                 .withPhone(VALID_PHONE_BOB).withEmail(VALID_EMAIL_AMY).withAddress(VALID_ADDRESS_AMY)
                 .withTags(VALID_TAG_HUSBAND, VALID_TAG_FRIEND).build();
         EditVolunteerCommand expectedCommand = new EditVolunteerCommand(targetIndex, descriptor);
@@ -124,7 +129,8 @@ public class EditVolunteerCommandParserTest {
         Index targetIndex = INDEX_FIRST_VOLUNTEER;
         String userInput = targetIndex.getOneBased() + PHONE_DESC_BOB + EMAIL_DESC_AMY;
 
-        EditVolunteerCommand.EditVolunteerDescriptor descriptor = new EditVolunteerDescriptorBuilder().withPhone(VALID_PHONE_BOB)
+        EditVolunteerCommand.EditVolunteerDescriptor descriptor
+                = new EditVolunteerDescriptorBuilder().withPhone(VALID_PHONE_BOB)
                 .withEmail(VALID_EMAIL_AMY).build();
         EditVolunteerCommand expectedCommand = new EditVolunteerCommand(targetIndex, descriptor);
 
@@ -136,7 +142,8 @@ public class EditVolunteerCommandParserTest {
         // name
         Index targetIndex = INDEX_THIRD_VOLUNTEER;
         String userInput = targetIndex.getOneBased() + NAME_DESC_AMY;
-        EditVolunteerCommand.EditVolunteerDescriptor descriptor = new EditVolunteerDescriptorBuilder().withName(VALID_NAME_AMY).build();
+        EditVolunteerCommand.EditVolunteerDescriptor descriptor
+                = new EditVolunteerDescriptorBuilder().withName(VALID_NAME_AMY).build();
         EditVolunteerCommand expectedCommand = new EditVolunteerCommand(targetIndex, descriptor);
         assertParseSuccess(parser, userInput, expectedCommand);
 
@@ -172,7 +179,8 @@ public class EditVolunteerCommandParserTest {
                 + TAG_DESC_FRIEND + PHONE_DESC_AMY + ADDRESS_DESC_AMY + EMAIL_DESC_AMY + TAG_DESC_FRIEND
                 + PHONE_DESC_BOB + ADDRESS_DESC_BOB + EMAIL_DESC_BOB + TAG_DESC_HUSBAND;
 
-        EditVolunteerCommand.EditVolunteerDescriptor descriptor = new EditVolunteerDescriptorBuilder().withPhone(VALID_PHONE_BOB)
+        EditVolunteerCommand.EditVolunteerDescriptor descriptor
+                = new EditVolunteerDescriptorBuilder().withPhone(VALID_PHONE_BOB)
                 .withEmail(VALID_EMAIL_BOB).withAddress(VALID_ADDRESS_BOB).withTags(VALID_TAG_FRIEND, VALID_TAG_HUSBAND)
                 .build();
         EditVolunteerCommand expectedCommand = new EditVolunteerCommand(targetIndex, descriptor);
@@ -185,7 +193,8 @@ public class EditVolunteerCommandParserTest {
         // no other valid values specified
         Index targetIndex = INDEX_FIRST_VOLUNTEER;
         String userInput = targetIndex.getOneBased() + INVALID_PHONE_DESC + PHONE_DESC_BOB;
-        EditVolunteerCommand.EditVolunteerDescriptor descriptor = new EditVolunteerDescriptorBuilder().withPhone(VALID_PHONE_BOB).build();
+        EditVolunteerCommand.EditVolunteerDescriptor descriptor
+                = new EditVolunteerDescriptorBuilder().withPhone(VALID_PHONE_BOB).build();
         EditVolunteerCommand expectedCommand = new EditVolunteerCommand(targetIndex, descriptor);
         assertParseSuccess(parser, userInput, expectedCommand);
 
@@ -203,7 +212,8 @@ public class EditVolunteerCommandParserTest {
         Index targetIndex = INDEX_THIRD_VOLUNTEER;
         String userInput = targetIndex.getOneBased() + TAG_EMPTY;
 
-        EditVolunteerCommand.EditVolunteerDescriptor descriptor = new EditVolunteerDescriptorBuilder().withTags().build();
+        EditVolunteerCommand.EditVolunteerDescriptor descriptor
+                = new EditVolunteerDescriptorBuilder().withTags().build();
         EditVolunteerCommand expectedCommand = new EditVolunteerCommand(targetIndex, descriptor);
 
         assertParseSuccess(parser, userInput, expectedCommand);

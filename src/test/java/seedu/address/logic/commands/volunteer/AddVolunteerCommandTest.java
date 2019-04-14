@@ -190,7 +190,9 @@ public class AddVolunteerCommandTest {
         public void setBeneficiary(Beneficiary target, Beneficiary editedBeneficiary) { }
 
         @Override
-        public Beneficiary getSelectedBeneficiary() { return null; };
+        public Beneficiary getSelectedBeneficiary() {
+            return null;
+        }
 
         @Override
         public void setSelectedBeneficiary(Beneficiary beneficiary) { }
@@ -252,8 +254,7 @@ public class AddVolunteerCommandTest {
 
         @Override
         public void undoAddressBook() {
-            throw new AssertionError
-                    ("This method should not be called.");
+            throw new AssertionError("This method should not be called.");
         }
 
         @Override
@@ -283,8 +284,7 @@ public class AddVolunteerCommandTest {
 
         @Override
         public Volunteer getSelectedVolunteer() {
-            throw new AssertionError
-                    ("This method should not be called.");
+            throw new AssertionError("This method should not be called.");
         }
 
         @Override

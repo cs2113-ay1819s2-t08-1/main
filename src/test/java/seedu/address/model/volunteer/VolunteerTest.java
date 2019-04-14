@@ -13,6 +13,7 @@ import static seedu.address.testutil.volunteer.TypicalVolunteers.BOB;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
+
 import seedu.address.testutil.volunteer.VolunteerBuilder;
 
 public class VolunteerTest {

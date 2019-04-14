@@ -67,7 +67,7 @@ public class AssignVolunteerCommandTest {
 
         // same values -> returns true
         AssignVolunteerCommand assignFirstCommandCopy =
-                new AssignVolunteerCommand(PROJECT1.getProjectTitle(),2);
+                new AssignVolunteerCommand(PROJECT1.getProjectTitle(), 2);
         assertTrue(assignFirstCommand.equals(assignFirstCommandCopy));
 
         // different types -> returns false

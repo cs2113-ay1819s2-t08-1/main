@@ -197,78 +197,78 @@ public abstract class AddressBookSystemTest {
      * @see BrowserPanelHandle#isUrlChanged()
      * @see VolunteerListPanelHandle#isSelectedVolunteerCardChanged()
      */
-        //    protected void assertSelectedCardChanged(Index expectedSelectedCardIndex) {
-        ////        getVolunteerListPanel().navigateToCard(getVolunteerListPanel().getSelectedCardIndex());
-        ////        String selectedCardName = getVolunteerListPanel().getHandleToSelectedCard().getName();
-        //        URL expectedUrl;
-        //        try {
-        //            expectedUrl = new URL(BrowserPanel.SEARCH_PAGE_URL + selectedCardName.replaceAll(" ", "%20"));
-        //        } catch (MalformedURLException mue) {
-        //            throw new AssertionError("URL expected to be valid.", mue);
-        //        }
-        //        assertEquals(expectedUrl, getBrowserPanel().getLoadedUrl());
-        //
-        //        assertEquals(expectedSelectedCardIndex.getZeroBased(),
-        //        getVolunteerListPanel().getSelectedCardIndex());
-        //    }
-        //
-        //    /**
-        //     * Asserts that the browser's url and the selected card in the volunteer list panel remain unchanged.
-        //     *
-        //     * @see BrowserPanelHandle#isUrlChanged()
-        //     * @see VolunteerListPanelHandle#isSelectedVolunteerCardChanged()
-        //     */
-        //    protected void assertSelectedCardUnchanged() {
-        //        assertFalse(getBrowserPanel().isUrlChanged());
-        //        assertFalse(getVolunteerListPanel().isSelectedVolunteerCardChanged());
-        //    }
-        //
-        //    /**
-        //     * Asserts that the command box's shows the default style.
-        //     */
-        //    protected void assertCommandBoxShowsDefaultStyle() {
-        //        assertEquals(COMMAND_BOX_DEFAULT_STYLE, getCommandBox().getStyleClass());
-        //    }
-        //
-        //    /**
-        //     * Asserts that the command box's shows the error style.
-        //     */
-        //    protected void assertCommandBoxShowsErrorStyle() {
-        //        assertEquals(COMMAND_BOX_ERROR_STYLE, getCommandBox().getStyleClass());
-        //    }
-        //
-        //    /**
-        //     * Asserts that the entire status bar remains the same.
-        //     */
-        //    protected void assertStatusBarUnchanged() {
-        //        StatusBarFooterHandle handle = getStatusBarFooter();
-        //        assertFalse(handle.isSaveLocationChanged());
-        //        assertFalse(handle.isSyncStatusChanged());
-        //    }
-        //
-        //    /**
-        //     * Asserts that only the sync status in the status bar was changed to the timing of
-        //     * {@code ClockRule#getInjectedClock()}, while the save location remains the same.
-        //     */
-        //    protected void assertStatusBarUnchangedExceptSyncStatus() {
-        //        StatusBarFooterHandle handle = getStatusBarFooter();
-        //        String timestamp = new Date(clockRule.getInjectedClock().millis()).toString();
-        //        String expectedSyncStatus = String.format(SYNC_STATUS_UPDATED, timestamp);
-        //        assertEquals(expectedSyncStatus, handle.getSyncStatus());
-        //        assertFalse(handle.isSaveLocationChanged());
-        //    }
+    //    protected void assertSelectedCardChanged(Index expectedSelectedCardIndex) {
+    //        getVolunteerListPanel().navigateToCard(getVolunteerListPanel().getSelectedCardIndex());
+    //        String selectedCardName = getVolunteerListPanel().getHandleToSelectedCard().getName();
+    //        URL expectedUrl;
+    //        try {
+    //            expectedUrl = new URL(BrowserPanel.SEARCH_PAGE_URL + selectedCardName.replaceAll(" ", "%20"));
+    //        } catch (MalformedURLException mue) {
+    //            throw new AssertionError("URL expected to be valid.", mue);
+    //        }
+    //        assertEquals(expectedUrl, getBrowserPanel().getLoadedUrl());
+    //
+    //        assertEquals(expectedSelectedCardIndex.getZeroBased(),
+    //        getVolunteerListPanel().getSelectedCardIndex());
+    //    }
+    //
+    //    /**
+    //     * Asserts that the browser's url and the selected card in the volunteer list panel remain unchanged.
+    //     *
+    //     * @see BrowserPanelHandle#isUrlChanged()
+    //     * @see VolunteerListPanelHandle#isSelectedVolunteerCardChanged()
+    //     */
+    //    protected void assertSelectedCardUnchanged() {
+    //        assertFalse(getBrowserPanel().isUrlChanged());
+    //        assertFalse(getVolunteerListPanel().isSelectedVolunteerCardChanged());
+    //    }
+    //
+    //    /**
+    //     * Asserts that the command box's shows the default style.
+    //     */
+    //    protected void assertCommandBoxShowsDefaultStyle() {
+    //        assertEquals(COMMAND_BOX_DEFAULT_STYLE, getCommandBox().getStyleClass());
+    //    }
+    //
+    //    /**
+    //     * Asserts that the command box's shows the error style.
+    //     */
+    //    protected void assertCommandBoxShowsErrorStyle() {
+    //        assertEquals(COMMAND_BOX_ERROR_STYLE, getCommandBox().getStyleClass());
+    //    }
+    //
+    //    /**
+    //     * Asserts that the entire status bar remains the same.
+    //     */
+    //    protected void assertStatusBarUnchanged() {
+    //        StatusBarFooterHandle handle = getStatusBarFooter();
+    //        assertFalse(handle.isSaveLocationChanged());
+    //        assertFalse(handle.isSyncStatusChanged());
+    //    }
+    //
+    //    /**
+    //     * Asserts that only the sync status in the status bar was changed to the timing of
+    //     * {@code ClockRule#getInjectedClock()}, while the save location remains the same.
+    //     */
+    //    protected void assertStatusBarUnchangedExceptSyncStatus() {
+    //        StatusBarFooterHandle handle = getStatusBarFooter();
+    //        String timestamp = new Date(clockRule.getInjectedClock().millis()).toString();
+    //        String expectedSyncStatus = String.format(SYNC_STATUS_UPDATED, timestamp);
+    //        assertEquals(expectedSyncStatus, handle.getSyncStatus());
+    //        assertFalse(handle.isSaveLocationChanged());
+    //    }
     /**
      * Asserts that the starting state of the application is correct.
      */
-        //    private void assertApplicationStartingStateIsCorrect() {
-        //        assertEquals("", getCommandBox().getInput());
-        //        assertEquals("", getResultDisplay().getText());
-        //        assertListMatching(getVolunteerListPanel(), getModel().getFilteredVolunteerList());
-        //        assertEquals(BrowserPanel.DEFAULT_PAGE, getBrowserPanel().getLoadedUrl());
-        //        assertEquals(Paths.get(".").resolve(testApp.getStorageSaveLocation()).toString(),
-        //            getStatusBarFooter().getSaveLocation());
-        //        assertEquals(SYNC_STATUS_INITIAL, getStatusBarFooter().getSyncStatus());
-        //    }
+    //    private void assertApplicationStartingStateIsCorrect() {
+    //        assertEquals("", getCommandBox().getInput());
+    //        assertEquals("", getResultDisplay().getText());
+    //        assertListMatching(getVolunteerListPanel(), getModel().getFilteredVolunteerList());
+    //        assertEquals(BrowserPanel.DEFAULT_PAGE, getBrowserPanel().getLoadedUrl());
+    //        assertEquals(Paths.get(".").resolve(testApp.getStorageSaveLocation()).toString(),
+    //            getStatusBarFooter().getSaveLocation());
+    //        assertEquals(SYNC_STATUS_INITIAL, getStatusBarFooter().getSyncStatus());
+    //    }
 
     /**
      * Returns a defensive copy of the current model.

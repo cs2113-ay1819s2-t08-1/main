@@ -704,6 +704,41 @@ The code snippet below shows how the main command is implemented.</p>
 list and collects the specified fields into a <code>String</code> array, which is appended to another <code>List</code> of <code>String</code> arrays
 and returned. The <code>toCsv</code> method formats the data into CSV-friendly data.</p>
 </div>
+<div class="paragraph">
+<p>Below are certain considerations made when designing the filtered export feature.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Aspect</th>
+<th class="tableblock halign-left valign-top">Alternatives</th>
+<th class="tableblock halign-left valign-top">Pros (+)/ Cons(-)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sorting the internal volunteer list</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Using a SortedList wrapper around the unmodifiable list</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">+ : Easy to implement. + Will not affect the actual data.
+    <br>
+ - :  The new SortedList has to be added to the UI, or constantly swapped around with
+ the usual list of volunteers.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Using PrintWriter to write out data to CSV</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Using an open-source library such as openCSV to handle the writing.</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">+ : Easier to understand and code for any new developers. + openCSV will handle special characters in data.
+    <br>
+ - : External library is required to be installed. - Data to be written is already checked and cleaned to be free of
+ special characters, hence it is not necessary.</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="sect2">
@@ -2279,4 +2314,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-13 20:24:02 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 04:05:52 UTC</div></div></div></body></html>

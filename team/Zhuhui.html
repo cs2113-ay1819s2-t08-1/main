@@ -123,39 +123,6 @@ compared to using the command line interface.</p>
 </ul>
 </div>
 </li>
-<li>
-<p>Enhancements to existing features:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>PENDING: Allow the selection of volunteers into details (Pull requests <a href="https://github.com">#33</a>, <a href="https://github.com">#34</a>)</p>
-</li>
-<li>
-<p>Wrote additional tests for existing features to increase coverage from 88% to 92% (Pull requests <a href="https://github.com">#36</a>, <a href="https://github.com">#38</a>)</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Documentation:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Did cosmetic tweaks to existing contents of the User Guide: <a href="https://github.com">#14</a></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Community:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>PRs reviewed (with non-trivial review comments): <a href="https://github.com">#12</a>, <a href="https://github.com">#32</a>, <a href="https://github.com">#19</a>, <a href="https://github.com">#42</a>)</p>
-</li>
-</ul>
-</div>
-</li>
 </ul>
 </div>
 </li>
@@ -177,7 +144,244 @@ compared to using the command line interface.</p>
 </tbody>
 </table>
 <div class="paragraph">
-<p>*Volunteer Class</p>
+<p>*Volunteer Feature
+=== Volunteer</p>
+</div>
+<div class="sect3">
+<h4 id="adding-a-volunteer-code-addvolunteer-code-code-av-code"><a class="link" href="#adding-a-volunteer-code-addvolunteer-code-code-av-code">Adding a volunteer: <code>addVolunteer</code> / <code>av</code></a></h4>
+<div class="paragraph">
+<p>As like before, this adds a volunteer to the volunteer pool</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>addVolunteer n/NAME y/AGE g/GENDER r/RACE [rg/RELIGION] a/ADDRESS e/EMAIL p/PHONE_NUMBER
+ec/EMERGENCY_CONTACT [dp/DIETARY_PREFERENCE] [m/MEDICAL_CONDITION] [t/TAG]&#8230;&#8203;</code></p>
+</div>
+<div class="paragraph">
+<p>Alternative Format: <code>av n/NAME y/AGE g/GENDER r/RACE [rg/RELIGION] a/ADDRESS e/EMAIL p/PHONE_NUMBER
+                    ec/EMERGENCY_CONTACT [dp/DIETARY_PREFERENCE] [m/MEDICAL_CONDITION] [t/TAG]&#8230;&#8203;</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>"Add Successful!" message is prompted upon successfully adding a volunteer</p>
+</li>
+<li>
+<p>An invalid message will be prompted if a Volunteer with the same exact name is present in the existing database</p>
+</li>
+<li>
+<p>Parameters for Religion, Dietary Preference, Medical Condition are optional and set to 'nil' by default</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+A volunteer can have any number of tags (including 0)
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>addVolunteer n/John Doe y/18 g/male r/eurasian rg/christian a/John street, block 123, #01-01 e/johnd@example.com
+p/98765432 ec/Mary, Mother, 92221111 dp/vegetarian m/asthma</code></p>
+</li>
+<li>
+<p><code>av n/Sarah Soh y/22 g/female r/chinese rg/buddhist a/betsy ave 6, 02-08 e/sarah08@example.com
+p/92345678 ec/Johnny, Husband, 81234568</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="deleting-a-volunteer-code-deletevolunteer-code-code-dv-code"><a class="link" href="#deleting-a-volunteer-code-deletevolunteer-code-code-dv-code">Deleting a volunteer : <code>deleteVolunteer</code> \ <code>dv</code></a></h4>
+<div class="paragraph">
+<p>After a volunteer has left, it can be deleted by this command by referencing its index in the list.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>deleteVolunteer INDEX</code><br>
+Alternative Format: <code>dv INDEX</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Deletes the volunteer at the specified <code>INDEX</code>.</p>
+</li>
+<li>
+<p>The index refers to the index number shown in the displayed volunteer list.</p>
+</li>
+<li>
+<p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+<li>
+<p>Error message is shown if the given index is invalid</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>listVolunteer</code><br>
+<code>deleteVolunteer 2</code><br>
+Deletes the 2nd volunteer in the volunteer list.</p>
+</li>
+<li>
+<p><code>findVolunteer Betsy</code><br>
+<code>dv 1</code><br>
+Deletes the 1st volunteer in the searched volunteer list.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Use the list volunteers commands to check the correct index of the volunteer to be deleted
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="editing-a-volunteer-code-editvolunteer-code-code-ev-code"><a class="link" href="#editing-a-volunteer-code-editvolunteer-code-code-ev-code">Editing a volunteer : <code>editVolunteer</code> \ <code>ev</code></a></h4>
+<div class="paragraph">
+<p>Similar to beneficiary, we can update volunteer particulars by the given index.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>editVolunteer INDEX [n/NAME] [y/AGE] [g/GENDER] [r/RACE] [rg/RELIGION][p/PHONE] [a/ADDRESS] [e/EMAIL]
+[ec/EMERGENCYCONTACT] [dp/DIETARYPREFERENCE] [mc/MEDICALCONDITION] [t/TAG]&#8230;&#8203;</code></p>
+</div>
+<div class="paragraph">
+<p>Alternative Format: <code>ev INDEX [n/NAME] [y/AGE] [g/GENDER] [r/RACE] [rg/RELIGION][p/PHONE] [a/ADDRESS] [e/EMAIL]
+                    [ec/EMERGENCYCONTACT] [dp/DIETARYPREFERENCE] [mc/MEDICALCONDITION] [t/TAG]&#8230;&#8203;</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Edits the volunteer at the specified <code>INDEX</code>.
+The index refers to the index number shown in the displayed volunteer list.
+The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+<li>
+<p>At least one of the optional fields must be provided.</p>
+</li>
+<li>
+<p>Existing values will be updated to the input values.</p>
+</li>
+<li>
+<p>When editing tags, the existing tags of the volunteer will be removed i.e adding of tags is not cumulative.</p>
+</li>
+<li>
+<p>You can remove all the volunteer&#8217;s tags by typing <code>t/</code> without specifying any tags after it.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>editVolunteer 1 p/91234567 e/johndoe@example.com</code><br>
+Edits the phone number and email address of the 1st volunteer to be <code>91234567</code> and <code>johndoe@example.com</code> respectively.</p>
+</li>
+<li>
+<p><code>ev 2 n/Betsy Crower t/</code><br>
+Edits the name of the 2nd volunteer to be <code>Betsy Crower</code> and clears all existing tags.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="locating-volunteers-by-name-code-findvolunteer-code-code-fv-code"><a class="link" href="#locating-volunteers-by-name-code-findvolunteer-code-code-fv-code">Locating volunteers by name: <code>findVolunteer</code> \ <code>fv</code></a></h4>
+<div class="paragraph">
+<p>Searching for volunteers works similarly to beneficiaries.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
+</div>
+<div class="paragraph">
+<p>Alternative Format: <code>fv KEYWORD [MORE_KEYWORDS]</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The search is case insensitive. e.g <code>hans</code> will match <code>Hans</code></p>
+</li>
+<li>
+<p>The order of the keywords does not matter. e.g. <code>Hans Bo</code> will match <code>Bo Hans</code></p>
+</li>
+<li>
+<p>Only the name is searched.</p>
+</li>
+<li>
+<p>Only full words will be matched e.g. <code>Han</code> will not match <code>Hans</code></p>
+</li>
+<li>
+<p>volunteers matching at least one keyword will be returned (i.e. <code>OR</code> search).</p>
+</li>
+<li>
+<p>e.g. <code>Hans Bo</code> will return <code>Hans Gruber</code>, <code>Bo Yang</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>findVolunteer John</code><br>
+Returns <code>john</code> and <code>John Doe</code></p>
+</li>
+<li>
+<p><code>fv Betsy Tim John</code><br>
+Returns any volunteer having names <code>Betsy</code>, <code>Tim</code>, or <code>John</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="listing-all-volunteers-code-listvolunteer-code-code-lv-code"><a class="link" href="#listing-all-volunteers-code-listvolunteer-code-code-lv-code">Listing all volunteers : <code>listVolunteer</code> \ <code>lv</code></a></h4>
+<div class="paragraph">
+<p>Shows a list of all volunteers in the volunteer pool.<br></p>
+</div>
+<div class="paragraph">
+<p>Format: <code>listVolunteer</code></p>
+</div>
+<div class="paragraph">
+<p>Alternative Format: <code>lv</code></p>
+</div>
 </div>
 </div>
 </div>
@@ -269,4 +473,4 @@ A sequence diagram is shown below to illustrate how it works in an abstract leve
 </table>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 17:56:10 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 18:11:14 UTC</div></div></div></body></html>

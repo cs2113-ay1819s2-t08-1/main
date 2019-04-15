@@ -137,6 +137,7 @@ public class AddressBookParser {
             return new ListBeneficiaryCommand();
 
         case ListVolunteerCommand.COMMAND_WORD:
+        case ListVolunteerCommand.COMMAND_ALIAS:
             return new ListVolunteerCommand();
 
         case HistoryCommand.COMMAND_WORD:

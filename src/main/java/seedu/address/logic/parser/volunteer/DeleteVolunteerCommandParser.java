@@ -22,7 +22,7 @@ public class DeleteVolunteerCommandParser implements Parser<DeleteVolunteerComma
     public DeleteVolunteerCommand parse(String args) throws ParseException {
         try {
             Index index = ParserUtil.parseIndex(args);
-            return new DeleteVolunteerCommand(index,false);
+            return new DeleteVolunteerCommand(index, false);
         } catch (ParseException pe) {
             throw new ParseException(
                 String.format(MESSAGE_INVALID_COMMAND_FORMAT, DeleteVolunteerCommand.MESSAGE_USAGE), pe);

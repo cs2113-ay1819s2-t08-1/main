@@ -10,22 +10,20 @@ import static seedu.address.commons.util.AppUtil.checkArgument;
 public class EmergencyContact {
 
     public static final String MESSAGE_CONSTRAINTS =
-        " Format must be <Name> <Relationship> <Contact number> and separated by spaces. "
-            + "Name should contain only the first name. "
-            + "Phone numbers should only contain numbers, and it should be at least 3 digits long";
+        " Format is recommended to be <Name> <Relationship> <Contact number> and separated by spaces. ";
 
-    public static final String VALIDATION_REGEX = "[\\p{Alnum}][\\p{Alnum}  ]*";
+    public static final String VALIDATION_REGEX = "[\\p{Alnum}][\\p{Alnum} ]*";
     public final String value;
 
     /**
      * Constructs a {@code Phone}.
      *
-     * @param emergencycontact A valid name, relationship and phone number.
+     * @param emergencyContact A valid name, relationship and phone number.
      */
-    public EmergencyContact(String emergencycontact) {
-        requireNonNull(emergencycontact);
-        checkArgument(isValidEmergencyContact(emergencycontact), MESSAGE_CONSTRAINTS);
-        value = emergencycontact;
+    public EmergencyContact(String emergencyContact) {
+        requireNonNull(emergencyContact);
+        checkArgument(isValidEmergencyContact(emergencyContact), MESSAGE_CONSTRAINTS);
+        value = emergencyContact;
     }
 
     /**

@@ -50,6 +50,7 @@ import seedu.address.model.volunteer.Volunteer;
 public class EditVolunteerCommand extends Command {
 
     public static final String COMMAND_WORD = "editVolunteer";
+    public static final String COMMAND_ALIAS = "ev";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Edits the details of the volunteer identified "
         + "by the index number used in the displayed volunteer list. "
@@ -57,12 +58,12 @@ public class EditVolunteerCommand extends Command {
         + "Parameters: INDEX (must be a positive integer) "
         + "[" + PREFIX_NAME + "NAME] "
         + "[" + PREFIX_AGE + "AGE] "
-        + "[" + PREFIX_GENDER + "AGE] "
+        + "[" + PREFIX_GENDER + "GENDER] "
         + "[" + PREFIX_RACE + "RACE] "
-        + "[" + PREFIX_RELIGION + "AGE] "
+        + "[" + PREFIX_RELIGION + "RELIGION] "
         + "[" + PREFIX_PHONE + "PHONE] "
         + "[" + PREFIX_EMAIL + "EMAIL] "
-        + "[" + PREFIX_EMERGENCY_CONTACT + "NAME, RELATIONSHIP, PHONE] "
+        + "[" + PREFIX_EMERGENCY_CONTACT + "NAME RELATIONSHIP PHONE] "
         + "[" + PREFIX_DIETARY_PREFERENCE + "PREFERENCE] "
         + "[" + PREFIX_MEDICAL_CONDITION + "STATUS] "
         + "[" + PREFIX_ADDRESS + "ADDRESS] "
@@ -172,9 +173,9 @@ public class EditVolunteerCommand extends Command {
         private Phone phone;
         private Address address;
         private Email email;
-        private EmergencyContact emergencycontact;
-        private DietaryPreference dietarypreference;
-        private MedicalCondition medicalcondition;
+        private EmergencyContact emergencyContact;
+        private DietaryPreference dietaryPreference;
+        private MedicalCondition medicalCondition;
         private Set<Tag> tags;
 
         public EditVolunteerDescriptor() {
@@ -193,9 +194,9 @@ public class EditVolunteerCommand extends Command {
             setPhone(toCopy.phone);
             setAddress(toCopy.address);
             setEmail(toCopy.email);
-            setEmergencyContact(toCopy.emergencycontact);
-            setDietaryPreference(toCopy.dietarypreference);
-            setMedicalCondition(toCopy.medicalcondition);
+            setEmergencyContact(toCopy.emergencyContact);
+            setDietaryPreference(toCopy.dietaryPreference);
+            setMedicalCondition(toCopy.medicalCondition);
             setTags(toCopy.tags);
         }
 
@@ -271,27 +272,27 @@ public class EditVolunteerCommand extends Command {
         }
 
         public Optional<EmergencyContact> getEmergencyContact() {
-            return Optional.ofNullable(emergencycontact);
+            return Optional.ofNullable(emergencyContact);
         }
 
-        public void setEmergencyContact(EmergencyContact emergencycontact) {
-            this.emergencycontact = emergencycontact;
+        public void setEmergencyContact(EmergencyContact emergencyContact) {
+            this.emergencyContact = emergencyContact;
         }
 
         public Optional<DietaryPreference> getDietaryPreference() {
-            return Optional.ofNullable(dietarypreference);
+            return Optional.ofNullable(dietaryPreference);
         }
 
-        public void setDietaryPreference(DietaryPreference dietarypreference) {
-            this.dietarypreference = dietarypreference;
+        public void setDietaryPreference(DietaryPreference dietaryPreference) {
+            this.dietaryPreference = dietaryPreference;
         }
 
         public Optional<MedicalCondition> getMedicalCondition() {
-            return Optional.ofNullable(medicalcondition);
+            return Optional.ofNullable(medicalCondition);
         }
 
-        public void setMedicalCondition(MedicalCondition medicalcondition) {
-            this.medicalcondition = medicalcondition;
+        public void setMedicalCondition(MedicalCondition medicalCondition) {
+            this.medicalCondition = medicalCondition;
         }
 
         /**

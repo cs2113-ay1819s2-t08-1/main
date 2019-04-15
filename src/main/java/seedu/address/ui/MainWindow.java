@@ -37,7 +37,7 @@ public class MainWindow extends UiPart<Stage> {
 
     private Stage primaryStage;
     private Logic logic;
-    private ValidatePassword validatePassword;
+    private seedu.address.ui.password.ValidatePassword validatePassword;
 
     // Independent Ui parts residing in this Ui container
     private ProjectListPanel projectListPanel;
@@ -129,7 +129,7 @@ public class MainWindow extends UiPart<Stage> {
      */
     boolean show(boolean []user) {
         primaryStage.show();
-        ValidatePassword.display(user);
+        seedu.address.ui.password.ValidatePassword.display(user);
         if (user[0]) {
             return true;
         } else {

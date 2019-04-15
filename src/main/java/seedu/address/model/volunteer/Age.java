@@ -11,13 +11,13 @@ import static seedu.address.commons.util.AppUtil.checkArgument;
 public class Age {
 
     public static final String MESSAGE_CONSTRAINTS =
-        "Age should be comprised of only positive number and at least two digit long";
+        "Age should be comprised of only positive number and is two digit long";
 
     /*
      * The first character of the address must not be a whitespace,
      * otherwise " " (a blank string) becomes a valid input.
      */
-    public static final String VALIDATION_REGEX = "\\d{2,}";
+    public static final String VALIDATION_REGEX = "\\d{2}";
 
     public final String ageOutput;
 

@@ -23,21 +23,22 @@ public class Volunteer {
     private final Religion religion;
     private final Phone phone;
     private final Email email;
-    private final EmergencyContact emergencycontact;
+    private final EmergencyContact emergencyContact;
     private final Address address;
-    private final DietaryPreference dietarypreference;
-    private final MedicalCondition medicalcondition;
+    private final DietaryPreference dietaryPreference;
+    private final MedicalCondition medicalCondition;
     private final Set<Tag> tags = new HashSet<>();
     // Data fields
     private int points;
     private HashSet<ProjectTitle> attachedProjectList = new HashSet<ProjectTitle>();
 
     /**
-     * Every field must be present and not null.
+     * Every Field must be present except DietaryPreference,
+     * MedicalCondition and Religion which is set to nil by default
      */
     public Volunteer(Name name, Age age, Gender gender, Race race, Religion religion, Phone phone, Address address,
-                     Email email, EmergencyContact emergencycontact, DietaryPreference dietarypreference,
-                     MedicalCondition medicalcondition, Set<Tag> tags) {
+                     Email email, EmergencyContact emergencyContact, DietaryPreference dietaryPreference,
+                     MedicalCondition medicalCondition, Set<Tag> tags) {
         requireAllNonNull(name, phone, email, address, tags);
         this.name = name;
         this.age = age;
@@ -47,10 +48,10 @@ public class Volunteer {
         this.phone = phone;
         this.address = address;
         this.email = email;
-        this.emergencycontact = emergencycontact;
-        this.dietarypreference = dietarypreference;
+        this.emergencyContact = emergencyContact;
+        this.dietaryPreference = dietaryPreference;
         this.tags.addAll(tags);
-        this.medicalcondition = medicalcondition;
+        this.medicalCondition = medicalCondition;
         this.points = 0;
     }
 
@@ -87,15 +88,15 @@ public class Volunteer {
     }
 
     public DietaryPreference getDietaryPreference() {
-        return dietarypreference;
+        return dietaryPreference;
     }
 
     public EmergencyContact getEmergencyContact() {
-        return emergencycontact;
+        return emergencyContact;
     }
 
     public MedicalCondition getMedicalCondition() {
-        return medicalcondition;
+        return medicalCondition;
     }
 
     /**
@@ -169,10 +170,10 @@ public class Volunteer {
     }
 
     @Override
-    public int hashCode() { //To change later***
+    public int hashCode() {
         // use this method for custom fields hashing instead of implementing your own
         return Objects.hash(name, race, age, phone, address, email,
-            emergencycontact, dietarypreference, medicalcondition, tags);
+            emergencyContact, dietaryPreference, medicalCondition, tags);
     }
 
     @Override

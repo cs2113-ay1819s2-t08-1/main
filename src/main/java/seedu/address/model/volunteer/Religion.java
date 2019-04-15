@@ -9,13 +9,13 @@ import static java.util.Objects.requireNonNull;
 
 public class Religion {
 
-    public static final String MESSAGE_CONSTRAINTS = "Religion should not contain any spaces or numbers";
+    public static final String MESSAGE_CONSTRAINTS = "Religion should be alphabetic";
 
     /*
      * The first character of the address must not be a whitespace,
      * otherwise " " (a blank string) becomes a valid input.
      */
-    public static final String VALIDATION_REGEX = "[\\p{Alnum}]*";
+    public static final String VALIDATION_REGEX = "[\\p{Alpha}]*";
     public final String religionOutput;
 
     /*

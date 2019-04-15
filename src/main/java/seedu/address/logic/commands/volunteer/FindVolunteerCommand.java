@@ -16,6 +16,8 @@ import seedu.address.model.volunteer.NameContainsKeywordsPredicate;
 public class FindVolunteerCommand extends Command {
 
     public static final String COMMAND_WORD = "findVolunteer";
+    public static final String COMMAND_ALIAS = "fv";
+    public static final String COMMAND_PARAMETERS = "Parameters: KEYWORD [MORE_KEYWORDS]...\n";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Finds all volunteers whose names contain any of "
         + "the specified keywords (case-insensitive) and displays them as a list with index numbers.\n"

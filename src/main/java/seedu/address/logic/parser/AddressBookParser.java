@@ -33,7 +33,6 @@ import seedu.address.logic.commands.volunteer.DeleteVolunteerCommand;
 import seedu.address.logic.commands.volunteer.EditVolunteerCommand;
 import seedu.address.logic.commands.volunteer.FindVolunteerCommand;
 import seedu.address.logic.commands.volunteer.ListVolunteerCommand;
-import seedu.address.logic.commands.volunteer.SelectVolunteerCommand;
 import seedu.address.logic.parser.beneficiary.AddBeneficiaryCommandParser;
 import seedu.address.logic.parser.beneficiary.DeleteBeneficiaryCommandParser;
 import seedu.address.logic.parser.beneficiary.EditBeneficiaryCommandParser;
@@ -48,7 +47,6 @@ import seedu.address.logic.parser.volunteer.AddVolunteerCommandParser;
 import seedu.address.logic.parser.volunteer.DeleteVolunteerCommandParser;
 import seedu.address.logic.parser.volunteer.EditVolunteerCommandParser;
 import seedu.address.logic.parser.volunteer.FindVolunteerCommandParser;
-import seedu.address.logic.parser.volunteer.SelectVolunteerCommandParser;
 
 /**
  * Parses user input.
@@ -86,6 +84,7 @@ public class AddressBookParser {
             return new AddBeneficiaryCommandParser().parse(arguments);
 
         case AddVolunteerCommand.COMMAND_WORD:
+        case AddVolunteerCommand.COMMAND_ALIAS:
             return new AddVolunteerCommandParser().parse(arguments);
 
         case SummaryBeneficiaryCommand.COMMAND_WORD:
@@ -103,6 +102,7 @@ public class AddressBookParser {
             return new EditBeneficiaryCommandParser().parse(arguments);
 
         case EditVolunteerCommand.COMMAND_WORD:
+        case EditVolunteerCommand.COMMAND_ALIAS:
             return new EditVolunteerCommandParser().parse(arguments);
 
         case DeleteBeneficiaryCommand.COMMAND_WORD:
@@ -114,6 +114,7 @@ public class AddressBookParser {
             return new DeleteProjectCommandParser().parse(arguments);
 
         case DeleteVolunteerCommand.COMMAND_WORD:
+        case DeleteVolunteerCommand.COMMAND_ALIAS:
             return new DeleteVolunteerCommandParser().parse(arguments);
 
         case ClearCommand.COMMAND_WORD:
@@ -124,6 +125,7 @@ public class AddressBookParser {
             return new FindBeneficiaryCommandParser().parse(arguments);
 
         case FindVolunteerCommand.COMMAND_WORD:
+        case FindVolunteerCommand.COMMAND_ALIAS:
             return new FindVolunteerCommandParser().parse(arguments);
 
         case ListProjectCommand.COMMAND_WORD:
@@ -135,6 +137,7 @@ public class AddressBookParser {
             return new ListBeneficiaryCommand();
 
         case ListVolunteerCommand.COMMAND_WORD:
+        case ListVolunteerCommand.COMMAND_ALIAS:
             return new ListVolunteerCommand();
 
         case HistoryCommand.COMMAND_WORD:
@@ -142,9 +145,6 @@ public class AddressBookParser {
 
         case ExitCommand.COMMAND_WORD:
             return new ExitCommand();
-
-        case SelectVolunteerCommand.COMMAND_WORD:
-            return new SelectVolunteerCommandParser().parse(arguments);
 
         case CompleteCommand.COMMAND_WORD:
             return new CompleteCommandParser().parse(arguments);

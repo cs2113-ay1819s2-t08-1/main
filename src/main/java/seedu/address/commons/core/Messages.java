@@ -15,7 +15,7 @@ public class Messages {
 
     public static final String MESSAGE_INVALID_BENEFICIARY_DISPLAYED_INDEX = "The beneficiary index provided "
         + "is invalid";
-    public static final String MESSAGE_BENEFICIARIES_LISTED_OVERVIEW = "%1$d persons listed!";
+    public static final String MESSAGE_BENEFICIARIES_LISTED_OVERVIEW = "%1$d beneficiaries listed!";
     public static final String MESSAGE_INVALID_VOLUNTEER_DISPLAYED_INDEX = "The volunteer index provided is invalid";
     public static final String MESSAGE_NOT_ENOUGH_VOLUNTEERS = "The volunteer pool does not have enough volunteers!";
     public static final String MESSAGE_VOLUNTEERS_LISTED_OVERVIEW = "%1$d volunteers listed!";

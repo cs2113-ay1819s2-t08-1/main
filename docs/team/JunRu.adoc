@@ -13,7 +13,7 @@ VolunCheer is a desktop application for project managers who wish to keep track 
 
 == Summary of contributions
 
-* *Major enhancement*: implemented the Project class whereby it creates a new `Project` object to the VolunCHeer application*
+* *Major enhancement: implemented the `Project` class whereby it creates a new `Project` object to the VolunCHeer application*
 ** What it does: the `Project` class is implemented with relevant functions that ties the Beneficiary pool and Volunteer pool together
 ** Features involved: the relevant features include basic functions such as `addProject`, `deleteProject` and `listProject`. The added features are the `complete` feature
   and the `assign` feature which will be elaborated in further details.
@@ -36,7 +36,7 @@ setting projects status as complete to keep track of ongoing and completed `Proj
     our `Map Command` and `Sort` function.
     3. Complete project *allows the user to mark a project as completed in the project list* this is indicated by a colour change - to red for the project title.
        - Justification: This is thought to be a useful feature as project managers would want to keep track of what are the ongoing projects while still have a copy of their completed projects.
-       - Highlights: This enhancement indicates a change of status of the specified project, it is a simple yet useful feature for the user.
+       - Highlights: This enhancement indicates a change of status of the specified `project`, it is a simple yet useful feature for the user.
 
 * *Minor enhancement*: ListProject and DeleteProject commands are inherited from addressBook and successfully implemented on the project class.
 
@@ -58,15 +58,14 @@ https://github.com/cs2113-ay1819s2-t08-1/main/issues/76#issue-428194020[#76]
 https://github.com/cs2113-ay1819s2-t08-1/main/issues/110#issue-430026906[#110]
 https://github.com/cs2113-ay1819s2-t08-1/main/issues/119#issue-431638374[#119]
 https://github.com/cs2113-ay1819s2-t08-1/main/issues/120#issue-431638782[#120]
-*** Managed overall merging of project and solve bugs raised.
-*** Merging and Integration of team's repositories.
+*** Managed overall merging and integration of project + solve bugs raised.
 https://github.com/cs2113-ay1819s2-t08-1/main/pull/141#issue-270291847[#141]
 ** Documentation:
 *** Did the UserGuide for v1.1: https://github.com/cs2113-ay1819s2-t08-1/main/pull/6[#6]
 *** Subsequent updates of documents on individual features.
 
 ** Tools:
-*** Integrated asciidoc for pdf releases of documentations as well as easy editing of adoc
+*** Integrated Ruby + asciidoctor for pdf releases of documentations as well as easy editing of adoc.
 
 == Contributions to the User Guide
 

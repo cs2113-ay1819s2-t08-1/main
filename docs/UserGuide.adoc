@@ -123,7 +123,7 @@ Format: `addProject n/PROJECT_NAME d/DATE`
 
 ****
 * Please enter DATE in DD/MM/YYYY format, making sure that the date should be after today.
-* Project Name does not accept duplicates in the project list, so make you name everything differently!
+* Project list does not accept duplicates in Project Titles, so make sure you name everything differently!
 * Projects are automatically sorted in ascending date order for easier tracking or Project tasks.
 ****
 
@@ -170,7 +170,7 @@ Format: `assignBeneficiary p/PROJECT_TITLE i/INDEX`
 [IMPORTANT]
 The index *must be a positive integer* `1, 2, 3, ...`
 
-After assigning a beneficiary, the project will have its adata updated as seen below.
+After assigning a beneficiary, the project will have its data updated as seen below.
 
 .When `assignB p/Old Folks Home Visit i/1` command executed
 image::assignB.png[]
@@ -198,7 +198,7 @@ image::assignV.png[]
 Use the commands listed in <<map>> to filter out the desired list of volunteers.
 
 ==== Mark project as complete: 'complete'
-Once a project is done, you can mark it as complete to distinguish it from your other projects.
+Once a `project` is done, you can mark it as complete to distinguish it from your other projects.
 Simply provide an INDEX to indicate which project you would like to complete.
 
 Format: `complete i/INDEX`

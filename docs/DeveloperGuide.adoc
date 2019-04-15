@@ -291,8 +291,7 @@ The diagram shows that the Project class is associated with the Complete class.
 The following sequence diagram shows how the complete command works:
 
 .Figure Sequence diagram for the complete command.
-image::CompleteSequenceDiagram.png[width="800"]
-
+image::CompleteSequenceDiagram.png[]
 
 1.	The `CompleteCommandParser` parses the user input to obtain the target project index and constructs a ne `CompleteCommand` with this index.
 2.	The logic portion of the complete command will be executed by the `CompleteCommand` method. To mark a Project object as complete:

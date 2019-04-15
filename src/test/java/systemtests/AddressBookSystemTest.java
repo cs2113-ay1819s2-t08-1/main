@@ -133,8 +133,8 @@ public abstract class AddressBookSystemTest {
      */
     protected void showVolunteersWithName(String keyword) {
         executeCommand(FindVolunteerCommand.COMMAND_WORD + " " + keyword);
-        assertTrue(getModel().getFilteredVolunteerList().size() <
-                getModel().getAddressBook().getVolunteerList().size());
+        assertTrue(getModel().getFilteredVolunteerList().size()
+                < getModel().getAddressBook().getVolunteerList().size());
     }
 
     /**

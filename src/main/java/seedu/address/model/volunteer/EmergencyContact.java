@@ -20,12 +20,12 @@ public class EmergencyContact {
     /**
      * Constructs a {@code Phone}.
      *
-     * @param emergencycontact A valid name, relationship and phone number.
+     * @param emergencyContact A valid name, relationship and phone number.
      */
-    public EmergencyContact(String emergencycontact) {
-        requireNonNull(emergencycontact);
-        checkArgument(isValidEmergencyContact(emergencycontact), MESSAGE_CONSTRAINTS);
-        value = emergencycontact;
+    public EmergencyContact(String emergencyContact) {
+        requireNonNull(emergencyContact);
+        checkArgument(isValidEmergencyContact(emergencyContact), MESSAGE_CONSTRAINTS);
+        value = emergencyContact;
     }
 
     /**

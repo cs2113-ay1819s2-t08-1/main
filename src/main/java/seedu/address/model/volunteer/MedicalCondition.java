@@ -18,10 +18,10 @@ public class MedicalCondition {
     /**
      * Constructs a {@code MedicalCondition}.
      */
-    public MedicalCondition(String medicalcondition) {
-        requireNonNull(medicalcondition);
-        checkArgument(isValidMedicalCondition(medicalcondition), MESSAGE_CONSTRAINTS);
-        status = medicalcondition;
+    public MedicalCondition(String medicalCondition) {
+        requireNonNull(medicalCondition);
+        checkArgument(isValidMedicalCondition(medicalCondition), MESSAGE_CONSTRAINTS);
+        status = medicalCondition;
     }
 
     /**

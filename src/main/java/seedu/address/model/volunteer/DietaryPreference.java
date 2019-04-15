@@ -17,10 +17,10 @@ public class DietaryPreference {
     /**
      * Constructs a {@code DietaryPreference}.
      */
-    public DietaryPreference(String dietarypreference) {
-        requireNonNull(dietarypreference);
-        checkArgument(isValidDietaryPreference(dietarypreference), MESSAGE_CONSTRAINTS);
-        restriction = dietarypreference;
+    public DietaryPreference(String dietaryPreference) {
+        requireNonNull(dietaryPreference);
+        checkArgument(isValidDietaryPreference(dietaryPreference), MESSAGE_CONSTRAINTS);
+        restriction = dietaryPreference;
     }
 
     /**

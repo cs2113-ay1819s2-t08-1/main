@@ -19,6 +19,13 @@ Team T08-1 consists of Zhao Junru, Nguyen Dang Huu, Jeremy Wong Kai Wen and myse
 working with major volunteering organizations. We understand the challenges volunteering project managers faced when dealing with
 multiple projects, beneficiaries and volunteers and thus, we created VolunCHeer to serve that need.
 
+image::Ui.png[400]
+
+The user interacts with VolunCHeer using a command-line interface, and has a GUI created with JavaFX. VolunCHeer is written
+in Java, and has about 10 kLoC.
+
+VolunCHeer's codebase draws from https://se-edu.github.io/[SE-EDU]'s AddressBook Level 4.
+
 == Terminology
 * Volunteer: The volunteers who participate in volunteer organization such as NUS Community Service Club, NUS Vietnamese
 Community's CIP Committee.

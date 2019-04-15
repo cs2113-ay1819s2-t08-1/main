@@ -29,6 +29,7 @@ import seedu.address.model.volunteer.Volunteer;
 public class AddVolunteerCommand extends Command {
 
     public static final String COMMAND_WORD = "addVolunteer";
+    public static final String COMMAND_ALIAS = "av";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Adds a person to the address book. "
         + "Parameters: "

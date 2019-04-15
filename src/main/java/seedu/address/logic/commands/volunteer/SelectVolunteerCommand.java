@@ -19,6 +19,7 @@ import seedu.address.model.volunteer.Volunteer;
 public class SelectVolunteerCommand extends Command {
 
     public static final String COMMAND_WORD = "selectVolunteer";
+    public static final String COMMAND_ALIAS = "sv";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD
         + ": Selects the volunteer identified by the index number used in the displayed volunteer list.\n"

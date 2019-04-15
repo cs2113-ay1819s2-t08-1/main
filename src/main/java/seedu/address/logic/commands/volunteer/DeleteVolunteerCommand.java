@@ -19,6 +19,7 @@ import seedu.address.model.volunteer.Volunteer;
 public class DeleteVolunteerCommand extends Command {
 
     public static final String COMMAND_WORD = "deleteVolunteer";
+    public static final String COMMAND_ALIAS = "dv";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD
         + ": Deletes the volunteer identified by the index number used in the displayed volunteer list.\n"

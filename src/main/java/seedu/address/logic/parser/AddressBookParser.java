@@ -33,7 +33,6 @@ import seedu.address.logic.commands.volunteer.DeleteVolunteerCommand;
 import seedu.address.logic.commands.volunteer.EditVolunteerCommand;
 import seedu.address.logic.commands.volunteer.FindVolunteerCommand;
 import seedu.address.logic.commands.volunteer.ListVolunteerCommand;
-import seedu.address.logic.commands.volunteer.SelectVolunteerCommand;
 import seedu.address.logic.parser.beneficiary.AddBeneficiaryCommandParser;
 import seedu.address.logic.parser.beneficiary.DeleteBeneficiaryCommandParser;
 import seedu.address.logic.parser.beneficiary.EditBeneficiaryCommandParser;
@@ -48,7 +47,6 @@ import seedu.address.logic.parser.volunteer.AddVolunteerCommandParser;
 import seedu.address.logic.parser.volunteer.DeleteVolunteerCommandParser;
 import seedu.address.logic.parser.volunteer.EditVolunteerCommandParser;
 import seedu.address.logic.parser.volunteer.FindVolunteerCommandParser;
-import seedu.address.logic.parser.volunteer.SelectVolunteerCommandParser;
 
 /**
  * Parses user input.

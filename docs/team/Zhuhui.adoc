@@ -19,6 +19,13 @@ Team T08-1 consists of Zhao Junru, Nguyen Dang Huu, Jeremy Wong Kai Wen and myse
 working with major volunteering organizations. We understand the challenges volunteering project managers faced when dealing with
 multiple projects, beneficiaries and volunteers and thus, we created VolunCHeer to serve that need.
 
+image::Ui.png[400]
+
+The user interacts with VolunCHeer using a command-line interface, and has a GUI created with JavaFX. VolunCHeer is written
+in Java, and has about 10 kLoC.
+
+VolunCHeer's codebase draws from https://se-edu.github.io/[SE-EDU]'s AddressBook Level 4.
+
 == Terminology
 * Volunteer: The volunteers who participate in volunteer organization such as NUS Community Service Club, NUS Vietnamese
 Community's CIP Committee.
@@ -49,7 +56,7 @@ because we are concerned about the security of our users and do not wish data st
 compared to using the command line interface.
 
 * *Minor enhancement*: Exit Dialog Box
-** What it does: It prompts the user for a confirmation message when exiting VolunCHeer. It allows the `exit` command to bypass the message.
+** What it does: It prompts the user for a confirmation message when exiting VolunCHeer. It allows the exit command to bypass the message.
 ** Justification: This feature prevents accidental termination of the program by the user or external program.
 
 * *Code contributed*: [https://github.com/cs2113-ay1819s2-t08-1/main/tree/master/src/main/java/seedu/address/logic/command/volunteer.java[Volunteer]] [https://github.com/cs2113-ay1819s2-t08-1/main/tree/master/src/main/java/seedu/address/ui/ValidatePassword.java[Password]]
@@ -70,7 +77,8 @@ include::../UserGuide.adoc[tag=VolunteerManagement]
 == Contributions to the Developer Guide
 
 |===
-|_Given below are sections I contributed to the Developer Guide. They showcase my ability to write technical documentation and the technical depth of my contributions to the project._
+|_Given below are sections I contributed to the Developer Guide. They showcase my ability to write technical documenta
+tion and the technical depth of my contributions to the project._
 |===
 
 *Password Feature

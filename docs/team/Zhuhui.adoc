@@ -55,13 +55,6 @@ because we are concerned about the security of our users and do not wish data st
 ** Highlights: A simple UI with a single password field is used to implement this feature as it is more user friendly
 compared to using the command line interface.
 
-* *Minor enhancement*: Exit Dialog Box
-** What it does: It prompts the user for a confirmation message when exiting VolunCHeer. It allows the exit command to bypass the message.
-** Justification: This feature prevents accidental termination of the program by the user or external program.
-
-* *Code contributed*: [https://github.com/cs2113-ay1819s2-t08-1/main/tree/master/src/main/java/seedu/address/logic/command/volunteer.java[Volunteer]] [https://github.com/cs2113-ay1819s2-t08-1/main/tree/master/src/main/java/seedu/address/ui/ValidatePassword.java[Password]]
-* *Other contributions*:
-
 ** UI interface:
 *** Ensure that UI is running smoothly
 

@@ -362,7 +362,7 @@ p/98765432 ec/Mary, Mother, 92221111 dp/vegetarian m/asthma`
 * `av n/Sarah Soh y/22 g/female r/chinese rg/buddhist a/betsy ave 6, 02-08 e/sarah08@example.com
 p/92345678 ec/Johnny, Husband, 81234568`
 
-==== Deleting a volunteer : `deleteVolunteer` \ `dv`
+==== Deleting a volunteer : `deleteVolunteer` / `dv`
 After a volunteer has left, it can be deleted by this command by referencing its index in the list.
 
 Format: `deleteVolunteer INDEX` +
@@ -387,7 +387,7 @@ Deletes the 1st volunteer in the searched volunteer list.
 [TIP]
 Use the list volunteers commands to check the correct index of the volunteer to be deleted
 
-==== Editing a volunteer : `editVolunteer` \ `ev`
+==== Editing a volunteer : `editVolunteer` / `ev`
 Similar to beneficiary, we can update volunteer particulars by the given index.
 
 Format: `editVolunteer INDEX [n/NAME] [y/AGE] [g/GENDER] [r/RACE] [rg/RELIGION][p/PHONE] [a/ADDRESS] [e/EMAIL]
@@ -412,7 +412,7 @@ Edits the phone number and email address of the 1st volunteer to be `91234567` a
 * `ev 2 n/Betsy Crower t/` +
 Edits the name of the 2nd volunteer to be `Betsy Crower` and clears all existing tags.
 
-==== Locating volunteers by name: `findVolunteer` \ `fv`
+==== Locating volunteers by name: `findVolunteer` / `fv`
 Searching for volunteers works similarly to beneficiaries.
 
 Format: `find KEYWORD [MORE_KEYWORDS]`
@@ -435,7 +435,7 @@ Returns `john` and `John Doe`
 * `fv Betsy Tim John` +
 Returns any volunteer having names `Betsy`, `Tim`, or `John`
 
-==== Listing all volunteers : `listVolunteer` \ `lv`
+==== Listing all volunteers : `listVolunteer` / `lv`
 Shows a list of all volunteers in the volunteer pool. +
 
 Format: `listVolunteer`

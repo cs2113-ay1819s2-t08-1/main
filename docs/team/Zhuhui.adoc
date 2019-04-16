@@ -64,7 +64,6 @@ compared to using the command line interface.
 |_Given below are sections I contributed to the User Guide. They showcase my ability to write documentation targeting end-users._
 |===
 
-*Volunteer Feature
 include::../UserGuide.adoc[tag=VolunteerManagement]
 
 == Contributions to the Developer Guide
@@ -74,5 +73,4 @@ include::../UserGuide.adoc[tag=VolunteerManagement]
 tion and the technical depth of my contributions to the project._
 |===
 
-*Password Feature
 include::../DeveloperGuide.adoc[tag=PasswordFeature]

@@ -53,7 +53,7 @@ public class ValidatePassword {
     private static Label message = new Label("");
     private static final String MESSAGE_VALID_LOGIN = "Login Successful";
     private static final String MESSAGE_INVALID_LOGIN = "Your password is incorrect!";
-    private static int tries = 5;
+    private static int tries = 6;
     private static String password = "password";
     /**
      *
